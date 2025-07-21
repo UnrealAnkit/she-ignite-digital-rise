@@ -6,7 +6,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import Footer from "@/components/Footer";
 import Separator from "@/components/Separator";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, Users, Award, TrendingUp, Mic, Play, ChevronLeft, ChevronRight, Camera, Calendar, Zap, Heart, Star, CheckCircle, Clock, MapPin } from "lucide-react";
+import { ArrowRight, Download, Users, Award, TrendingUp, Mic, Play, ChevronLeft, ChevronRight, Camera, Calendar, Zap, Heart, Star, CheckCircle, Clock, MapPin, MessageCircle, Target } from "lucide-react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -1107,77 +1107,125 @@ const Index = () => {
             </div>
 
             {/* Main Content Grid */}
-            <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              {/* Left Side - Text Content */}
+            {/* Main Content - Redesigned for Better Flow */}
+            <div className="max-w-6xl mx-auto">
+              {/* Hero Statement */}
               <motion.div 
-                className="space-y-6"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="text-center mb-16"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <div className="space-y-4">
-                  <p className="text-xl text-gray-700 leading-relaxed">
-                    Inside our community, you'll find women just like you — building, learning, failing, rising, and helping each other grow.
-                  </p>
-                  <p className="text-xl text-gray-700 leading-relaxed">
-                    This isn't just a chat group.
-                  </p>
-                  <p className="text-xl text-gray-700 leading-relaxed">
-                    It's where collaborations happen, tools are exchanged, wins are celebrated, and businesses grow — together.
-                  </p>
-                  <p className="text-xl text-gray-700 leading-relaxed">
-                    Whether you're just starting out or scaling up, there's space for you here.
-                  </p>
+                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-red-50 to-pink-50 px-6 py-3 rounded-full mb-8">
+                  <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                  <span className="text-red-700 font-semibold text-sm">Community First</span>
                 </div>
+                
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
+                  Inside our community, you'll find women just like you — 
+                  <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent"> building, learning, failing, rising, and helping each other grow.</span>
+                </h3>
+                
+                <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                  This isn't just a chat group. It's where collaborations happen, tools are exchanged, 
+                  wins are celebrated, and businesses grow — together.
+                </p>
               </motion.div>
 
-              {/* Right Side - Benefits Content */}
+              {/* Benefits Grid */}
               <motion.div 
-                className="space-y-6"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <div className="text-left mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-lg">💡</span>
+                {/* Benefit 1 */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                  <div className="relative p-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <MessageCircle className="text-white h-6 w-6" />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Members-Only Access</h4>
+                    <p className="text-gray-700 leading-relaxed">Exclusive WhatsApp groups where real conversations happen and genuine support flows.</p>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">What You Get Inside:</h3>
                 </div>
-                
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">✓</span>
+
+                {/* Benefit 2 */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                  <div className="relative p-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Target className="text-white h-6 w-6" />
                     </div>
-                    <span className="font-medium text-gray-900 text-sm">Access to members-only WhatsApp groups</span>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Priority Invites</h4>
+                    <p className="text-gray-700 leading-relaxed">First access to events, trainings, and exclusive opportunities before anyone else.</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">✓</span>
+                </div>
+
+                {/* Benefit 3 */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                  <div className="relative p-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Users className="text-white h-6 w-6" />
                     </div>
-                    <span className="font-medium text-gray-900 text-sm">Priority invites to events and trainings</span>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Peer Support</h4>
+                    <p className="text-gray-700 leading-relaxed">Accountability partners and mentors who genuinely want to see you succeed.</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">✓</span>
+                </div>
+
+                {/* Benefit 4 */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                  <div className="relative p-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Zap className="text-white h-6 w-6" />
                     </div>
-                    <span className="font-medium text-gray-900 text-sm">Peer support + accountability</span>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Early Access</h4>
+                    <p className="text-gray-700 leading-relaxed">Be the first to know about tools, resources, and deals that can transform your business.</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">✓</span>
+                </div>
+
+                {/* Benefit 5 */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                  <div className="relative p-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Star className="text-white h-6 w-6" />
                     </div>
-                    <span className="font-medium text-gray-900 text-sm">Early access to tools, resources, and deals</span>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Platform Visibility</h4>
+                    <p className="text-gray-700 leading-relaxed">Get featured across SHE Leads India platforms and grow your personal brand.</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">✓</span>
+                </div>
+
+                {/* Benefit 6 */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                  <div className="relative p-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <TrendingUp className="text-white h-6 w-6" />
                     </div>
-                    <span className="font-medium text-gray-900 text-sm">Visibility through SHE Leads India platforms</span>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Growth Together</h4>
+                    <p className="text-gray-700 leading-relaxed">Whether you're just starting out or scaling up, there's space for you here.</p>
                   </div>
+                </div>
+              </motion.div>
+
+              {/* Call to Action Statement */}
+              <motion.div 
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <div className="inline-flex items-center gap-4 bg-white px-8 py-4 rounded-full shadow-lg border border-red-100">
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                  <span className="text-gray-700 font-medium">Ready to join your tribe?</span>
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
                 </div>
               </motion.div>
             </div>

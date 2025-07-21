@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { preloadCriticalResources, monitorCoreWebVitals } from "@/lib/performance";
 import { initGA } from "@/lib/analytics";
+import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import StartHere from "./pages/StartHere";
 import Programs from "./pages/Programs";
@@ -73,6 +74,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        <Analytics />
       </TooltipProvider>
     </QueryClientProvider>
   );

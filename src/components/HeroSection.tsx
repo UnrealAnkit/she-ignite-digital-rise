@@ -5,6 +5,7 @@ import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import JourneyModal from "@/components/JourneyModal";
+import Separator from "@/components/Separator";
 // Using direct path to media folder image
 
 const HeroSection = () => {
@@ -164,7 +165,7 @@ const HeroSection = () => {
 
           {/* Stats */}
           <motion.div 
-            className="flex flex-wrap gap-6 mt-4 pt-4 border-t border-background/20"
+            className="flex flex-wrap gap-6 mt-4 pt-4"
             ref={sectionRef}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -178,6 +179,9 @@ const HeroSection = () => {
               </div>
             </div>
           </motion.div>
+          
+          {/* Stylized separator */}
+          <Separator className="mt-6" />
         </div>
       </div>
 

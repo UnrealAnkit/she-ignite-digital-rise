@@ -4,6 +4,7 @@ import ProgramsShowcase from "@/components/ProgramsShowcase";
 import TestimonialCard from "@/components/TestimonialCard";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Footer from "@/components/Footer";
+import Separator from "@/components/Separator";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Users, Award, TrendingUp, Mic, Play, ChevronLeft, ChevronRight, Camera, Calendar, Zap, Heart, Star, CheckCircle, Clock, MapPin } from "lucide-react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
@@ -746,7 +747,7 @@ const Index = () => {
               <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
                 Why We Exist
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full"></div>
+              <Separator variant="thin" />
             </div>
             
             {/* Content Grid - Problem on Left, Solution on Right */}
@@ -906,8 +907,8 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Red Separator */}
-      <div className="w-full h-1 bg-gradient-to-r from-red-500 to-red-600"></div>
+      {/* Stylized separator */}
+      <Separator />
 
       {/* What We Do Section */}
       <motion.section 
@@ -932,7 +933,7 @@ const Index = () => {
                 <span className="text-gray-900">What We </span>
                 <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Do</span>
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full mb-8"></div>
+              <Separator variant="thin" />
               
               <p className="text-xl md:text-2xl font-semibold mb-6">
                 <span className="text-gray-900">Practical. </span>
@@ -1102,7 +1103,7 @@ const Index = () => {
               <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
                 You Don't Need to Figure It All Out Alone
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full mb-8"></div>
+              <Separator variant="thin" />
             </div>
 
             {/* Main Content Grid */}
@@ -1216,8 +1217,8 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Thin black line divider */}
-      <div className="w-full h-px bg-black opacity-20"></div>
+      {/* Stylized separator */}
+      <Separator />
 
       {/* Social Proof Section */}
       <motion.section 
@@ -1278,8 +1279,8 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Thin black line divider */}
-      <div className="w-full h-px bg-black opacity-20"></div>
+      {/* Stylized separator */}
+      <Separator />
 
       {/* Podcast Section */}
       <motion.section 
@@ -1420,8 +1421,8 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Thin black line divider */}
-      <div className="w-full h-px bg-black opacity-20"></div>
+      {/* Stylized separator */}
+      <Separator />
 
       {/* SHELeads Platform Section */}
       <motion.section 
@@ -1588,8 +1589,8 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Thin black line divider */}
-      <div className="w-full h-px bg-black opacity-20"></div>
+      {/* Stylized separator */}
+      <Separator />
 
       {/* Media Coverage & Recognition */}
       <motion.section 
@@ -1718,8 +1719,8 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Thin black line divider */}
-      <div className="w-full h-px bg-black opacity-20"></div>
+      {/* Stylized separator */}
+      <Separator />
 
       {/* Event Gallery Section */}
       <motion.section 

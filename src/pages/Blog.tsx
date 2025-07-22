@@ -259,6 +259,18 @@ const Blog = () => {
                 
                 return (
                   <div key={post.id} className={`group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 cursor-pointer ${cardVariant}`} onClick={() => handlePostClick(post.id)}>
+                    {/* Blog Image */}
+                    {post.image_url && (
+                      <div className="relative h-48 md:h-56 overflow-hidden rounded-t-3xl">
+                        <img
+                          src={post.image_url}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      </div>
+                    )}
+                    
                     {/* Decorative elements */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
                     <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
@@ -355,6 +367,18 @@ const Blog = () => {
                 
                 return (
                   <div key={post.id} className={`group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 cursor-pointer ${cardVariant}`} onClick={() => handlePostClick(post.id)}>
+                    {/* Blog Image */}
+                    {post.image_url && (
+                      <div className="relative h-40 md:h-48 overflow-hidden rounded-t-3xl">
+                        <img
+                          src={post.image_url}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      </div>
+                    )}
+                    
                     {/* Decorative elements */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
                     <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>

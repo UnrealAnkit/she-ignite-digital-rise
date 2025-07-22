@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Calendar, Clock, User, Share2, Bookmark } from "lucide-react";
 import { fetchBlogPostById, BlogPost } from "@/lib/blogService";
 import { useEffect, useState } from "react";
-// import ReactMarkdown from "react-markdown"; // Uncomment if you add react-markdown
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -29,18 +28,39 @@ const BlogPost = () => {
   }, [slug]);
 
   if (loading) {
-    return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <Navigation />
+        <div className="flex items-center justify-center min-h-[60vh]">
+          <div className="text-center">
+            <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-lg text-gray-600">Loading article...</p>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
   }
 
   if (!post) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-gray-50">
         <Navigation />
         <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-2xl font-bold mb-4">Post not found</h1>
-          <Button onClick={() => navigate('/blog')}>
-            Back to Blog
-          </Button>
+          <div className="max-w-md mx-auto">
+            <div className="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Bookmark className="h-12 w-12 text-red-500" />
+            </div>
+            <h1 className="text-3xl font-bold mb-4 text-gray-900">Article Not Found</h1>
+            <p className="text-gray-600 mb-8">The article you're looking for doesn't exist or has been removed.</p>
+            <Button 
+              onClick={() => navigate('/blog')}
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg"
+            >
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Blog
+            </Button>
+          </div>
         </div>
         <Footer />
       </div>
@@ -48,32 +68,54 @@ const BlogPost = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <Navigation />
-      {/* Hero Section */}
-      <section className="py-20 text-white" style={{ background: 'linear-gradient(135deg, rgb(230, 0, 35), rgb(204, 0, 31))' }}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Button 
-              variant="ghost" 
-              className="text-primary-foreground mb-8 hover:bg-primary-foreground/10"
-              onClick={() => navigate('/blog')}
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Blog
-            </Button>
-            <div className="mb-6">
-              <Badge variant="secondary" className="mb-4">
-                {post.category}
-              </Badge>
+      
+      {/* Simple Header */}
+      <div className="bg-white border-b">
+        <div className="container mx-auto px-4 py-4">
+          <Button 
+            variant="ghost" 
+            className="text-gray-600 hover:text-gray-900"
+            onClick={() => navigate('/blog')}
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Blog
+          </Button>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto">
+          
+          {/* Blog Image - Fixed Size */}
+          {post.image_url && (
+            <div className="mb-8">
+              <img
+                src={post.image_url}
+                alt={post.title}
+                className="w-full h-64 md:h-80 object-cover rounded-lg shadow-md"
+              />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          )}
+
+          {/* Article Header */}
+          <div className="bg-white rounded-lg shadow-sm p-6 md:p-8 mb-8">
+            <Badge className="mb-4 bg-blue-100 text-blue-800">
+              {post.category}
+            </Badge>
+            
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               {post.title}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
+            
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               {post.excerpt}
             </p>
-            <div className="flex flex-wrap items-center gap-6 text-sm opacity-80">
+            
+            {/* Author Info */}
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
               <div className="flex items-center gap-2">
                 <User className="h-4 w-4" />
                 <span>{post.author}</span>
@@ -91,37 +133,43 @@ const BlogPost = () => {
                 <span>{post.read_time}</span>
               </div>
             </div>
-            <div className="flex items-center gap-4 mt-8">
-              <Button variant="outline" size="sm" className="text-primary-foreground border-primary-foreground/30">
+            
+            {/* Share and Save Buttons */}
+            <div className="flex items-center gap-3">
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50"
+              >
                 <Share2 className="h-4 w-4 mr-2" />
                 Share
               </Button>
-              <Button variant="outline" size="sm" className="text-primary-foreground border-primary-foreground/30">
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50"
+              >
                 <Bookmark className="h-4 w-4 mr-2" />
                 Save
               </Button>
             </div>
           </div>
-        </div>
-      </section>
-      {/* Content Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+
+          {/* Article Content */}
+          <div className="bg-white rounded-lg shadow-sm p-6 md:p-8">
             <div className="prose prose-lg max-w-none">
-              {/* If you want markdown rendering, use ReactMarkdown here: */}
-              {/* <ReactMarkdown>{post.content}</ReactMarkdown> */}
-              <div className="whitespace-pre-wrap text-lg leading-relaxed">
+              <div className="whitespace-pre-wrap text-base md:text-lg leading-relaxed text-gray-800">
                 {post.content}
               </div>
             </div>
+            
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
-              <div className="mt-12 pt-8 border-t">
-                <h3 className="text-lg font-semibold mb-4">Tags:</h3>
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Tags:</h3>
                 <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag: string, index: number) => (
-                    <Badge key={index} variant="outline">
+                    <Badge key={index} variant="outline" className="bg-gray-50 text-gray-700 border-gray-200">
                       {tag}
                     </Badge>
                   ))}
@@ -130,34 +178,39 @@ const BlogPost = () => {
             )}
           </div>
         </div>
-      </section>
+      </div>
+      
       {/* Newsletter Signup */}
-      <section className="py-20">
+      <div className="bg-gray-50 py-12">
         <div className="container mx-auto px-4">
-                      <div className="rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto" style={{ backgroundColor: 'rgba(230, 0, 35, 0.05)' }}>
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-2xl font-bold mb-4 text-gray-900">
               Never Miss an Insight
             </h3>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-600 mb-6">
               Get our latest articles, exclusive tips, and business strategies 
               delivered directly to your inbox every week.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-6">
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                className="flex-1 px-4 py-3 rounded-lg border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               />
-              <Button variant="hero" size="lg">
+              <Button 
+                size="default"
+                className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg"
+              >
                 Subscribe
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-gray-500 mt-3">
               Join 2,000+ entrepreneurs. No spam, unsubscribe anytime.
             </p>
           </div>
         </div>
-      </section>
+      </div>
+      
       <Footer />
     </div>
   );

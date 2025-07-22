@@ -24,6 +24,7 @@ const emptyBlogForm = {
   featured: false,
   image_url: "",
   tags: [] as string[],
+  published_at: new Date().toISOString(),
 };
 
 const emptyEventForm = {
@@ -308,7 +309,13 @@ export default function AdminPanel() {
 
   const handleEditBlog = (post: BlogPost) => {
     setEditingBlogId(post.id);
-    setBlogForm({ ...post, tags: post.tags || [] });
+    setBlogForm({ 
+      ...post, 
+      tags: post.tags || [],
+      published_at: post.published_at || new Date().toISOString(),
+      image_url: post.image_url || "",
+      featured: Boolean(post.featured)
+    });
     setActiveTab("blogs");
   };
 
@@ -352,15 +359,26 @@ export default function AdminPanel() {
     e.preventDefault();
     setSaving(true);
     try {
+      // Process the form data to ensure it matches the frontend format
+      const processedForm = {
+        ...blogForm,
+        tags: Array.isArray(blogForm.tags) ? blogForm.tags : [],
+        published_at: blogForm.published_at || new Date().toISOString(),
+        featured: Boolean(blogForm.featured),
+        image_url: blogForm.image_url || "",
+      };
+      
       if (editingBlogId) {
-        await updateBlogPost(editingBlogId, blogForm);
+        await updateBlogPost(editingBlogId, processedForm);
       } else {
-        await createBlogPost(blogForm);
+        await createBlogPost(processedForm);
       }
       setBlogForm(emptyBlogForm);
       setEditingBlogId(null);
       loadPosts();
+      alert("Blog post saved successfully!");
     } catch (err) {
+      console.error("Error saving blog post:", err);
       alert("Error saving blog post");
     }
     setSaving(false);
@@ -850,18 +868,33 @@ export default function AdminPanel() {
                       />
                     </div>
                     
-                    <div className="flex items-center gap-3">
-                      <input 
-                        type="checkbox" 
-                        name="featured" 
-                        checked={blogForm.featured} 
-                        onChange={handleBlogChange}
-                        className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
-                      />
-                      <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
-                        <Star className="h-4 w-4" />
-                        Featured Post
-                      </label>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-gray-700">Publish Date</label>
+                        <input 
+                          type="datetime-local" 
+                          name="published_at" 
+                          value={blogForm.published_at ? new Date(blogForm.published_at).toISOString().slice(0, 16) : ''} 
+                          onChange={handleBlogChange} 
+                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-gray-700">Featured Post</label>
+                        <div className="flex items-center gap-3">
+                          <input 
+                            type="checkbox" 
+                            name="featured" 
+                            checked={blogForm.featured} 
+                            onChange={handleBlogChange}
+                            className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
+                          />
+                          <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                            <Star className="h-4 w-4" />
+                            Mark as Featured Post
+                          </label>
+                        </div>
+                      </div>
                     </div>
                     
                     <div className="flex gap-4 pt-4">

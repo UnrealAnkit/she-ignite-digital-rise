@@ -75,15 +75,15 @@ const categories = [
   "AI & Technology", 
   "Business Growth",
   "Success Stories",
+  "Leadership",
+  "Finance",
+  "Networking",
+  "Personal Development"
 ];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.5 }
-  }
+  visible: { opacity: 1, y: 0 }
 };
 
 const staggerContainer = {
@@ -91,8 +91,7 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1
+      staggerChildren: 0.1
     }
   }
 };
@@ -498,94 +497,56 @@ export default function AdminPanel() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-center"
-        >
-          <div className="mb-6">
-            <img 
-              src="/she-leads-logo.png" 
-              alt="SHE Leads India" 
-              className="h-16 w-auto object-contain mx-auto mb-4"
-            />
+      <div className="min-h-screen bg-gray-50">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-lg text-gray-600 font-medium">Loading admin panel...</p>
           </div>
-          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-lg font-medium text-muted-foreground">Loading admin panel...</p>
-        </motion.div>
+        </div>
       </div>
     );
   }
 
   if (!user) {
-    return <AdminLogin onLogin={() => {}} />;
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <AdminLogin onLogin={() => {}} />
+      </div>
+    );
   }
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Enhanced Header */}
-      <motion.div 
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        className="bg-white/80 backdrop-blur-lg border-b border-white/20 shadow-lg"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <motion.div
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.1 }}
-            >
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg p-1">
-                  <img 
-                    src="/she-leads-logo.png" 
-                    alt="SHE Leads India" 
-                    className="w-full h-full object-contain"
-                  />
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                  <Settings className="h-5 w-5 text-white" />
                 </div>
-                <div>
-                  <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-                    Admin Dashboard
-                  </h1>
-                  <p className="text-muted-foreground flex items-center gap-2">
-                    <UserIcon className="h-4 w-4" />
-                    Welcome back, {user.email}
-                  </p>
-                </div>
+                <h1 className="text-2xl font-bold text-gray-900">Admin Panel</h1>
               </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ x: 20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="flex items-center gap-4"
+              <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-200">
+                <UserIcon className="h-3 w-3 mr-1" />
+                {user.email}
+              </Badge>
+            </div>
+            <Button 
+              onClick={handleLogout}
+              variant="outline"
+              className="text-gray-600 hover:text-gray-900 border-gray-300 hover:border-gray-400"
             >
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                />
-              </div>
-              <Button 
-                variant="outline" 
-                onClick={handleLogout}
-                className="hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all duration-200"
-              >
-                <LogOut className="h-4 w-4 mr-2" />
-                Logout
-              </Button>
-            </motion.div>
+              <LogOut className="h-4 w-4 mr-2" />
+              Logout
+            </Button>
           </div>
         </div>
-      </motion.div>
+      </header>
 
+      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           {/* Enhanced Tab Navigation */}
@@ -594,45 +555,45 @@ export default function AdminPanel() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <TabsList className="grid w-full grid-cols-6 bg-white/60 backdrop-blur-sm p-1 rounded-xl shadow-lg border border-white/20">
+            <TabsList className="grid w-full grid-cols-6 bg-white shadow-sm border border-gray-200 p-1 rounded-xl">
               <TabsTrigger 
                 value="dashboard" 
-                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300"
+                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300 font-medium"
               >
                 <BarChart3 className="h-4 w-4" />
                 <span className="hidden sm:inline">Dashboard</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="blogs" 
-                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300"
+                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300 font-medium"
               >
                 <FileText className="h-4 w-4" />
                 <span className="hidden sm:inline">Blogs</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="events" 
-                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300"
+                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300 font-medium"
               >
                 <Calendar className="h-4 w-4" />
                 <span className="hidden sm:inline">Events</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="trainings" 
-                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300"
+                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300 font-medium"
               >
                 <BookOpen className="h-4 w-4" />
                 <span className="hidden sm:inline">Training</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="registrations" 
-                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300"
+                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300 font-medium"
               >
                 <Users className="h-4 w-4" />
-                <span className="hidden sm:inline">Users</span>
+                <span className="hidden sm:inline">Registrations</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="settings" 
-                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300"
+                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all duration-300 font-medium"
               >
                 <Settings className="h-4 w-4" />
                 <span className="hidden sm:inline">Settings</span>
@@ -649,7 +610,7 @@ export default function AdminPanel() {
               className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
             >
               <motion.div variants={fadeInUp}>
-                <Card className="bg-gradient-to-br from-blue-500 to-blue-600 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <Card className="bg-gradient-to-br from-blue-500 to-blue-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
@@ -664,13 +625,13 @@ export default function AdminPanel() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="bg-gradient-to-br from-green-500 to-green-600 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <Card className="bg-gradient-to-br from-green-500 to-green-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-green-100 text-sm font-medium">Published Events</p>
                         <p className="text-3xl font-bold">{stats.publishedEvents}</p>
-                        <p className="text-green-100 text-xs">of {events.length} total</p>
+                        <p className="text-green-100 text-xs">Active events</p>
                       </div>
                       <Calendar className="h-8 w-8 text-green-200" />
                     </div>
@@ -679,28 +640,28 @@ export default function AdminPanel() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="bg-primary text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <Card className="bg-gradient-to-br from-purple-500 to-purple-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-white/80 text-sm font-medium">Training Sessions</p>
+                        <p className="text-purple-100 text-sm font-medium">Published Trainings</p>
                         <p className="text-3xl font-bold">{stats.publishedTrainings}</p>
-                        <p className="text-white/80 text-xs">active programs</p>
+                        <p className="text-purple-100 text-xs">Active courses</p>
                       </div>
-                      <BookOpen className="h-8 w-8 text-white/80" />
+                      <BookOpen className="h-8 w-8 text-purple-200" />
                     </div>
                   </CardContent>
                 </Card>
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="bg-gradient-to-br from-orange-500 to-orange-600 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <Card className="bg-gradient-to-br from-orange-500 to-orange-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-orange-100 text-sm font-medium">Total Registrations</p>
                         <p className="text-3xl font-bold">{stats.totalRegistrations}</p>
-                        <p className="text-orange-100 text-xs">all programs</p>
+                        <p className="text-orange-100 text-xs">All events & trainings</p>
                       </div>
                       <Users className="h-8 w-8 text-orange-200" />
                     </div>
@@ -709,15 +670,15 @@ export default function AdminPanel() {
               </motion.div>
             </motion.div>
 
-            {/* Recent Activity */}
+            {/* Quick Actions */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Card className="bg-white/60 backdrop-blur-sm border border-white/20 shadow-xl">
+              <Card className="bg-white shadow-sm border border-gray-200">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2 text-xl">
+                  <CardTitle className="flex items-center gap-2 text-xl text-gray-900">
                     <TrendingUp className="h-5 w-5 text-primary" />
                     Quick Actions
                   </CardTitle>
@@ -726,29 +687,29 @@ export default function AdminPanel() {
                   <div className="grid gap-4 md:grid-cols-3">
                     <Button
                       onClick={() => setActiveTab("blogs")}
-                      className="h-20 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="h-20 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300"
                     >
                       <div className="text-center">
                         <Plus className="h-6 w-6 mx-auto mb-2" />
-                        <span>New Blog Post</span>
+                        <span className="font-medium">New Blog Post</span>
                       </div>
                     </Button>
                     <Button
                       onClick={() => setActiveTab("events")}
-                      className="h-20 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="h-20 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300"
                     >
                       <div className="text-center">
                         <Plus className="h-6 w-6 mx-auto mb-2" />
-                        <span>New Event</span>
+                        <span className="font-medium">New Event</span>
                       </div>
                     </Button>
                     <Button
                       onClick={() => setActiveTab("trainings")}
-                      className="h-20 bg-primary hover:bg-primary/90 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="h-20 bg-primary hover:bg-primary/90 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300"
                     >
                       <div className="text-center">
                         <Plus className="h-6 w-6 mx-auto mb-2" />
-                        <span>New Training</span>
+                        <span className="font-medium">New Training</span>
                       </div>
                     </Button>
                   </div>
@@ -764,9 +725,9 @@ export default function AdminPanel() {
               animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <Card className="bg-white/60 backdrop-blur-sm border border-white/20 shadow-xl">
-                <CardHeader className="bg-primary/10 rounded-t-lg">
-                  <CardTitle className="flex items-center gap-2 text-xl">
+              <Card className="bg-white shadow-sm border border-gray-200">
+                <CardHeader className="bg-gray-50 border-b border-gray-200">
+                  <CardTitle className="flex items-center gap-2 text-xl text-gray-900">
                     <Plus className="h-5 w-5 text-primary" />
                     {editingBlogId ? "Edit Blog Post" : "Create New Blog Post"}
                   </CardTitle>
@@ -775,61 +736,61 @@ export default function AdminPanel() {
                   <form onSubmit={handleBlogSubmit} className="grid gap-6">
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Title *</label>
+                        <label className="text-sm font-semibold text-gray-700">Title *</label>
                         <input 
                           name="title" 
                           value={blogForm.title} 
                           onChange={handleBlogChange} 
                           placeholder="Enter blog title" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Author *</label>
+                        <label className="text-sm font-semibold text-gray-700">Author *</label>
                         <input 
                           name="author" 
                           value={blogForm.author} 
                           onChange={handleBlogChange} 
                           placeholder="Author name" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Excerpt *</label>
+                      <label className="text-sm font-semibold text-gray-700">Excerpt *</label>
                       <input 
                         name="excerpt" 
                         value={blogForm.excerpt} 
                         onChange={handleBlogChange} 
                         placeholder="Brief description of the blog post" 
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         required 
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Content *</label>
+                      <label className="text-sm font-semibold text-gray-700">Content *</label>
                       <textarea 
                         name="content" 
                         value={blogForm.content} 
                         onChange={handleBlogChange} 
                         placeholder="Write your blog content here (Markdown supported)" 
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 min-h-[200px]" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 min-h-[200px] text-gray-900" 
                         required 
                       />
                     </div>
                     
                     <div className="grid gap-4 md:grid-cols-3">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Category</label>
+                        <label className="text-sm font-semibold text-gray-700">Category</label>
                         <select 
                           name="category" 
                           value={blogForm.category} 
                           onChange={handleBlogChange} 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900"
                         >
                           {categories.map((cat) => (
                             <option key={cat} value={cat}>{cat}</option>
@@ -837,30 +798,30 @@ export default function AdminPanel() {
                         </select>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Read Time</label>
+                        <label className="text-sm font-semibold text-gray-700">Read Time</label>
                         <input 
                           name="read_time" 
                           value={blogForm.read_time} 
                           onChange={handleBlogChange} 
                           placeholder="e.g., 5 min read" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Tags</label>
+                        <label className="text-sm font-semibold text-gray-700">Tags</label>
                         <input 
                           name="tags" 
                           value={blogForm.tags.join(", ")} 
                           onChange={handleBlogTagsChange} 
                           placeholder="tag1, tag2, tag3" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Blog Image</label>
+                      <label className="text-sm font-semibold text-gray-700">Blog Image</label>
                       <ImageUpload
                         value={blogForm.image_url}
                         onChange={(url) => setBlogForm((f: any) => ({ ...f, image_url: url }))}
@@ -870,18 +831,18 @@ export default function AdminPanel() {
                     
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Publish Date</label>
+                        <label className="text-sm font-semibold text-gray-700">Publish Date</label>
                         <input 
                           type="datetime-local" 
                           name="published_at" 
                           value={blogForm.published_at ? new Date(blogForm.published_at).toISOString().slice(0, 16) : ''} 
                           onChange={handleBlogChange} 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Featured Post</label>
-                        <div className="flex items-center gap-3">
+                        <label className="text-sm font-semibold text-gray-700">Featured Post</label>
+                        <div className="flex items-center gap-3 pt-3">
                           <input 
                             type="checkbox" 
                             name="featured" 
@@ -901,7 +862,7 @@ export default function AdminPanel() {
                       <Button 
                         type="submit" 
                         disabled={saving}
-                        className="bg-primary hover:bg-primary/90 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-primary hover:bg-primary/90 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300 px-6 py-3"
                       >
                         <Save className="h-4 w-4 mr-2" />
                         {saving ? "Saving..." : editingBlogId ? "Update Post" : "Create Post"}
@@ -911,7 +872,7 @@ export default function AdminPanel() {
                           type="button" 
                           variant="outline" 
                           onClick={handleCancelBlog}
-                          className="hover:bg-gray-50 transition-all duration-200"
+                          className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-all duration-200 px-6 py-3"
                         >
                           <X className="h-4 w-4 mr-2" />
                           Cancel
@@ -923,23 +884,23 @@ export default function AdminPanel() {
               </Card>
 
               {/* Blog Posts List */}
-              <Card className="bg-white/60 backdrop-blur-sm border border-white/20 shadow-xl">
-                <CardHeader>
+              <Card className="bg-white shadow-sm border border-gray-200">
+                <CardHeader className="bg-gray-50 border-b border-gray-200">
                   <CardTitle className="flex items-center justify-between">
-                    <span className="flex items-center gap-2">
+                    <span className="flex items-center gap-2 text-gray-900">
                       <FileText className="h-5 w-5 text-primary" />
                       All Blog Posts ({posts.length})
                     </span>
-                    <Badge variant="secondary" className="bg-primary/10 text-primary">
+                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
                       {posts.filter(p => p.featured).length} Featured
                     </Badge>
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="p-6">
                   {postsLoading ? (
                     <div className="text-center py-8">
                       <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                      <p className="text-muted-foreground">Loading posts...</p>
+                      <p className="text-gray-600 font-medium">Loading posts...</p>
                     </div>
                   ) : error ? (
                     <Alert variant="destructive">
@@ -954,22 +915,22 @@ export default function AdminPanel() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.1 }}
-                          className="p-4 border border-gray-200 rounded-lg hover:shadow-lg transition-all duration-300 bg-white/50"
+                          className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-all duration-300 bg-white"
                         >
                           <div className="flex items-center justify-between">
                             <div className="flex-1">
                               <div className="flex items-center gap-3 mb-2">
-                                <h3 className="font-semibold text-lg">{post.title}</h3>
+                                <h3 className="font-semibold text-lg text-gray-900">{post.title}</h3>
                                 {post.featured && (
                                   <Badge className="bg-yellow-100 text-yellow-800 border-yellow-300">
                                     <Star className="h-3 w-3 mr-1" />
                                     Featured
                                   </Badge>
                                 )}
-                                <Badge variant="outline">{post.category}</Badge>
+                                <Badge variant="outline" className="border-gray-300 text-gray-700">{post.category}</Badge>
                               </div>
-                              <p className="text-muted-foreground text-sm mb-2">{post.excerpt}</p>
-                              <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                              <p className="text-gray-600 text-sm mb-2">{post.excerpt}</p>
+                              <div className="flex items-center gap-4 text-xs text-gray-500">
                                 <span className="flex items-center gap-1">
                                   <UserIcon className="h-3 w-3" />
                                   {post.author}
@@ -978,6 +939,10 @@ export default function AdminPanel() {
                                   <Clock className="h-3 w-3" />
                                   {post.read_time}
                                 </span>
+                                <span className="flex items-center gap-1">
+                                  <Calendar className="h-3 w-3" />
+                                  {new Date(post.published_at).toLocaleDateString()}
+                                </span>
                               </div>
                             </div>
                             <div className="flex gap-2">
@@ -985,7 +950,7 @@ export default function AdminPanel() {
                                 size="sm" 
                                 variant="outline" 
                                 onClick={() => handleEditBlog(post)}
-                                className="hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200"
+                                className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
                               >
                                 <Edit className="h-4 w-4" />
                               </Button>
@@ -993,7 +958,7 @@ export default function AdminPanel() {
                                 size="sm" 
                                 variant="outline" 
                                 onClick={() => handleDeleteBlog(post.id)}
-                                className="hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all duration-200"
+                                className="border-red-300 text-red-700 hover:bg-red-50 hover:text-red-900 transition-all duration-200"
                               >
                                 <Trash2 className="h-4 w-4" />
                               </Button>
@@ -1015,9 +980,9 @@ export default function AdminPanel() {
               animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <Card className="bg-white/60 backdrop-blur-sm border border-white/20 shadow-xl">
-                <CardHeader className="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-t-lg">
-                  <CardTitle className="flex items-center gap-2 text-xl">
+              <Card className="bg-white shadow-sm border border-gray-200">
+                <CardHeader className="bg-gray-50 border-b border-gray-200">
+                  <CardTitle className="flex items-center gap-2 text-xl text-gray-900">
                     <Plus className="h-5 w-5 text-primary" />
                     {editingEventId ? "Edit Event" : "Create New Event"}
                   </CardTitle>
@@ -1026,68 +991,68 @@ export default function AdminPanel() {
                   <form onSubmit={handleEventSubmit} className="grid gap-6">
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Event Title *</label>
+                        <label className="text-sm font-semibold text-gray-700">Event Title *</label>
                         <input 
                           name="title" 
                           value={eventForm.title} 
                           onChange={handleEventChange} 
                           placeholder="Enter event title" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Location *</label>
+                        <label className="text-sm font-semibold text-gray-700">Location *</label>
                         <input 
                           name="location" 
                           value={eventForm.location} 
                           onChange={handleEventChange} 
                           placeholder="Event location" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Description *</label>
+                      <label className="text-sm font-semibold text-gray-700">Description *</label>
                       <textarea 
                         name="description" 
                         value={eventForm.description} 
                         onChange={handleEventChange} 
                         placeholder="Event description" 
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 min-h-[120px]" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 min-h-[120px] text-gray-900" 
                         required 
                       />
                     </div>
                     
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Event Date *</label>
+                        <label className="text-sm font-semibold text-gray-700">Event Date *</label>
                         <input 
                           name="event_date" 
                           type="date" 
                           value={eventForm.event_date} 
                           onChange={handleEventChange} 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Event Time *</label>
+                        <label className="text-sm font-semibold text-gray-700">Event Time *</label>
                         <input 
                           name="event_time" 
                           type="time" 
                           value={eventForm.event_time} 
                           onChange={handleEventChange} 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Event Image</label>
+                      <label className="text-sm font-semibold text-gray-700">Event Image</label>
                       <ImageUpload
                         value={eventForm.image_url}
                         onChange={(url) => setEventForm((f: any) => ({ ...f, image_url: url }))}
@@ -1097,18 +1062,18 @@ export default function AdminPanel() {
                     
                     <div className="grid gap-4 md:grid-cols-3">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Max Attendees</label>
+                        <label className="text-sm font-semibold text-gray-700">Max Attendees</label>
                         <input 
                           name="max_attendees" 
                           type="number" 
                           value={eventForm.max_attendees} 
                           onChange={handleEventChange} 
                           placeholder="100" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Price</label>
+                        <label className="text-sm font-semibold text-gray-700">Price</label>
                         <input 
                           name="price" 
                           type="number" 
@@ -1116,16 +1081,16 @@ export default function AdminPanel() {
                           value={eventForm.price} 
                           onChange={handleEventChange} 
                           placeholder="0.00" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Currency</label>
+                        <label className="text-sm font-semibold text-gray-700">Currency</label>
                         <select 
                           name="currency" 
                           value={eventForm.currency} 
                           onChange={handleEventChange} 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900"
                         >
                           <option value="USD">USD</option>
                           <option value="INR">INR</option>
@@ -1136,26 +1101,26 @@ export default function AdminPanel() {
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Payment Link</label>
+                      <label className="text-sm font-semibold text-gray-700">Payment Link</label>
                       <input 
                         name="payment_link" 
                         type="url" 
                         value={eventForm.payment_link} 
                         onChange={handleEventChange} 
                         placeholder="https://rzp.io/rzp/your-payment-link" 
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                       />
                       <p className="text-xs text-gray-500">Enter the payment gateway link (e.g., Razorpay, Stripe, etc.)</p>
                     </div>
                     
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Status</label>
+                        <label className="text-sm font-semibold text-gray-700">Status</label>
                         <select 
                           name="status" 
                           value={eventForm.status} 
                           onChange={handleEventChange} 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900"
                         >
                           <option value="draft">Draft</option>
                           <option value="published">Published</option>
@@ -1163,25 +1128,25 @@ export default function AdminPanel() {
                         </select>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Registration Fields</label>
+                        <label className="text-sm font-semibold text-gray-700">Registration Fields</label>
                         <input 
                           name="registration_fields" 
                           value={eventForm.registration_fields.join(", ")} 
                           onChange={handleEventFieldsChange} 
                           placeholder="name, email, phone" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Thank You Message</label>
+                      <label className="text-sm font-semibold text-gray-700">Thank You Message</label>
                       <textarea 
                         name="thank_you_message" 
                         value={eventForm.thank_you_message} 
                         onChange={handleEventChange} 
                         placeholder="Thank you message after registration" 
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 min-h-[120px] text-gray-900" 
                       />
                     </div>
                     
@@ -1203,7 +1168,7 @@ export default function AdminPanel() {
                       <Button 
                         type="submit" 
                         disabled={saving}
-                        className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300 px-6 py-3"
                       >
                         <Save className="h-4 w-4 mr-2" />
                         {saving ? "Saving..." : editingEventId ? "Update Event" : "Create Event"}
@@ -1213,7 +1178,7 @@ export default function AdminPanel() {
                           type="button" 
                           variant="outline" 
                           onClick={handleCancelEvent}
-                          className="hover:bg-gray-50 transition-all duration-200"
+                          className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-all duration-200 px-6 py-3"
                         >
                           <X className="h-4 w-4 mr-2" />
                           Cancel
@@ -1225,23 +1190,23 @@ export default function AdminPanel() {
               </Card>
 
               {/* Events List */}
-              <Card className="bg-white/60 backdrop-blur-sm border border-white/20 shadow-xl">
-                <CardHeader>
+              <Card className="bg-white shadow-sm border border-gray-200">
+                <CardHeader className="bg-gray-50 border-b border-gray-200">
                   <CardTitle className="flex items-center justify-between">
-                    <span className="flex items-center gap-2">
+                    <span className="flex items-center gap-2 text-gray-900">
                       <Calendar className="h-5 w-5 text-primary" />
                       All Events ({events.length})
                     </span>
-                    <Badge variant="secondary" className="bg-green-100 text-green-800">
+                    <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-200">
                       {events.filter(e => e.status === 'published').length} Published
                     </Badge>
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="p-6">
                   {eventsLoading ? (
                     <div className="text-center py-8">
                       <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                      <p className="text-muted-foreground">Loading events...</p>
+                      <p className="text-gray-600 font-medium">Loading events...</p>
                     </div>
                   ) : (
                     <div className="grid gap-4">
@@ -1251,12 +1216,12 @@ export default function AdminPanel() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.1 }}
-                          className="p-4 border border-gray-200 rounded-lg hover:shadow-lg transition-all duration-300 bg-white/50"
+                          className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-all duration-300 bg-white"
                         >
                           <div className="flex items-center justify-between">
                             <div className="flex-1">
                               <div className="flex items-center gap-3 mb-2">
-                                <h3 className="font-semibold text-lg">{event.title}</h3>
+                                <h3 className="font-semibold text-lg text-gray-900">{event.title}</h3>
                                 <Badge className={`${
                                   event.status === 'published' ? 'bg-green-100 text-green-800' :
                                   event.status === 'draft' ? 'bg-yellow-100 text-yellow-800' :
@@ -1271,8 +1236,8 @@ export default function AdminPanel() {
                                   </Badge>
                                 )}
                               </div>
-                              <p className="text-muted-foreground text-sm mb-2">{event.description}</p>
-                              <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                              <p className="text-gray-600 text-sm mb-2">{event.description}</p>
+                              <div className="flex items-center gap-4 text-xs text-gray-500">
                                 <span className="flex items-center gap-1">
                                   <Calendar className="h-3 w-3" />
                                   {event.event_date}
@@ -1292,7 +1257,7 @@ export default function AdminPanel() {
                                 size="sm" 
                                 variant="outline" 
                                 onClick={() => handleEditEvent(event)}
-                                className="hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200"
+                                className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
                               >
                                 <Edit className="h-4 w-4" />
                               </Button>
@@ -1300,7 +1265,7 @@ export default function AdminPanel() {
                                 size="sm" 
                                 variant="outline" 
                                 onClick={() => handleDeleteEvent(event.id)}
-                                className="hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all duration-200"
+                                className="border-red-300 text-red-700 hover:bg-red-50 hover:text-red-900 transition-all duration-200"
                               >
                                 <Trash2 className="h-4 w-4" />
                               </Button>
@@ -1322,9 +1287,9 @@ export default function AdminPanel() {
               animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <Card className="bg-white/60 backdrop-blur-sm border border-white/20 shadow-xl">
-                <CardHeader className="bg-primary/10 rounded-t-lg">
-                  <CardTitle className="flex items-center gap-2 text-xl">
+              <Card className="bg-white shadow-sm border border-gray-200">
+                <CardHeader className="bg-gray-50 border-b border-gray-200">
+                  <CardTitle className="flex items-center gap-2 text-xl text-gray-900">
                     <Plus className="h-5 w-5 text-primary" />
                     {editingTrainingId ? "Edit Training" : "Create New Training"}
                   </CardTitle>
@@ -1333,82 +1298,82 @@ export default function AdminPanel() {
                   <form onSubmit={handleTrainingSubmit} className="grid gap-6">
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Training Title *</label>
+                        <label className="text-sm font-semibold text-gray-700">Training Title *</label>
                         <input 
                           name="title" 
                           value={trainingForm.title} 
                           onChange={handleTrainingChange} 
                           placeholder="Enter training title" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Instructor *</label>
+                        <label className="text-sm font-semibold text-gray-700">Instructor *</label>
                         <input 
                           name="instructor" 
                           value={trainingForm.instructor} 
                           onChange={handleTrainingChange} 
                           placeholder="Instructor name" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Description *</label>
+                      <label className="text-sm font-semibold text-gray-700">Description *</label>
                       <textarea 
                         name="description" 
                         value={trainingForm.description} 
                         onChange={handleTrainingChange} 
                         placeholder="Training description" 
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 min-h-[120px]" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 min-h-[120px] text-gray-900" 
                         required 
                       />
                     </div>
                     
                     <div className="grid gap-4 md:grid-cols-4">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Start Date *</label>
+                        <label className="text-sm font-semibold text-gray-700">Start Date *</label>
                         <input 
                           name="start_date" 
                           type="date" 
                           value={trainingForm.start_date} 
                           onChange={handleTrainingChange} 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Start Time *</label>
+                        <label className="text-sm font-semibold text-gray-700">Start Time *</label>
                         <input 
                           name="start_time" 
                           type="time" 
                           value={trainingForm.start_time} 
                           onChange={handleTrainingChange} 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Duration *</label>
+                        <label className="text-sm font-semibold text-gray-700">Duration *</label>
                         <input 
                           name="duration" 
                           value={trainingForm.duration} 
                           onChange={handleTrainingChange} 
                           placeholder="e.g., 2 hours" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Level</label>
+                        <label className="text-sm font-semibold text-gray-700">Level</label>
                         <select 
                           name="level" 
                           value={trainingForm.level} 
                           onChange={handleTrainingChange} 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900"
                         >
                           <option value="Beginner">Beginner</option>
                           <option value="Intermediate">Intermediate</option>
@@ -1418,19 +1383,19 @@ export default function AdminPanel() {
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Location *</label>
+                      <label className="text-sm font-semibold text-gray-700">Location *</label>
                       <input 
                         name="location" 
                         value={trainingForm.location} 
                         onChange={handleTrainingChange} 
                         placeholder="Training location" 
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         required 
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Training Image</label>
+                      <label className="text-sm font-semibold text-gray-700">Training Image</label>
                       <ImageUpload
                         value={trainingForm.image_url}
                         onChange={(url) => setTrainingForm((f: any) => ({ ...f, image_url: url }))}
@@ -1440,41 +1405,41 @@ export default function AdminPanel() {
                     
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Topics (comma separated)</label>
+                        <label className="text-sm font-semibold text-gray-700">Topics (comma separated)</label>
                         <input 
                           name="topics" 
                           value={trainingForm.topics.join(", ")} 
                           onChange={handleTrainingTopicsChange} 
                           placeholder="topic1, topic2, topic3" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Materials Included</label>
+                        <label className="text-sm font-semibold text-gray-700">Materials Included</label>
                         <input 
                           name="materials_included" 
                           value={trainingForm.materials_included.join(", ")} 
                           onChange={handleTrainingMaterialsChange} 
                           placeholder="material1, material2" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
                     </div>
                     
                     <div className="grid gap-4 md:grid-cols-4">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Max Participants</label>
+                        <label className="text-sm font-semibold text-gray-700">Max Participants</label>
                         <input 
                           name="max_participants" 
                           type="number" 
                           value={trainingForm.max_participants} 
                           onChange={handleTrainingChange} 
                           placeholder="50" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Price</label>
+                        <label className="text-sm font-semibold text-gray-700">Price</label>
                         <input 
                           name="price" 
                           type="number" 
@@ -1482,16 +1447,16 @@ export default function AdminPanel() {
                           value={trainingForm.price} 
                           onChange={handleTrainingChange} 
                           placeholder="0.00" 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Currency</label>
+                        <label className="text-sm font-semibold text-gray-700">Currency</label>
                         <select 
                           name="currency" 
                           value={trainingForm.currency} 
                           onChange={handleTrainingChange} 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900"
                         >
                           <option value="USD">USD</option>
                           <option value="INR">INR</option>
@@ -1500,12 +1465,12 @@ export default function AdminPanel() {
                         </select>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Status</label>
+                        <label className="text-sm font-semibold text-gray-700">Status</label>
                         <select 
                           name="status" 
                           value={trainingForm.status} 
                           onChange={handleTrainingChange} 
-                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900"
                         >
                           <option value="draft">Draft</option>
                           <option value="published">Published</option>
@@ -1516,14 +1481,14 @@ export default function AdminPanel() {
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700">Payment Link</label>
+                      <label className="text-sm font-semibold text-gray-700">Payment Link</label>
                       <input 
                         name="payment_link" 
                         type="url" 
                         value={trainingForm.payment_link} 
                         onChange={handleTrainingChange} 
                         placeholder="https://rzp.io/rzp/your-payment-link" 
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                       />
                       <p className="text-xs text-gray-500">Enter the payment gateway link (e.g., Razorpay, Stripe, etc.)</p>
                     </div>
@@ -1561,7 +1526,7 @@ export default function AdminPanel() {
                       <Button 
                         type="submit" 
                         disabled={saving}
-                        className="bg-primary hover:bg-primary/90 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300 px-6 py-3"
                       >
                         <Save className="h-4 w-4 mr-2" />
                         {saving ? "Saving..." : editingTrainingId ? "Update Training" : "Create Training"}
@@ -1571,7 +1536,7 @@ export default function AdminPanel() {
                           type="button" 
                           variant="outline" 
                           onClick={handleCancelTraining}
-                          className="hover:bg-gray-50 transition-all duration-200"
+                          className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-all duration-200 px-6 py-3"
                         >
                           <X className="h-4 w-4 mr-2" />
                           Cancel
@@ -1583,23 +1548,23 @@ export default function AdminPanel() {
               </Card>
 
               {/* Training List */}
-              <Card className="bg-white/60 backdrop-blur-sm border border-white/20 shadow-xl">
-                <CardHeader>
+              <Card className="bg-white shadow-sm border border-gray-200">
+                <CardHeader className="bg-gray-50 border-b border-gray-200">
                   <CardTitle className="flex items-center justify-between">
-                    <span className="flex items-center gap-2">
+                    <span className="flex items-center gap-2 text-gray-900">
                       <BookOpen className="h-5 w-5 text-primary" />
                       All Training Sessions ({trainings.length})
                     </span>
-                    <Badge variant="secondary" className="bg-primary/10 text-primary">
+                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
                       {trainings.filter(t => t.status === 'published').length} Published
                     </Badge>
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="p-6">
                   {trainingsLoading ? (
                     <div className="text-center py-8">
                       <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                      <p className="text-muted-foreground">Loading training sessions...</p>
+                      <p className="text-gray-600 font-medium">Loading training sessions...</p>
                     </div>
                   ) : (
                     <div className="grid gap-4">
@@ -1609,12 +1574,12 @@ export default function AdminPanel() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.1 }}
-                          className="p-4 border border-gray-200 rounded-lg hover:shadow-lg transition-all duration-300 bg-white/50"
+                          className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-all duration-300 bg-white"
                         >
                           <div className="flex items-center justify-between">
                             <div className="flex-1">
                               <div className="flex items-center gap-3 mb-2">
-                                <h3 className="font-semibold text-lg">{training.title}</h3>
+                                <h3 className="font-semibold text-lg text-gray-900">{training.title}</h3>
                                 <Badge className={`${
                                   training.status === 'published' ? 'bg-green-100 text-green-800' :
                                   training.status === 'draft' ? 'bg-yellow-100 text-yellow-800' :
@@ -1633,8 +1598,8 @@ export default function AdminPanel() {
                                   </Badge>
                                 )}
                               </div>
-                              <p className="text-muted-foreground text-sm mb-2">{training.description}</p>
-                              <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                              <p className="text-gray-600 text-sm mb-2">{training.description}</p>
+                              <div className="flex items-center gap-4 text-xs text-gray-500">
                                 <span className="flex items-center gap-1">
                                   <UserIcon className="h-3 w-3" />
                                   {training.instructor}
@@ -1658,7 +1623,7 @@ export default function AdminPanel() {
                                 size="sm" 
                                 variant="outline" 
                                 onClick={() => handleEditTraining(training)}
-                                className="hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200"
+                                className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
                               >
                                 <Edit className="h-4 w-4" />
                               </Button>
@@ -1666,7 +1631,7 @@ export default function AdminPanel() {
                                 size="sm" 
                                 variant="outline" 
                                 onClick={() => handleDeleteTraining(training.id)}
-                                className="hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all duration-200"
+                                className="border-red-300 text-red-700 hover:bg-red-50 hover:text-red-900 transition-all duration-200"
                               >
                                 <Trash2 className="h-4 w-4" />
                               </Button>
@@ -1688,14 +1653,14 @@ export default function AdminPanel() {
               className="space-y-6"
             >
               {/* Event Registrations */}
-              <Card className="bg-white/60 backdrop-blur-sm border border-white/20 shadow-xl">
-                <CardHeader className="bg-gradient-to-r from-blue-500/10 to-green-500/10 rounded-t-lg">
+              <Card className="bg-white shadow-sm border border-gray-200">
+                <CardHeader className="bg-gray-50 border-b border-gray-200">
                   <CardTitle className="flex items-center justify-between">
-                    <span className="flex items-center gap-2">
+                    <span className="flex items-center gap-2 text-gray-900">
                       <Calendar className="h-5 w-5 text-primary" />
                       Event Registrations
                     </span>
-                    <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                    <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-blue-200">
                       {registrations.length} Total
                     </Badge>
                   </CardTitle>
@@ -1714,7 +1679,7 @@ export default function AdminPanel() {
                   {registrationsLoading ? (
                     <div className="text-center py-8">
                       <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                      <p className="text-muted-foreground">Loading event registrations...</p>
+                      <p className="text-gray-600 font-medium">Loading event registrations...</p>
                     </div>
                   ) : registrations.length === 0 ? (
                     <div className="text-center py-8">
@@ -1729,12 +1694,12 @@ export default function AdminPanel() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.1 }}
-                          className="p-4 border border-gray-200 rounded-lg hover:shadow-lg transition-all duration-300 bg-white/50"
+                          className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-all duration-300 bg-white"
                         >
                           <div className="flex items-center justify-between">
                             <div className="flex-1">
                               <div className="flex items-center gap-3 mb-2">
-                                <h3 className="font-semibold text-lg">
+                                <h3 className="font-semibold text-lg text-gray-900">
                                   {registration.event_title || `Event ID: ${registration.event_id}`}
                                 </h3>
                                 <Badge className={`${
@@ -1764,7 +1729,7 @@ export default function AdminPanel() {
                                 </div>
                               </div>
                               {registration.event_date && (
-                                <div className="mt-2 flex items-center gap-4 text-xs text-muted-foreground">
+                                <div className="mt-2 flex items-center gap-4 text-xs text-gray-500">
                                   <span className="flex items-center gap-1">
                                     <Calendar className="h-3 w-3" />
                                     {registration.event_date}
@@ -1786,7 +1751,7 @@ export default function AdminPanel() {
                                   const newStatus = registration.status === 'confirmed' ? 'pending' : 'confirmed';
                                   // You can implement status update functionality here
                                 }}
-                                className="hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200"
+                                className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
                               >
                                 {registration.status === 'confirmed' ? 'Unconfirm' : 'Confirm'}
                               </Button>
@@ -1800,14 +1765,14 @@ export default function AdminPanel() {
               </Card>
 
               {/* Training Registrations */}
-              <Card className="bg-white/60 backdrop-blur-sm border border-white/20 shadow-xl">
-                <CardHeader className="bg-primary/10 rounded-t-lg">
+              <Card className="bg-white shadow-sm border border-gray-200">
+                <CardHeader className="bg-gray-50 border-b border-gray-200">
                   <CardTitle className="flex items-center justify-between">
-                    <span className="flex items-center gap-2">
+                    <span className="flex items-center gap-2 text-gray-900">
                       <BookOpen className="h-5 w-5 text-primary" />
                       Training Registrations
                     </span>
-                    <Badge variant="secondary" className="bg-primary/10 text-primary">
+                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
                       {trainingRegistrations.length} Total
                     </Badge>
                   </CardTitle>
@@ -1826,7 +1791,7 @@ export default function AdminPanel() {
                   {trainingRegistrationsLoading ? (
                     <div className="text-center py-8">
                       <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                      <p className="text-muted-foreground">Loading training registrations...</p>
+                      <p className="text-gray-600 font-medium">Loading training registrations...</p>
                     </div>
                   ) : trainingRegistrations.length === 0 ? (
                     <div className="text-center py-8">
@@ -1841,12 +1806,12 @@ export default function AdminPanel() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.1 }}
-                          className="p-4 border border-gray-200 rounded-lg hover:shadow-lg transition-all duration-300 bg-white/50"
+                          className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-all duration-300 bg-white"
                         >
                           <div className="flex items-center justify-between">
                             <div className="flex-1">
                               <div className="flex items-center gap-3 mb-2">
-                                <h3 className="font-semibold text-lg">
+                                <h3 className="font-semibold text-lg text-gray-900">
                                   {registration.training_title || `Training ID: ${registration.training_id}`}
                                 </h3>
                                 <Badge className={`${
@@ -1876,7 +1841,7 @@ export default function AdminPanel() {
                                 </div>
                               </div>
                               {registration.training_start_date && (
-                                <div className="mt-2 flex items-center gap-4 text-xs text-muted-foreground">
+                                <div className="mt-2 flex items-center gap-4 text-xs text-gray-500">
                                   <span className="flex items-center gap-1">
                                     <Calendar className="h-3 w-3" />
                                     {registration.training_start_date}
@@ -1898,7 +1863,7 @@ export default function AdminPanel() {
                                   const newStatus = registration.status === 'confirmed' ? 'pending' : 'confirmed';
                                   // You can implement status update functionality here
                                 }}
-                                className="hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-all duration-200"
+                                className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
                               >
                                 {registration.status === 'confirmed' ? 'Unconfirm' : 'Confirm'}
                               </Button>
@@ -1919,7 +1884,7 @@ export default function AdminPanel() {
               animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <Card className="bg-white/60 backdrop-blur-sm border border-white/20 shadow-xl">
+              <Card className="bg-white shadow-sm border border-gray-200">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Settings className="h-5 w-5 text-primary" />

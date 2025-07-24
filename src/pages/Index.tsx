@@ -444,7 +444,7 @@ const Index = () => {
                 >
                   {/* Event 1: CANVA & AI WORKSHOP */}
                   <div className="w-full flex-shrink-0 px-4">
-                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
+                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group min-h-[400px] md:min-h-[380px]">
                       {/* Background Image */}
                       <div className="absolute inset-0 opacity-15">
                         <img 
@@ -468,12 +468,12 @@ const Index = () => {
                               </div>
                             </div>
                             <div className="flex-1 min-w-0">
-                              <h3 className="text-lg md:text-xl font-bold text-black mb-1">CANVA & AI WORKSHOP</h3>
+                              <h3 className="text-base md:text-xl font-bold text-black mb-1">CANVA & AI WORKSHOP</h3>
                               <p className="text-red-600 font-semibold text-xs md:text-sm">Design Bold. Write Smart.</p>
                             </div>
                           </div>
                           <div className="text-right ml-2">
-                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">₹1500</div>
+                            <div className="text-lg md:text-2xl font-bold text-red-600 mb-1">₹1500</div>
                             <div className="text-xs text-gray-600 bg-white px-2 py-1 rounded-full">includes lunch & kit</div>
                           </div>
                         </div>
@@ -530,7 +530,7 @@ const Index = () => {
 
                   {/* Event 2: Weekly Free Training */}
                   <div className="w-full flex-shrink-0 px-4">
-                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
+                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group min-h-[400px] md:min-h-[380px]">
                       {/* Background Image */}
                       <div className="absolute inset-0 opacity-15">
                         <img 
@@ -614,7 +614,7 @@ const Index = () => {
 
                   {/* Event 3: 5-Day Challenge */}
                   <div className="w-full flex-shrink-0 px-4">
-                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
+                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group min-h-[400px] md:min-h-[380px]">
                       {/* Background Image */}
                       <div className="absolute inset-0 opacity-15">
                         <img 

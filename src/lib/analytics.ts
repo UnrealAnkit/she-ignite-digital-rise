@@ -1,36 +1,15 @@
-// Google Analytics 4 Setup
+// Google Analytics utility functions
+
 declare global {
   interface Window {
     gtag: (...args: any[]) => void;
   }
 }
 
-// Initialize Google Analytics
-export const initGA = () => {
-  if (typeof window !== 'undefined') {
-    // Load Google Analytics script
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID`;
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function() {
-      window.dataLayer.push(arguments);
-    };
-
-    window.gtag('js', new Date());
-    window.gtag('config', 'GA_MEASUREMENT_ID', {
-      page_title: document.title,
-      page_location: window.location.href,
-    });
-  }
-};
-
 // Track page views
 export const trackPageView = (url: string) => {
   if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('config', 'GA_MEASUREMENT_ID', {
+    window.gtag('config', 'G-BKS0T77ZCP', {
       page_path: url,
     });
   }
@@ -47,17 +26,57 @@ export const trackEvent = (action: string, category: string, label?: string, val
   }
 };
 
+// Track button clicks
+export const trackButtonClick = (buttonName: string, page: string) => {
+  trackEvent('click', 'button', `${buttonName} - ${page}`);
+};
+
 // Track form submissions
 export const trackFormSubmission = (formName: string) => {
-  trackEvent('form_submit', 'engagement', formName);
+  trackEvent('submit', 'form', formName);
 };
 
-// Track button clicks
-export const trackButtonClick = (buttonName: string) => {
-  trackEvent('button_click', 'engagement', buttonName);
+// Track navigation
+export const trackNavigation = (from: string, to: string) => {
+  trackEvent('navigation', 'page', `${from} to ${to}`);
 };
 
-// Track external links
-export const trackExternalLink = (url: string, linkText: string) => {
-  trackEvent('external_link', 'engagement', linkText, undefined);
+// Track social media clicks
+export const trackSocialClick = (platform: string) => {
+  trackEvent('click', 'social', platform);
+};
+
+// Track phone number clicks
+export const trackPhoneClick = () => {
+  trackEvent('click', 'contact', 'phone');
+};
+
+// Track email clicks
+export const trackEmailClick = () => {
+  trackEvent('click', 'contact', 'email');
+};
+
+// Track program interest
+export const trackProgramInterest = (programName: string) => {
+  trackEvent('interest', 'program', programName);
+};
+
+// Track event registration
+export const trackEventRegistration = (eventName: string) => {
+  trackEvent('registration', 'event', eventName);
+};
+
+// Track training registration
+export const trackTrainingRegistration = (trainingName: string) => {
+  trackEvent('registration', 'training', trainingName);
+};
+
+// Track blog engagement
+export const trackBlogEngagement = (action: string, blogTitle: string) => {
+  trackEvent(action, 'blog', blogTitle);
+};
+
+// Track admin actions
+export const trackAdminAction = (action: string) => {
+  trackEvent(action, 'admin', 'admin_panel');
 }; 

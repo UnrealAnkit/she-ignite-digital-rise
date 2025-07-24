@@ -33,9 +33,9 @@ const Navigation = () => {
               transition={{ duration: 0.2 }}
             >
               <img 
-                src="/she-leads-logo.png" 
+                src="/media/Logo.png" 
                 alt="SHE Leads India" 
-                className="h-14 w-auto object-contain"
+                className="h-16 md:h-20 w-auto object-contain"
               />
             </motion.div>
           </Link>

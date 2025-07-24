@@ -137,7 +137,7 @@ const EmpowerHer2025 = () => {
                 {/* Logo and Event Title */}
                 <div className="flex flex-col items-end gap-2">
                   <img 
-                    src="/she-leads-logo.png" 
+                    src="/media/Logo.png" 
                     alt="SHE Leads India" 
                     className="h-24 w-auto object-contain"
                   />

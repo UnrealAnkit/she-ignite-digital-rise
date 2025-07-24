@@ -27,7 +27,7 @@ const Footer = () => {
             {/* Logo */}
             <div className="mb-4">
               <img 
-                src="/she-leads-logo.png" 
+                src="/media/Logo.png" 
                 alt="SHE Leads India" 
                 className="h-16 w-auto object-contain brightness-0 invert opacity-80"
               />

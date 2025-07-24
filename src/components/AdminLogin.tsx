@@ -48,7 +48,7 @@ export default function AdminLogin({ onLogin }: AdminLoginProps) {
               ← Back to Login
             </Button>
             <img 
-              src="/she-leads-logo.png" 
+              src="/media/Logo.png" 
               alt="SHE Leads India" 
               className="h-8 w-auto object-contain"
             />
@@ -65,7 +65,7 @@ export default function AdminLogin({ onLogin }: AdminLoginProps) {
         <CardHeader className="text-center">
           <div className="flex justify-center mb-4">
             <img 
-              src="/she-leads-logo.png" 
+              src="/media/Logo.png" 
               alt="SHE Leads India" 
               className="h-16 w-auto object-contain"
             />

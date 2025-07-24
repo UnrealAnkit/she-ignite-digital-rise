@@ -53,7 +53,7 @@ const NotFound = () => {
           transition={{ duration: 0.6 }}
         >
           <img 
-            src="/she-leads-logo.png" 
+                          src="/media/Logo.png" 
             alt="SHE Leads India" 
             className="h-20 w-auto object-contain"
           />

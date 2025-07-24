@@ -15,7 +15,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   title = "SHELeadsIndia - Women Entrepreneurs Digital Marketing & AI Training",
   description = "Empower women entrepreneurs with digital marketing, AI training, and business solutions. Transform your business dreams into digital success with SHELeadsIndia.",
   keywords = "women entrepreneurs, digital marketing, AI training, business solutions, women empowerment, digital transformation, Pune, Nagpur, Nashik, India",
-  image = "https://sheleadsindia.in/she-leads-logo.png",
+  image = "https://sheleadsindia.in/media/Logo.png",
   url = "https://sheleadsindia.in",
   type = "website",
   canonical
@@ -89,7 +89,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             "@type": "Organization",
             "name": "SHELeadsIndia",
             "url": "https://sheleadsindia.in",
-            "logo": "https://sheleadsindia.in/she-leads-logo.png",
+            "logo": "https://sheleadsindia.in/media/Logo.png",
             "description": "Empowering women entrepreneurs with digital marketing, AI training, and business solutions"
           }
         })}

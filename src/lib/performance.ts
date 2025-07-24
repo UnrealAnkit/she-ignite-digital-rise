@@ -5,7 +5,7 @@ export const preloadCriticalResources = () => {
   if (typeof window !== 'undefined') {
     // Preload critical images
     const criticalImages = [
-      '/she-leads-logo.png',
+      '/media/Logo.png',
       '/media/IMG_0011.JPG',
       '/media/digital wisdom.JPG'
     ];

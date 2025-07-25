@@ -5,8 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { preloadCriticalResources, monitorCoreWebVitals } from "@/lib/performance";
+import { initGA } from "@/lib/analytics";
 import { Analytics } from "@vercel/analytics/react";
-import { usePageTracking } from "@/hooks/usePageTracking";
 import Index from "./pages/Index";
 import StartHere from "./pages/StartHere";
 import Programs from "./pages/Programs";
@@ -34,13 +34,13 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Track page views
-  usePageTracking();
-
   useEffect(() => {
     // Initialize performance optimizations
     preloadCriticalResources();
     monitorCoreWebVitals();
+    
+    // Initialize Google Analytics
+    initGA();
   }, []);
 
   return (

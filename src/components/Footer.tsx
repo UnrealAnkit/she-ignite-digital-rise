@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, Mail, Phone, Instagram, Linkedin, Youtube } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
-import { trackPhoneClick, trackEmailClick } from "@/lib/analytics";
 
 const Footer = () => {
   return (
@@ -37,22 +36,11 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-white text-sm">
                 <Phone className="h-3 w-3" />
-                <a 
-                  href="tel:+918806661434" 
-                  onClick={trackPhoneClick}
-                  className="hover:underline cursor-pointer"
-                >
-                  +918806661434
-                </a>
+                <span>+918806661434</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
                 <Mail className="h-3 w-3" />
-                <a 
-                  href="mailto:info@shelladsindia.in" 
-                  onClick={trackEmailClick}
-                  className="hover:underline" 
-                  style={{ color: '#E60023' }}
-                >
+                <a href="mailto:info@shelladsindia.in" className="hover:underline" style={{ color: '#E60023' }}>
                   info@shelladsindia.in
                 </a>
               </div>

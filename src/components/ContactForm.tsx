@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { trackFormSubmission } from "@/lib/analytics";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -46,8 +45,6 @@ const ContactForm = () => {
           subject: '',
           message: ''
         });
-        // Track successful form submission
-        trackFormSubmission('contact_form');
       }
     } catch (error) {
       console.error('Error submitting form:', error);

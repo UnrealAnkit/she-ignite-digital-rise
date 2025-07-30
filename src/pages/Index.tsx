@@ -473,7 +473,7 @@ const Index = () => {
                             </div>
                           </div>
                           <div className="text-right ml-2">
-                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">₹1500</div>
+                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">₹1200</div>
                             <div className="text-xs text-gray-600 bg-white px-2 py-1 rounded-full">includes lunch & kit</div>
                           </div>
                         </div>

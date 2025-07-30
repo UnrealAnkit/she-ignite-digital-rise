@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import Separator from "@/components/Separator";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Download, MapPin, Users, CheckCircle, MessageCircle, Star, Clock, TrendingUp } from "lucide-react";
@@ -263,7 +263,7 @@ const StartHere = () => {
               <div key={index} className="text-center relative group">
                 {index < steps.length - 1 && (
                   <div className="hidden md:block absolute top-32 left-1/2 w-full transform translate-x-8">
-                    <Separator variant="thin" />
+            
                   </div>
                 )}
                 <div className="relative z-10 bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">

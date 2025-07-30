@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
-import { Upload, X, Image as ImageIcon } from 'lucide-react';
+import { Upload, X, Image as ImageIcon, Maximize2 } from 'lucide-react';
 import { uploadImage, deleteImage } from '@/lib/storageService';
 
 interface ImageUploadProps {
@@ -10,6 +10,7 @@ interface ImageUploadProps {
   onPathChange?: (path: string) => void;
   folder?: string;
   className?: string;
+  displayMode?: 'default' | 'full';
 }
 
 export default function ImageUpload({ 
@@ -17,7 +18,8 @@ export default function ImageUpload({
   onChange, 
   onPathChange, 
   folder = 'events',
-  className = '' 
+  className = '',
+  displayMode = 'default'
 }: ImageUploadProps) {
   const [uploading, setUploading] = useState(false);
   const [dragActive, setDragActive] = useState(false);
@@ -91,13 +93,23 @@ export default function ImageUpload({
     <div className={`space-y-4 ${className}`}>
       {/* Current Image Display */}
       {value && (
-        <Card>
+        <Card className={displayMode === 'full' ? 'border-2 border-primary/20 bg-primary/5' : ''}>
           <CardContent className="p-4">
             <div className="relative">
+              {displayMode === 'full' && (
+                <div className="absolute top-2 left-2 z-10 bg-primary text-white px-2 py-1 rounded-md text-xs font-medium flex items-center gap-1">
+                  <Maximize2 className="h-3 w-3" />
+                  Full Preview
+                </div>
+              )}
               <img 
                 src={value} 
                 alt="Preview" 
-                className="w-full h-48 object-cover rounded-lg"
+                className={`w-full object-cover rounded-lg transition-all duration-300 ${
+                  displayMode === 'full' 
+                    ? 'h-64 sm:h-80 md:h-[40vh] lg:h-[50vh] xl:h-[60vh] max-h-[600px] min-h-[250px]' 
+                    : 'h-48'
+                }`}
                 onError={(e) => {
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}
@@ -120,7 +132,7 @@ export default function ImageUpload({
       <Card 
         className={`border-2 border-dashed transition-colors ${
           dragActive ? 'border-primary bg-primary/5' : 'border-muted-foreground/25'
-        }`}
+        } ${displayMode === 'full' ? 'border-primary/50 bg-primary/5' : ''}`}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
@@ -138,6 +150,12 @@ export default function ImageUpload({
               </p>
               <p className="text-xs text-muted-foreground mt-1">
                 PNG, JPG, GIF up to 5MB
+                {displayMode === 'full' && (
+                  <span className="block text-primary font-medium mt-1 bg-primary/10 px-2 py-1 rounded">
+                    <Maximize2 className="h-3 w-3 inline mr-1" />
+                    Full-size preview enabled
+                  </span>
+                )}
               </p>
             </div>
 

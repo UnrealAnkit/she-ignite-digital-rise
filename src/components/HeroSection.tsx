@@ -5,7 +5,7 @@ import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import JourneyModal from "@/components/JourneyModal";
-import Separator from "@/components/Separator";
+
 // Using direct path to media folder image
 
 const HeroSection = () => {
@@ -181,7 +181,7 @@ const HeroSection = () => {
           </motion.div>
           
           {/* Stylized separator */}
-          <Separator className="mt-6" />
+  
         </div>
       </div>
 

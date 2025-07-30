@@ -1,21 +1,17 @@
--- Fix training table schema issues
--- Run this in your Supabase SQL Editor
 
--- Check current trainings table structure
 SELECT column_name, data_type, is_nullable, column_default
 FROM information_schema.columns 
 WHERE table_schema = 'public' 
   AND table_name = 'trainings'
 ORDER BY ordinal_position;
 
--- Fix any potential issues with the trainings table
--- Make sure all JSONB columns have proper defaults
+
 ALTER TABLE public.trainings ALTER COLUMN topics SET DEFAULT '[]';
 ALTER TABLE public.trainings ALTER COLUMN requirements SET DEFAULT '[]';
 ALTER TABLE public.trainings ALTER COLUMN registration_fields SET DEFAULT '["name", "email", "phone"]';
 ALTER TABLE public.trainings ALTER COLUMN materials_included SET DEFAULT '[]';
 
--- Update any existing NULL values to proper defaults
+
 UPDATE public.trainings 
 SET topics = '[]' 
 WHERE topics IS NULL;

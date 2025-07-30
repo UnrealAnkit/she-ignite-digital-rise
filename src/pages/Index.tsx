@@ -4,7 +4,7 @@ import ProgramsShowcase from "@/components/ProgramsShowcase";
 import TestimonialCard from "@/components/TestimonialCard";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Footer from "@/components/Footer";
-import Separator from "@/components/Separator";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Users, Award, TrendingUp, Mic, Play, ChevronLeft, ChevronRight, Camera, Calendar, Zap, Heart, Star, CheckCircle, Clock, MapPin, MessageCircle, Target } from "lucide-react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
@@ -660,9 +660,7 @@ const Index = () => {
                           <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
                             <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
                               <div className="w-3 h-3 md:w-4 md:h-4 text-red-600">
-                                <svg fill="currentColor" viewBox="0 0 24 24">
-                                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                </svg>
+                                <CheckCircle className="h-3 w-3 md:h-4 md:w-4" />
                               </div>
                             </div>
                             <div className="font-semibold text-black text-xs md:text-sm">WhatsApp + Live Zoom</div>
@@ -747,7 +745,6 @@ const Index = () => {
               <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
                 Why We Exist
               </h2>
-              <Separator variant="thin" />
             </div>
             
             {/* Content Grid - Problem on Left, Solution on Right */}
@@ -907,9 +904,6 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Stylized separator */}
-      <Separator />
-
       {/* What We Do Section */}
       <motion.section 
         className="py-20 bg-white"
@@ -922,18 +916,10 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             {/* Main Heading */}
             <div className="text-center mb-16">
-              <div className="flex justify-center mb-6">
-                <img 
-                  src="/media/Logo.png" 
-                  alt="SHE Leads India Logo" 
-                  className="h-16 md:h-20 object-contain"
-                />
-              </div>
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="text-gray-900">What We </span>
                 <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Do</span>
               </h2>
-              <Separator variant="thin" />
               
               <p className="text-xl md:text-2xl font-semibold mb-6">
                 <span className="text-gray-900">Practical. </span>
@@ -1091,19 +1077,11 @@ const Index = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            {/* Header with SHE Leads Logo */}
+            {/* Header */}
             <div className="text-center mb-16">
-              <div className="flex justify-center mb-6">
-                <img 
-                  src="/media/Logo.png" 
-                  alt="SHE Leads India Logo" 
-                  className="h-16 md:h-20 object-contain"
-                />
-              </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
                 You Don't Need to Figure It All Out Alone
               </h2>
-              <Separator variant="thin" />
             </div>
 
             {/* Main Content Grid */}
@@ -1265,9 +1243,6 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Stylized separator */}
-      <Separator />
-
       {/* Social Proof Section */}
       <motion.section 
         className="py-20 bg-background"
@@ -1326,9 +1301,6 @@ const Index = () => {
           </motion.div>
         </div>
       </motion.section>
-
-      {/* Stylized separator */}
-      <Separator />
 
       {/* Podcast Section */}
       <motion.section 
@@ -1468,9 +1440,6 @@ const Index = () => {
           </motion.div>
         </div>
       </motion.section>
-
-      {/* Stylized separator */}
-      <Separator />
 
       {/* SHELeads Platform Section */}
       <motion.section 
@@ -1637,9 +1606,6 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Stylized separator */}
-      <Separator />
-
       {/* Media Coverage & Recognition */}
       <motion.section 
         className="py-20 bg-gray-50"
@@ -1766,9 +1732,6 @@ const Index = () => {
           </motion.div>
         </div>
       </motion.section>
-
-      {/* Stylized separator */}
-      <Separator />
 
       {/* Event Gallery Section */}
       <motion.section 

@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import Separator from "@/components/Separator";
+
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MapPin, Users, Mic, Award, CheckCircle, ArrowRight, Star } from "lucide-react";
 import { motion } from "framer-motion";
@@ -42,7 +42,6 @@ const EmpowerHer2025 = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
                 2025
               </h1>
-              <Separator variant="thick" />
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 A Transformative Experience Awaits!
               </h2>
@@ -86,9 +85,7 @@ const EmpowerHer2025 = () => {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-4 leading-tight">
                   Step into a day designed to empower you as a truly successful woman entrepreneur.
                 </h2>
-                <div className="mb-6 flex justify-start">
-                  <Separator variant="thick" />
-                </div>
+
                 
                 <div className="space-y-4">
                   <p className="text-lg text-gray-700 leading-relaxed">

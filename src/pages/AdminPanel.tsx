@@ -826,6 +826,7 @@ export default function AdminPanel() {
                         value={blogForm.image_url}
                         onChange={(url) => setBlogForm((f: any) => ({ ...f, image_url: url }))}
                         folder="blog"
+                        displayMode="full"
                       />
                     </div>
                     
@@ -1057,6 +1058,7 @@ export default function AdminPanel() {
                         value={eventForm.image_url}
                         onChange={(url) => setEventForm((f: any) => ({ ...f, image_url: url }))}
                         folder="events"
+                        displayMode="full"
                       />
                     </div>
                     
@@ -1400,6 +1402,7 @@ export default function AdminPanel() {
                         value={trainingForm.image_url}
                         onChange={(url) => setTrainingForm((f: any) => ({ ...f, image_url: url }))}
                         folder="trainings"
+                        displayMode="full"
                       />
                     </div>
                     

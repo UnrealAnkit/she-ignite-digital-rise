@@ -415,307 +415,7 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Upcoming Events Carousel Section */}
-      <motion.section 
-        className="py-12 bg-white"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-10%" }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-black">
-              Upcoming <span className="text-red-600">Events</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Join our transformative events designed specifically for women entrepreneurs
-            </p>
-          </div>
 
-          {/* Events Carousel */}
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              {/* Carousel Container */}
-              <div className="overflow-hidden">
-                <div 
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${currentEventIndex * 100}%)` }}
-                >
-                  {/* Event 1: CANVA & AI WORKSHOP */}
-                  <div className="w-full flex-shrink-0 px-4">
-                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
-                      {/* Background Image */}
-                      <div className="absolute inset-0 opacity-15">
-                        <img 
-                          src="/media/IMG_0011.JPG" 
-                          alt="Hero Background" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      
-                      {/* Content */}
-                      <div className="relative z-10 p-3 md:p-4 h-full flex flex-col">
-                        {/* Header with Brand Colors */}
-                        <div className="flex items-center justify-between mb-3 md:mb-4">
-                          <div className="flex items-center gap-2 md:gap-3 flex-1">
-                            <div className="relative">
-                              <div className="w-8 h-8 md:w-10 md:h-10 bg-red-600 rounded-xl flex items-center justify-center shadow-lg">
-                                <Zap className="h-4 w-4 md:h-5 md:w-5 text-white" />
-                              </div>
-                              <div className="absolute -top-1 -right-1 w-3 h-3 bg-black rounded-full flex items-center justify-center">
-                                <span className="text-xs font-bold text-white">🔥</span>
-                              </div>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <h3 className="text-lg md:text-xl font-bold text-black mb-1">CANVA & AI WORKSHOP</h3>
-                              <p className="text-red-600 font-semibold text-xs md:text-sm">Design Bold. Write Smart.</p>
-                            </div>
-                          </div>
-                          <div className="text-right ml-2">
-                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">₹1200</div>
-                            <div className="text-xs text-gray-600 bg-white px-2 py-1 rounded-full">includes lunch & kit</div>
-                          </div>
-                        </div>
-                        
-                        {/* Event Details with Brand Colors */}
-                        <div className="grid grid-cols-2 gap-2 mb-3 md:mb-4">
-                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
-                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
-                              <Calendar className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
-                            </div>
-                            <div className="font-semibold text-black text-xs md:text-sm">1st August 2025</div>
-                            <div className="text-xs text-gray-600">Workshop Day</div>
-                          </div>
-                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
-                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
-                              <Clock className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
-                            </div>
-                            <div className="font-semibold text-black text-xs md:text-sm">11 AM – 4 PM</div>
-                            <div className="text-xs text-gray-600">5 Hours Intensive</div>
-                          </div>
-                        </div>
-                        
-                        {/* Focus Areas with Brand Colors */}
-                        <div className="mb-3 md:mb-4 flex-1">
-                          <h4 className="font-bold text-xs md:text-sm mb-2 text-black flex items-center gap-2">
-                            <div className="w-2 h-2 bg-red-600 rounded-full"></div>
-                            What's Included:
-                          </h4>
-                          <div className="space-y-1">
-                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
-                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">Canva design session</span>
-                            </div>
-                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
-                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">AI content writing</span>
-                            </div>
-                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
-                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">Take-home materials</span>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Brand Color Button */}
-                        <Button asChild className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 mt-auto text-xs md:text-sm">
-                          <Link to="/canva-ai-workshop">
-                            Register Now
-                          </Link>
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Event 2: Weekly Free Training */}
-                  <div className="w-full flex-shrink-0 px-4">
-                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
-                      {/* Background Image */}
-                      <div className="absolute inset-0 opacity-15">
-                        <img 
-                          src="/media/market place.JPG" 
-                          alt="Market Place Background" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      
-                      {/* Content */}
-                      <div className="relative z-10 p-3 md:p-4 h-full flex flex-col">
-                        {/* Header with Brand Colors */}
-                        <div className="flex items-center justify-between mb-3 md:mb-4">
-                          <div className="flex items-center gap-2 md:gap-3 flex-1">
-                            <div className="relative">
-                              <div className="w-8 h-8 md:w-10 md:h-10 bg-red-600 rounded-xl flex items-center justify-center shadow-lg">
-                                <Play className="h-4 w-4 md:h-5 md:w-5 text-white" />
-                              </div>
-                              <div className="absolute -top-1 -right-1 w-3 h-3 bg-black rounded-full flex items-center justify-center">
-                                <span className="text-xs font-bold text-white">FREE</span>
-                              </div>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <h3 className="text-lg md:text-xl font-bold text-black mb-1">Weekly Free Training</h3>
-                              <p className="text-red-600 font-semibold text-xs md:text-sm">Online Session</p>
-                            </div>
-                          </div>
-                          <div className="text-right ml-2">
-                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">FREE</div>
-                            <div className="text-xs text-gray-600 bg-white px-2 py-1 rounded-full">weekly session</div>
-                          </div>
-                        </div>
-                        
-                        {/* Event Details with Brand Colors */}
-                        <div className="grid grid-cols-2 gap-2 mb-3 md:mb-4">
-                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
-                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
-                              <Calendar className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
-                            </div>
-                            <div className="font-semibold text-black text-xs md:text-sm">Tuesday, 23rd July</div>
-                            <div className="text-xs text-gray-600">Weekly Session</div>
-                          </div>
-                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
-                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
-                              <Clock className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
-                            </div>
-                            <div className="font-semibold text-black text-xs md:text-sm">5 PM – 6 PM</div>
-                            <div className="text-xs text-gray-600">1 Hour Session</div>
-                          </div>
-                        </div>
-                        
-                        {/* Focus Areas with Brand Colors */}
-                        <div className="mb-3 md:mb-4 flex-1">
-                          <h4 className="font-bold text-xs md:text-sm mb-2 text-black flex items-center gap-2">
-                            <div className="w-2 h-2 bg-red-600 rounded-full"></div>
-                            This Week's Topic:
-                          </h4>
-                          <div className="space-y-1">
-                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
-                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">Instagram Growth for Women Entrepreneurs</span>
-                            </div>
-                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
-                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">Master social media marketing</span>
-                            </div>
-                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
-                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">Zoom platform access</span>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Brand Color Button */}
-                        <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 mt-auto text-xs md:text-sm">
-                          Join Free
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Event 3: 5-Day Challenge */}
-                  <div className="w-full flex-shrink-0 px-4">
-                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
-                      {/* Background Image */}
-                      <div className="absolute inset-0 opacity-15">
-                        <img 
-                          src="/media/Mentoring.JPG" 
-                          alt="Mentoring Background" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      
-                      {/* Content */}
-                      <div className="relative z-10 p-3 md:p-4 h-full flex flex-col">
-                        {/* Header with Brand Colors */}
-                        <div className="flex items-center justify-between mb-3 md:mb-4">
-                          <div className="flex items-center gap-2 md:gap-3 flex-1">
-                            <div className="relative">
-                              <div className="w-8 h-8 md:w-10 md:h-10 bg-red-600 rounded-xl flex items-center justify-center shadow-lg">
-                                <div className="text-base md:text-lg font-bold text-white">5</div>
-                              </div>
-                              <div className="absolute -top-1 -right-1 w-3 h-3 bg-black rounded-full flex items-center justify-center">
-                                <span className="text-xs font-bold text-white">⚡</span>
-                              </div>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <h3 className="text-lg md:text-xl font-bold text-black mb-1">5-Day Challenge</h3>
-                              <p className="text-red-600 font-semibold text-xs md:text-sm">Content That Converts</p>
-                            </div>
-                          </div>
-                          <div className="text-right ml-2">
-                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">₹1500</div>
-                            <div className="text-xs text-gray-600 bg-white px-2 py-1 rounded-full">complete program</div>
-                          </div>
-                        </div>
-                        
-                        {/* Event Details with Brand Colors */}
-                        <div className="grid grid-cols-2 gap-2 mb-3 md:mb-4">
-                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
-                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
-                              <Calendar className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
-                            </div>
-                            <div className="font-semibold text-black text-xs md:text-sm">Starts 5th August</div>
-                            <div className="text-xs text-gray-600">5-Day Program</div>
-                          </div>
-                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
-                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
-                              <div className="w-3 h-3 md:w-4 md:h-4 text-red-600">
-                                <CheckCircle className="h-3 w-3 md:h-4 md:w-4" />
-                              </div>
-                            </div>
-                            <div className="font-semibold text-black text-xs md:text-sm">WhatsApp + Live Zoom</div>
-                            <div className="text-xs text-gray-600">Hybrid Format</div>
-                          </div>
-                        </div>
-                        
-                        {/* Focus Areas with Brand Colors */}
-                        <div className="mb-3 md:mb-4 flex-1">
-                          <h4 className="font-bold text-xs md:text-sm mb-2 text-black flex items-center gap-2">
-                            <div className="w-2 h-2 bg-red-600 rounded-full"></div>
-                            Focus Areas:
-                          </h4>
-                          <div className="space-y-1">
-                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
-                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">AI-powered content calendar</span>
-                            </div>
-                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
-                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">Lead magnets creation</span>
-                            </div>
-                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
-                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">CTA writing techniques</span>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Brand Color Button */}
-                        <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 mt-auto text-xs md:text-sm">
-                          Join Challenge
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Navigation Dots */}
-              <div className="flex justify-center mt-8 space-x-2">
-                {[0, 1, 2].map((index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentEventIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      currentEventIndex === index ? 'bg-red-600 w-8' : 'bg-gray-300'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.section>
 
       {/* Why We Exist Section */}
       <motion.section 
@@ -1239,6 +939,308 @@ const Index = () => {
                 </motion.div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Upcoming Events Carousel Section */}
+      <motion.section 
+        className="py-12 bg-white"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-black">
+              Upcoming <span className="text-red-600">Events</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Join our transformative events designed specifically for women entrepreneurs
+            </p>
+          </div>
+
+          {/* Events Carousel */}
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Carousel Container */}
+              <div className="overflow-hidden">
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentEventIndex * 100}%)` }}
+                >
+                  {/* Event 1: CANVA & AI WORKSHOP */}
+                  <div className="w-full flex-shrink-0 px-4">
+                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
+                      {/* Background Image */}
+                      <div className="absolute inset-0 opacity-15">
+                        <img 
+                          src="/media/IMG_0011.JPG" 
+                          alt="Hero Background" 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="relative z-10 p-3 md:p-4 h-full flex flex-col">
+                        {/* Header with Brand Colors */}
+                        <div className="flex items-center justify-between mb-3 md:mb-4">
+                          <div className="flex items-center gap-2 md:gap-3 flex-1">
+                            <div className="relative">
+                              <div className="w-8 h-8 md:w-10 md:h-10 bg-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <Zap className="h-4 w-4 md:h-5 md:w-5 text-white" />
+                              </div>
+                              <div className="absolute -top-1 -right-1 w-3 h-3 bg-black rounded-full flex items-center justify-center">
+                                <span className="text-xs font-bold text-white">🔥</span>
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h3 className="text-lg md:text-xl font-bold text-black mb-1">CANVA & AI WORKSHOP</h3>
+                              <p className="text-red-600 font-semibold text-xs md:text-sm">Design Bold. Write Smart.</p>
+                            </div>
+                          </div>
+                          <div className="text-right ml-2">
+                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">₹1200</div>
+                            <div className="text-xs text-gray-600 bg-white px-2 py-1 rounded-full">includes lunch & kit</div>
+                          </div>
+                        </div>
+                        
+                        {/* Event Details with Brand Colors */}
+                        <div className="grid grid-cols-2 gap-2 mb-3 md:mb-4">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
+                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                              <Calendar className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
+                            </div>
+                            <div className="font-semibold text-black text-xs md:text-sm">1st August 2025</div>
+                            <div className="text-xs text-gray-600">Workshop Day</div>
+                          </div>
+                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
+                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                              <Clock className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
+                            </div>
+                            <div className="font-semibold text-black text-xs md:text-sm">11 AM – 4 PM</div>
+                            <div className="text-xs text-gray-600">5 Hours Intensive</div>
+                          </div>
+                        </div>
+                        
+                        {/* Focus Areas with Brand Colors */}
+                        <div className="mb-3 md:mb-4 flex-1">
+                          <h4 className="font-bold text-xs md:text-sm mb-2 text-black flex items-center gap-2">
+                            <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                            What's Included:
+                          </h4>
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">Canva design session</span>
+                            </div>
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">AI content writing</span>
+                            </div>
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">Take-home materials</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Brand Color Button */}
+                        <Button asChild className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 mt-auto text-xs md:text-sm">
+                          <Link to="/canva-ai-workshop">
+                            Register Now
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Event 2: Weekly Free Training */}
+                  <div className="w-full flex-shrink-0 px-4">
+                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
+                      {/* Background Image */}
+                      <div className="absolute inset-0 opacity-15">
+                        <img 
+                          src="/media/market place.JPG" 
+                          alt="Market Place Background" 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="relative z-10 p-3 md:p-4 h-full flex flex-col">
+                        {/* Header with Brand Colors */}
+                        <div className="flex items-center justify-between mb-3 md:mb-4">
+                          <div className="flex items-center gap-2 md:gap-3 flex-1">
+                            <div className="relative">
+                              <div className="w-8 h-8 md:w-10 md:h-10 bg-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <Play className="h-4 w-4 md:h-5 md:w-5 text-white" />
+                              </div>
+                              <div className="absolute -top-1 -right-1 w-3 h-3 bg-black rounded-full flex items-center justify-center">
+                                <span className="text-xs font-bold text-white">FREE</span>
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h3 className="text-lg md:text-xl font-bold text-black mb-1">Weekly Free Training</h3>
+                              <p className="text-red-600 font-semibold text-xs md:text-sm">Online Session</p>
+                            </div>
+                          </div>
+                          <div className="text-right ml-2">
+                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">FREE</div>
+                            <div className="text-xs text-gray-600 bg-white px-2 py-1 rounded-full">weekly session</div>
+                          </div>
+                        </div>
+                        
+                        {/* Event Details with Brand Colors */}
+                        <div className="grid grid-cols-2 gap-2 mb-3 md:mb-4">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
+                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                              <Calendar className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
+                            </div>
+                            <div className="font-semibold text-black text-xs md:text-sm">Tuesday, 23rd July</div>
+                            <div className="text-xs text-gray-600">Weekly Session</div>
+                          </div>
+                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
+                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                              <Clock className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
+                            </div>
+                            <div className="font-semibold text-black text-xs md:text-sm">5 PM – 6 PM</div>
+                            <div className="text-xs text-gray-600">1 Hour Session</div>
+                          </div>
+                        </div>
+                        
+                        {/* Focus Areas with Brand Colors */}
+                        <div className="mb-3 md:mb-4 flex-1">
+                          <h4 className="font-bold text-xs md:text-sm mb-2 text-black flex items-center gap-2">
+                            <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                            This Week's Topic:
+                          </h4>
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">Instagram Growth for Women Entrepreneurs</span>
+                            </div>
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">Master social media marketing</span>
+                            </div>
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">Zoom platform access</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Brand Color Button */}
+                        <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 mt-auto text-xs md:text-sm">
+                          Join Free
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Event 3: 5-Day Challenge */}
+                  <div className="w-full flex-shrink-0 px-4">
+                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
+                      {/* Background Image */}
+                      <div className="absolute inset-0 opacity-15">
+                        <img 
+                          src="/media/Mentoring.JPG" 
+                          alt="Mentoring Background" 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="relative z-10 p-3 md:p-4 h-full flex flex-col">
+                        {/* Header with Brand Colors */}
+                        <div className="flex items-center justify-between mb-3 md:mb-4">
+                          <div className="flex items-center gap-2 md:gap-3 flex-1">
+                            <div className="relative">
+                              <div className="w-8 h-8 md:w-10 md:h-10 bg-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div className="text-base md:text-lg font-bold text-white">5</div>
+                              </div>
+                              <div className="absolute -top-1 -right-1 w-3 h-3 bg-black rounded-full flex items-center justify-center">
+                                <span className="text-xs font-bold text-white">⚡</span>
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h3 className="text-lg md:text-xl font-bold text-black mb-1">5-Day Challenge</h3>
+                              <p className="text-red-600 font-semibold text-xs md:text-sm">Content That Converts</p>
+                            </div>
+                          </div>
+                          <div className="text-right ml-2">
+                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">₹1500</div>
+                            <div className="text-xs text-gray-600 bg-white px-2 py-1 rounded-full">complete program</div>
+                          </div>
+                        </div>
+                        
+                        {/* Event Details with Brand Colors */}
+                        <div className="grid grid-cols-2 gap-2 mb-3 md:mb-4">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
+                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                              <Calendar className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
+                            </div>
+                            <div className="font-semibold text-black text-xs md:text-sm">Starts 5th August</div>
+                            <div className="text-xs text-gray-600">5-Day Program</div>
+                          </div>
+                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
+                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                              <div className="w-3 h-3 md:w-4 md:h-4 text-red-600">
+                                <CheckCircle className="h-3 w-3 md:h-4 md:w-4" />
+                              </div>
+                            </div>
+                            <div className="font-semibold text-black text-xs md:text-sm">WhatsApp + Live Zoom</div>
+                            <div className="text-xs text-gray-600">Hybrid Format</div>
+                          </div>
+                        </div>
+                        
+                        {/* Focus Areas with Brand Colors */}
+                        <div className="mb-3 md:mb-4 flex-1">
+                          <h4 className="font-bold text-xs md:text-sm mb-2 text-black flex items-center gap-2">
+                            <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                            Focus Areas:
+                          </h4>
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">AI-powered content calendar</span>
+                            </div>
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">Lead magnets creation</span>
+                            </div>
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">CTA writing techniques</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Brand Color Button */}
+                        <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 mt-auto text-xs md:text-sm">
+                          Join Challenge
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Navigation Dots */}
+              <div className="flex justify-center mt-8 space-x-2">
+                {[0, 1, 2].map((index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentEventIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      currentEventIndex === index ? 'bg-red-600 w-8' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </motion.section>

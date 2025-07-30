@@ -148,19 +148,7 @@ const HeroSection = () => {
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </motion.div>
-            <motion.div
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.2)"
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              <Button asChild variant="white" size="xl" className="w-full sm:w-auto text-sm">
-                <Link to="/success-stories">
-                  What is SHELeadsIndia? → Watch the Vision
-                </Link>
-              </Button>
-            </motion.div>
+
           </motion.div>
 
           {/* Stats */}

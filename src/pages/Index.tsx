@@ -358,7 +358,7 @@ const Index = () => {
               <div className="mb-8">
                 <div className="flex items-start space-x-4 mb-4">
                   <img 
-                    src="/media/IMG_20250101_201136 - Gopi V.jpg" 
+                    src="/media/IMG_20250101_201136 - Gopi V-modified.png" 
                     alt="Gopi Vishrolia Joshi"
                     className="w-16 h-16 rounded-full object-cover"
                   />
@@ -376,11 +376,11 @@ const Index = () => {
               {/* Testimonial 2 - Pune */}
               <div className="mb-8">
                 <div className="flex items-start space-x-4 mb-4">
-                  <img 
-                    src="/media/IMG_6764 - Manjusha Bhaskarwar.jpeg" 
-                    alt="Manjusha Ravi Bhaskarwar"
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
+                                      <img
+                      src="/media/IMG_6764 - Manjusha Bhaskarwar (1)-modified.png"
+                      alt="Manjusha Ravi Bhaskarwar"
+                      className="w-16 h-16 rounded-full object-cover"
+                    />
                   <div>
                     <h4 className="font-semibold text-red-600 text-lg">Manjusha Ravi Bhaskarwar</h4>
                     <p className="text-gray-900 text-sm font-medium">Content Creator</p>
@@ -480,7 +480,7 @@ const Index = () => {
                     </div>
                     <div className="flex-1">
                       <p className="text-gray-700 leading-relaxed text-lg font-medium">
-                        <span className="text-red-600 font-bold">There's no shortage of women with ideas</span> - brilliant, innovative, world-changing ideas
+                        <span className="text-red-600 font-bold">There's no shortage of women with ideas</span> - brilliant, innovative, world-changing ideas that could transform industries
                       </p>
                     </div>
                   </div>
@@ -491,7 +491,7 @@ const Index = () => {
                     </div>
                     <div className="flex-1">
                       <p className="text-gray-700 leading-relaxed text-lg font-medium">
-                        <span className="text-red-600 font-bold">But most don't get the support, tools, or tribe</span> to turn those ideas into income
+                        <span className="text-red-600 font-bold">But most don't get the support, tools, or tribe</span> to turn those ideas into sustainable income streams
                       </p>
                     </div>
                   </div>
@@ -502,7 +502,7 @@ const Index = () => {
                     </div>
                     <div className="flex-1">
                       <p className="text-gray-700 leading-relaxed text-lg font-medium">
-                        <span className="text-red-600 font-bold">They lack the ecosystem</span> needed to build sustainable businesses
+                        <span className="text-red-600 font-bold">They lack the ecosystem</span> needed to build sustainable businesses in today's digital landscape
                       </p>
                     </div>
                   </div>
@@ -520,7 +520,7 @@ const Index = () => {
                 {/* Solution Image */}
                 <div className="relative mb-8">
                   <img 
-                    src="/media/DSC02153.JPG" 
+                    src="/media/IMG_0013.JPG" 
                     alt="Women entrepreneurs succeeding together" 
                     className="w-full h-64 object-cover rounded-2xl shadow-2xl"
                   />
@@ -533,32 +533,49 @@ const Index = () => {
                 </div>
                 
                 {/* Solution Content */}
-                <div className="space-y-6">
-                  <div className="mb-6">
-                    <p className="text-4xl font-bold mb-3">
-                      <span className="text-gray-900">SHE</span> 
-                      <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent"> Leads India</span>
-                    </p>
-                    <p className="text-xl text-gray-700 font-medium">is here to change that.</p>
-                  </div>
+                                  <div className="space-y-6">
                   
                   {/* Solution Features */}
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-4 group">
-                      <div className="flex-shrink-0 w-4 h-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                      <span className="text-gray-700 font-semibold text-lg">AI-powered tools & training</span>
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4 group">
+                      <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">
+                        ✓
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-gray-700 leading-relaxed text-lg font-medium">
+                          <span className="text-green-600 font-bold">AI-powered tools & training</span> for modern business growth
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-4 group">
-                      <div className="flex-shrink-0 w-4 h-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                      <span className="text-gray-700 font-semibold text-lg">Digital marketing mastery</span>
+                    <div className="flex items-start space-x-4 group">
+                      <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">
+                        ✓
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-gray-700 leading-relaxed text-lg font-medium">
+                          <span className="text-green-600 font-bold">Digital marketing mastery</span> to reach your audience effectively
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-4 group">
-                      <div className="flex-shrink-0 w-4 h-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                      <span className="text-gray-700 font-semibold text-lg">Community support network</span>
+                    <div className="flex items-start space-x-4 group">
+                      <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">
+                        ✓
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-gray-700 leading-relaxed text-lg font-medium">
+                          <span className="text-green-600 font-bold">Community support network</span> of like-minded entrepreneurs
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-4 group">
-                      <div className="flex-shrink-0 w-4 h-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                      <span className="text-gray-700 font-semibold text-lg">All built for Indian businesswomen</span>
+                    <div className="flex items-start space-x-4 group">
+                      <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">
+                        ✓
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-gray-700 leading-relaxed text-lg font-medium">
+                          <span className="text-green-600 font-bold">All built for Indian businesswomen</span> by Indian businesswomen
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -655,7 +672,7 @@ const Index = () => {
                 </div>
                 <div className="mb-6">
                   <img 
-                    src="/media/IMG_0137.JPG" 
+                    src="/media/Mentoring.JPG" 
                     alt="Women learning digital skills" 
                     className="w-full h-48 object-cover rounded-xl mb-6"
                   />
@@ -713,7 +730,7 @@ const Index = () => {
                 </div>
                 <div className="mb-6">
                   <img 
-                    src="/media/Mentoring.JPG" 
+                    src="/media/IMG_0137.JPG" 
                     alt="Women mentoring and learning together" 
                     className="w-full h-48 object-cover rounded-xl mb-6"
                   />
@@ -1523,7 +1540,7 @@ const Index = () => {
                 >
                   <div className="w-full h-48 rounded-xl mb-3 overflow-hidden bg-gray-50">
                     <img 
-                      src="/media/IMG_0137.JPG" 
+                      src="/media/Mentoring.JPG" 
                       alt="Women learning digital skills" 
                       className="w-full h-full object-cover object-center"
                       style={{
@@ -1567,7 +1584,7 @@ const Index = () => {
                 >
                   <div className="w-full h-48 rounded-xl mb-3 overflow-hidden bg-gray-50">
                     <img 
-                      src="/media/Mentoring.JPG" 
+                      src="/media/IMG_0137.JPG" 
                       alt="Women mentoring and learning together" 
                       className="w-full h-full object-cover object-center"
                       style={{

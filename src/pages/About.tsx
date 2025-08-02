@@ -263,6 +263,87 @@ const About = () => {
         </div>
       </section>
 
+      {/* Our Team Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Our Team
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Meet the passionate team behind SHELeads India, dedicated to empowering women entrepreneurs across the country.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            {/* Nikita Vora */}
+            <div className="text-center">
+              <div className="relative mb-6">
+                <img
+                  src="/media/founder-nikita.webp"
+                  alt="Nikita Vora"
+                  className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Nikita Vora</h3>
+              <p className="text-muted-foreground">Founder & Director</p>
+            </div>
+
+            {/* Salonia Bajaj */}
+            <div className="text-center">
+              <div className="relative mb-6">
+                <img
+                  src="/media/Salonia.avif"
+                  alt="Salonia Bajaj"
+                  className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Salonia Bajaj</h3>
+              <p className="text-muted-foreground">Head - Marketing</p>
+            </div>
+
+            {/* Priti Bhaskarwar */}
+            <div className="text-center">
+              <div className="relative mb-6">
+                <img
+                  src="/media/Priti.avif"
+                  alt="Priti Bhaskarwar"
+                  className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Priti Bhaskarwar</h3>
+              <p className="text-muted-foreground">Head - Technical</p>
+            </div>
+
+            {/* Ritika Jain */}
+            <div className="text-center">
+              <div className="relative mb-6">
+                <img
+                  src="/media/Ritika.avif"
+                  alt="Ritika Jain"
+                  className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Ritika Jain</h3>
+              <p className="text-muted-foreground">Creative Head</p>
+            </div>
+
+            {/* Dhara Pandya */}
+            <div className="text-center">
+              <div className="relative mb-6">
+                <img
+                  src="/media/Dhara.avif"
+                  alt="Dhara Pandya"
+                  className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Dhara Pandya</h3>
+              <p className="text-muted-foreground">Learning Head</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Company Overview */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
@@ -541,57 +622,6 @@ const About = () => {
               ))}
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* Regional Presence */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our Regional Impact
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Building strong entrepreneurial ecosystems across Maharashtra, 
-              one city at a time.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { city: "Pune", members: "200+", events: "24", businesses: "150+" },
-              { city: "Nagpur", members: "180+", events: "18", businesses: "120+" },
-              { city: "Nashik", members: "120+", events: "12", businesses: "85+" }
-            ].map((region, index) => (
-              <Card key={index} className="text-center hover:shadow-elegant transition-all duration-300">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(230, 0, 35, 0.1)' }}>
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-2xl">{region.city}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    <div>
-                      <div className="font-bold text-primary">{region.members}</div>
-                      <div className="text-xs text-muted-foreground">Members</div>
-                    </div>
-                    <div>
-                      <div className="font-bold text-primary">{region.events}</div>
-                      <div className="text-xs text-muted-foreground">Events</div>
-                    </div>
-                    <div>
-                      <div className="font-bold text-primary">{region.businesses}</div>
-                      <div className="text-xs text-muted-foreground">Businesses</div>
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm" className="w-full">
-                    Join {region.city} Chapter
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

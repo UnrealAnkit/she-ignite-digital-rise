@@ -25,6 +25,7 @@ import AdminPanel from "./pages/AdminPanel";
 import Podcast from "./pages/Podcast";
 import EventsGallery from "./pages/EventsGallery";
 import CanvaAIWorkshop from "./pages/CanvaAIWorkshop";
+import CoPilotAITraining from "./pages/CoPilotAITraining";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Content from "./pages/Content";
@@ -67,6 +68,7 @@ const App = () => {
             <Route path="/podcast" element={<Podcast />} />
             <Route path="/events-gallery" element={<EventsGallery />} />
             <Route path="/canva-ai-workshop" element={<CanvaAIWorkshop />} />
+            <Route path="/co-pilot-ai-training" element={<CoPilotAITraining />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/content" element={<Content />} />

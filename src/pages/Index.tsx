@@ -987,15 +987,20 @@ const Index = () => {
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentEventIndex * 100}%)` }}
                 >
-                  {/* Event 1: CANVA & AI WORKSHOP */}
+                  {/* Event 1: CO-PILOT AI TRAINING */}
                   <div className="w-full flex-shrink-0 px-4">
                     <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
                       {/* Background Image */}
                       <div className="absolute inset-0 opacity-15">
                         <img 
-                          src="/media/IMG_0011.JPG" 
-                          alt="Hero Background" 
-                          className="w-full h-full object-cover"
+                          src="/media/co pilot training 5th august.jpg" 
+                          alt="Co-Pilot AI Training Background" 
+                          className="w-full h-full object-cover object-center"
+                          style={{
+                            objectPosition: 'center center',
+                            maxHeight: '100%',
+                            maxWidth: '100%'
+                          }}
                         />
                       </div>
                       
@@ -1009,17 +1014,17 @@ const Index = () => {
                                 <Zap className="h-4 w-4 md:h-5 md:w-5 text-white" />
                               </div>
                               <div className="absolute -top-1 -right-1 w-3 h-3 bg-black rounded-full flex items-center justify-center">
-                                <span className="text-xs font-bold text-white">🔥</span>
+                                <span className="text-xs font-bold text-white">FREE</span>
                               </div>
                             </div>
                             <div className="flex-1 min-w-0">
-                              <h3 className="text-lg md:text-xl font-bold text-black mb-1">CANVA & AI WORKSHOP</h3>
-                              <p className="text-red-600 font-semibold text-xs md:text-sm">Design Bold. Write Smart.</p>
+                              <h3 className="text-lg md:text-xl font-bold text-black mb-1">CO-PILOT AI TRAINING</h3>
+                              <p className="text-red-600 font-semibold text-xs md:text-sm">Work Smarter with AI</p>
                             </div>
                           </div>
                           <div className="text-right ml-2">
-                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">₹1200</div>
-                            <div className="text-xs text-gray-600 bg-white px-2 py-1 rounded-full">includes lunch & kit</div>
+                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">FREE</div>
+                            <div className="text-xs text-gray-600 bg-white px-2 py-1 rounded-full">live training</div>
                           </div>
                         </div>
                         
@@ -1029,15 +1034,15 @@ const Index = () => {
                             <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
                               <Calendar className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
                             </div>
-                            <div className="font-semibold text-black text-xs md:text-sm">1st August 2025</div>
-                            <div className="text-xs text-gray-600">Workshop Day</div>
+                            <div className="font-semibold text-black text-xs md:text-sm">5th August 2025</div>
+                            <div className="text-xs text-gray-600">Tuesday</div>
                           </div>
                           <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
                             <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
                               <Clock className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
                             </div>
-                            <div className="font-semibold text-black text-xs md:text-sm">11 AM – 4 PM</div>
-                            <div className="text-xs text-gray-600">5 Hours Intensive</div>
+                            <div className="font-semibold text-black text-xs md:text-sm">7:00 PM IST</div>
+                            <div className="text-xs text-gray-600">Live on Zoom</div>
                           </div>
                         </div>
                         
@@ -1045,28 +1050,28 @@ const Index = () => {
                         <div className="mb-3 md:mb-4 flex-1">
                           <h4 className="font-bold text-xs md:text-sm mb-2 text-black flex items-center gap-2">
                             <div className="w-2 h-2 bg-red-600 rounded-full"></div>
-                            What's Included:
+                            What You'll Learn:
                           </h4>
                           <div className="space-y-1">
                             <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
                               <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">Canva design session</span>
+                              <span className="font-medium text-xs">Use AI as your assistant</span>
                             </div>
                             <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
                               <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">AI content writing</span>
+                              <span className="font-medium text-xs">Speed up daily tasks</span>
                             </div>
                             <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
                               <div className="w-1 h-1 bg-red-600 rounded-full"></div>
-                              <span className="font-medium text-xs">Take-home materials</span>
+                              <span className="font-medium text-xs">Ready-to-use AI workflow</span>
                             </div>
                           </div>
                         </div>
                         
                         {/* Brand Color Button */}
                         <Button asChild className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 mt-auto text-xs md:text-sm">
-                          <Link to="/canva-ai-workshop">
-                            Register Now
+                          <Link to="/co-pilot-ai-training">
+                            Register Now - FREE
                           </Link>
                         </Button>
                       </div>

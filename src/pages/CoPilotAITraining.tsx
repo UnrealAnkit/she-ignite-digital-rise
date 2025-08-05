@@ -68,7 +68,7 @@ const CoPilotAITraining = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="/media/IMG_0011.JPG"
+            src="/media/co pilot training 5th august.jpg"
             alt="Co-Pilot AI Training"
             className="w-full h-full object-cover"
             style={{

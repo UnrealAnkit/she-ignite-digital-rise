@@ -149,7 +149,7 @@ const CanvaAIWorkshop = () => {
                 <div className="w-8 h-8 text-red-400 mb-3 mx-auto flex items-center justify-center">
                   <span className="text-2xl font-bold">₹</span>
                 </div>
-                <p className="font-semibold text-white">₹1200/-</p>
+                <p className="font-semibold text-white">₹600/-</p>
                 <p className="text-sm text-white/80">All inclusive</p>
               </motion.div>
             </motion.div>
@@ -435,7 +435,7 @@ const CanvaAIWorkshop = () => {
                 >
                   <a href="https://rzp.io/rzp/TmsWQUS" target="_blank" rel="noopener noreferrer">
                     <Heart className="h-6 w-6 mr-3" />
-                    Book My Seat - ₹1200/-
+                    Book My Seat - ₹600/-
                     <ArrowRight className="h-6 w-6 ml-3" />
                   </a>
                 </Button>

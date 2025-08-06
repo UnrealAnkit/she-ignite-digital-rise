@@ -11,7 +11,26 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+function useKitFormScript() {
+  useEffect(() => {
+    // Remove any existing script to avoid duplicates
+    const existing = document.querySelector('script[data-uid="87124b0f4a"]');
+    if (existing) existing.remove();
+
+    const script = document.createElement("script");
+    script.src = "https://digitalstepup.kit.com/87124b0f4a/index.js";
+    script.async = true;
+    script.setAttribute("data-uid", "87124b0f4a");
+    document.body.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, []);
+}
+
 const Index = () => {
+  useKitFormScript();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
   
@@ -2013,6 +2032,26 @@ const Index = () => {
           </motion.div>
         </div>
       </motion.section>
+
+      {/* Newsletter Subscription Section */}
+      <section className="py-16 bg-gradient-to-br from-white to-gray-50 border-t border-b border-gray-200">
+        <div className="container mx-auto px-4 text-center max-w-xl flex flex-col items-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+            Subscribe to Our Newsletter for Fresh Content, Tips, and More!
+          </h2>
+          <a
+            data-formkit-toggle="87124b0f4a"
+            href="https://digitalstepup.kit.com/87124b0f4a"
+            className="mb-8 px-6 py-2 rounded-full bg-primary text-white font-semibold shadow hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 inline-block"
+            style={{ textDecoration: 'none' }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe via Modal
+          </a>
+          <div id="kit-newsletter-form" className="w-full"></div>
+        </div>
+      </section>
 
       <Footer />
     </div>

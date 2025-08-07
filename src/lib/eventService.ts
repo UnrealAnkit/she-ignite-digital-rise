@@ -8,6 +8,7 @@ export interface Event {
   event_time: string;
   location: string;
   image_url: string;
+  page_link?: string;
   registration_enabled: boolean;
   max_attendees: number;
   price: number;

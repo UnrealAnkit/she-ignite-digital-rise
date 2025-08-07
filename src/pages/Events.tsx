@@ -3,7 +3,7 @@ import { fetchEvents, Event } from "@/lib/eventService";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Users, DollarSign, Clock, Target, Brain, Zap, TrendingUp, CheckCircle, Star, Camera, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Users, DollarSign, Clock, Target, Brain, Zap, TrendingUp, CheckCircle, Star, Camera, ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -345,6 +345,23 @@ export default function Events() {
                             <Link to={`/events/${event.id}/register`}>
                               Register
                             </Link>
+                          </Button>
+                        )}
+                        {event.page_link && (
+                          <Button 
+                            asChild 
+                            size="sm" 
+                            variant="outline" 
+                            className="h-12 px-4 rounded-2xl border-blue-200 text-blue-600 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300"
+                            title="View Detailed Page"
+                          >
+                            <a 
+                              href={event.page_link} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                            >
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
                           </Button>
                         )}
                       </div>

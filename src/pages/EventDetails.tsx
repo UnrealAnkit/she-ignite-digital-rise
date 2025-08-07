@@ -4,7 +4,7 @@ import { fetchEventById, Event } from "@/lib/eventService";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Users, DollarSign, Clock, ArrowLeft } from "lucide-react";
+import { Calendar, MapPin, Users, DollarSign, Clock, ArrowLeft, ExternalLink } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -235,11 +235,30 @@ export default function EventDetails() {
                   <p className="text-muted-foreground">
                     Secure your spot at this exciting event!
                   </p>
-                  <Button asChild size="lg" className="w-full md:w-auto">
-                    <Link to={`/events/${event.id}/register`}>
-                      Register Now
-                    </Link>
-                  </Button>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Button asChild size="lg" className="w-full sm:w-auto">
+                      <Link to={`/events/${event.id}/register`}>
+                        Register Now
+                      </Link>
+                    </Button>
+                    {event.page_link && (
+                      <Button 
+                        asChild 
+                        size="lg" 
+                        variant="outline" 
+                        className="w-full sm:w-auto"
+                      >
+                        <a 
+                          href={event.page_link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          View Detailed Page
+                        </a>
+                      </Button>
+                    )}
+                  </div>
                 </div>
               ) : (
                 <div className="text-center space-y-4">
@@ -249,6 +268,24 @@ export default function EventDetails() {
                   <p className="text-muted-foreground">
                     Registration is currently not available for this event.
                   </p>
+                  {event.page_link && (
+                    <div className="pt-4">
+                      <Button 
+                        asChild 
+                        size="lg" 
+                        variant="outline"
+                      >
+                        <a 
+                          href={event.page_link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          View Detailed Page
+                        </a>
+                      </Button>
+                    </div>
+                  )}
                 </div>
               )}
             </div>

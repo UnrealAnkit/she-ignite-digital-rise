@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import AdminLogin from "@/components/AdminLogin";
-import { LogOut, Plus, Edit, Trash2, Users, Calendar, FileText, Settings, BookOpen, Eye, Save, X, Search, Filter, BarChart3, TrendingUp, Clock, MapPin, User as UserIcon, Mail, Phone, CheckCircle, AlertCircle, Star } from "lucide-react";
+import { LogOut, Plus, Edit, Trash2, Users, Calendar, FileText, Settings, BookOpen, Eye, Save, X, Search, Filter, BarChart3, TrendingUp, Clock, MapPin, User as UserIcon, Mail, Phone, CheckCircle, AlertCircle, Star, Link } from "lucide-react";
 import ImageUpload from "@/components/ImageUpload";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabaseClient";
@@ -34,6 +34,7 @@ const emptyEventForm = {
   event_time: "",
   location: "",
   image_url: "",
+  page_link: "",
   registration_enabled: true,
   max_attendees: 100,
   price: 0,
@@ -1062,6 +1063,19 @@ export default function AdminPanel() {
                       />
                     </div>
                     
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-gray-700">Page Link</label>
+                      <input 
+                        name="page_link" 
+                        type="url" 
+                        value={eventForm.page_link} 
+                        onChange={handleEventChange} 
+                        placeholder="https://yourdomain.com/event-page" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
+                      />
+                      <p className="text-xs text-gray-500">Enter the direct link to the event page (e.g., /canva-ai-workshop, /co-pilot-ai-training)</p>
+                    </div>
+                    
                     <div className="grid gap-4 md:grid-cols-3">
                       <div className="space-y-2">
                         <label className="text-sm font-semibold text-gray-700">Max Attendees</label>
@@ -1252,6 +1266,19 @@ export default function AdminPanel() {
                                   <MapPin className="h-3 w-3" />
                                   {event.location}
                                 </span>
+                                {event.page_link && (
+                                  <span className="flex items-center gap-1">
+                                    <Link className="h-3 w-3" />
+                                    <a 
+                                      href={event.page_link} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="text-blue-600 hover:text-blue-800 underline"
+                                    >
+                                      View Page
+                                    </a>
+                                  </span>
+                                )}
                               </div>
                             </div>
                             <div className="flex gap-2">

@@ -65,21 +65,21 @@ const CoPilotAITraining = () => {
         animate="visible"
         variants={fadeInUp}
       >
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 w-full h-full">
-          <img
-            src="/media/co pilot training 5th august.jpg"
-            alt="Co-Pilot AI Training"
-            className="w-full h-full object-cover"
-            style={{
-              objectPosition: 'center center',
-              height: '100vh',
-              width: '100%',
-              maxWidth: '100vw'
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
-        </div>
+                 {/* Background Image with Overlay */}
+         <div className="absolute inset-0 w-full h-full">
+           <img
+             src="/media/IMG_0011.JPG"
+             alt="Co-Pilot AI Training"
+             className="w-full h-full object-cover"
+             style={{
+               objectPosition: 'center center',
+               height: '100vh',
+               width: '100%',
+               maxWidth: '100vw'
+             }}
+           />
+           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
+         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div className="text-center max-w-4xl mx-auto text-white" variants={fadeInUp}>
@@ -208,7 +208,7 @@ const CoPilotAITraining = () => {
               <div className="relative mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-2xl border-4 border-red-200 group-hover:border-red-300 transition-all duration-300">
                   <img 
-                    src="/media/co pilot training 5th august.jpg" 
+                    src="/media/rachna ma'am.jpg" 
                     alt="Rachana Upadhyay" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />

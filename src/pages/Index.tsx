@@ -1181,7 +1181,7 @@ const Index = () => {
                     </div>
                   </div>
 
-                  {/* Event 3: 5-Day Challenge */}
+                  {/* Event 4: 5-Day Challenge */}
                   <div className="w-full flex-shrink-0 px-4">
                     <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
                       {/* Background Image */}
@@ -1266,12 +1266,103 @@ const Index = () => {
                       </div>
                     </div>
                   </div>
+
+                  {/* Event 3: 7-Day AI + Business Growth Challenge */}
+                  <div className="w-full flex-shrink-0 px-4">
+                    <div className="relative overflow-hidden bg-white rounded-2xl shadow-xl border border-gray-200 group h-[320px] md:h-[380px]">
+                      {/* Background Image */}
+                      <div className="absolute inset-0 opacity-15">
+                        <img 
+                          src="/media/networking.JPG" 
+                          alt="AI Business Growth Challenge Background" 
+                          className="w-full h-full object-cover object-center"
+                          style={{
+                            objectPosition: 'center center',
+                            maxHeight: '100%',
+                            maxWidth: '100%'
+                          }}
+                        />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="relative z-10 p-3 md:p-4 h-full flex flex-col">
+                        {/* Header with Brand Colors */}
+                        <div className="flex items-center justify-between mb-3 md:mb-4">
+                          <div className="flex items-center gap-2 md:gap-3 flex-1">
+                            <div className="relative">
+                              <div className="w-8 h-8 md:w-10 md:h-10 bg-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div className="text-base md:text-lg font-bold text-white">7</div>
+                              </div>
+                              <div className="absolute -top-1 -right-1 w-3 h-3 bg-black rounded-full flex items-center justify-center">
+                                <span className="text-xs font-bold text-white">AI</span>
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h3 className="text-lg md:text-xl font-bold text-black mb-1">7-Day AI + Business Growth Challenge</h3>
+                              <p className="text-red-600 font-semibold text-xs md:text-sm">For Women Entrepreneurs</p>
+                            </div>
+                          </div>
+                          <div className="text-right ml-2">
+                            <div className="text-xl md:text-2xl font-bold text-red-600 mb-1">₹1500</div>
+                            <div className="text-xs text-gray-600 bg-white px-2 py-1 rounded-full">7-day program</div>
+                          </div>
+                        </div>
+                        
+                        {/* Event Details with Brand Colors */}
+                        <div className="grid grid-cols-2 gap-2 mb-3 md:mb-4">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
+                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                              <Calendar className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
+                            </div>
+                            <div className="font-semibold text-black text-xs md:text-sm">11th August 2025</div>
+                            <div className="text-xs text-gray-600">Monday Start</div>
+                          </div>
+                          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1 md:p-2 text-center">
+                            <div className="w-6 h-6 md:w-8 md:h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                              <Users className="h-3 w-3 md:h-4 md:w-4 text-red-600" />
+                            </div>
+                            <div className="font-semibold text-black text-xs md:text-sm">Led by Rachna</div>
+                            <div className="text-xs text-gray-600">SHELeadsIndia</div>
+                          </div>
+                        </div>
+                        
+                        {/* Focus Areas with Brand Colors */}
+                        <div className="mb-3 md:mb-4 flex-1">
+                          <h4 className="font-bold text-xs md:text-sm mb-2 text-black flex items-center gap-2">
+                            <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                            What You'll Learn:
+                          </h4>
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">AI tools for business growth</span>
+                            </div>
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">Smart automation strategies</span>
+                            </div>
+                            <div className="flex items-center gap-2 p-1 bg-white/90 backdrop-blur-sm rounded-lg">
+                              <div className="w-1 h-1 bg-red-600 rounded-full"></div>
+                              <span className="font-medium text-xs">Daily challenges & support</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Brand Color Button */}
+                        <Button asChild className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 mt-auto text-xs md:text-sm">
+                          <Link to="/ai-business-growth-challenge">
+                            Join Challenge
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               {/* Navigation Dots */}
               <div className="flex justify-center mt-8 space-x-2">
-                {[0, 1, 2].map((index) => (
+                {[0, 1, 2, 3].map((index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentEventIndex(index)}

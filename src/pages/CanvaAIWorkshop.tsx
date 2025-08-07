@@ -117,7 +117,7 @@ const CanvaAIWorkshop = () => {
                 whileHover={{ scale: 1.02, y: -2 }}
               >
                 <Calendar className="h-8 w-8 text-red-400 mb-3 mx-auto" />
-                <p className="font-semibold text-white">1st August 2025</p>
+                <p className="font-semibold text-white">8th August 2025</p>
                 <p className="text-sm text-white/80">Save the Date</p>
               </motion.div>
               

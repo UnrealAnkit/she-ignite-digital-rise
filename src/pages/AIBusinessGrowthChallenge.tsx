@@ -335,38 +335,33 @@ const AIBusinessGrowthChallenge = () => {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
           >
-            {[
-              {
-                icon: CalendarDays,
-                title: "7 Daily Live Sessions",
-                description: "1 hour daily live sessions on Zoom with hands-on tasks and Q&A"
-              },
-              {
-                icon: BookOpen,
-                title: "Resource Library",
-                description: "Access to AI tools, templates, and step-by-step guides"
-              },
-              {
-                icon: Users,
-                title: "Community Support",
-                description: "Join our WhatsApp group for daily motivation and peer support"
-              },
-              {
-                icon: Shield,
-                title: "Lifetime Access",
-                description: "Keep all materials and recordings for future reference"
-              },
-              {
-                icon: Gift,
-                title: "Bonus Tools",
-                description: "Free access to premium AI tools and software during the challenge"
-              },
-              {
-                icon: Trophy,
-                title: "Certificate",
-                description: "Completion certificate to showcase your AI business skills"
-              }
-            ].map((item, index) => (
+                         {[
+               {
+                 icon: CalendarDays,
+                 title: "7 Daily Live Sessions",
+                 description: "1 hour daily live sessions on Zoom with hands-on tasks and Q&A"
+               },
+               {
+                 icon: BookOpen,
+                 title: "Resource Library",
+                 description: "Access to AI tools, templates, and step-by-step guides"
+               },
+               {
+                 icon: Users,
+                 title: "Community Support",
+                 description: "Join our WhatsApp group for daily motivation and peer support"
+               },
+               {
+                 icon: Shield,
+                 title: "Lifetime Access",
+                 description: "Keep all materials and recordings for future reference"
+               },
+               {
+                 icon: Gift,
+                 title: "Bonus Tools",
+                 description: "Free access to premium AI tools and software during the challenge"
+               }
+             ].map((item, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
@@ -415,32 +410,28 @@ const AIBusinessGrowthChallenge = () => {
                   <p className="text-gray-600">Complete Program</p>
                 </div>
 
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span className="text-gray-700">7 daily live training sessions</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span className="text-gray-700">AI tools and software access</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span className="text-gray-700">Resource library and templates</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span className="text-gray-700">Community support group</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span className="text-gray-700">Lifetime access to materials</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span className="text-gray-700">Completion certificate</span>
-                  </div>
-                </div>
+                                 <div className="space-y-4 mb-8">
+                   <div className="flex items-center gap-3">
+                     <CheckCircle className="h-5 w-5 text-green-600" />
+                     <span className="text-gray-700">7 daily live training sessions</span>
+                   </div>
+                   <div className="flex items-center gap-3">
+                     <CheckCircle className="h-5 w-5 text-green-600" />
+                     <span className="text-gray-700">AI tools and software access</span>
+                   </div>
+                   <div className="flex items-center gap-3">
+                     <CheckCircle className="h-5 w-5 text-green-600" />
+                     <span className="text-gray-700">Resource library and templates</span>
+                   </div>
+                   <div className="flex items-center gap-3">
+                     <CheckCircle className="h-5 w-5 text-green-600" />
+                     <span className="text-gray-700">Community support group</span>
+                   </div>
+                   <div className="flex items-center gap-3">
+                     <CheckCircle className="h-5 w-5 text-green-600" />
+                     <span className="text-gray-700">Lifetime access to materials</span>
+                   </div>
+                 </div>
 
                                  <Button 
                    asChild 

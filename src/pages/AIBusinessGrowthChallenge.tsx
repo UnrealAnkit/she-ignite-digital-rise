@@ -67,11 +67,11 @@ const AIBusinessGrowthChallenge = () => {
             </motion.div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
-              7-Day AI + Business Growth Challenge
+              7-DAY AI + SMART TOOLS CHALLENGE
             </h1>
             
             <p className="text-2xl md:text-3xl font-semibold text-red-400 mb-4" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}}>
-              Transform Your Business with AI & Smart Tools
+              Turn AI into your 24/7 business assistant
             </p>
             
             <p className="text-lg text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}}>
@@ -132,17 +132,17 @@ const AIBusinessGrowthChallenge = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <Button 
-                asChild 
-                size="xl" 
-                className="bg-red-600 hover:bg-red-700 text-white px-12 py-6 rounded-2xl text-xl font-semibold shadow-2xl"
-              >
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <Rocket className="h-6 w-6 mr-3" />
-                  Join the Challenge Now
-                  <ArrowRight className="h-6 w-6 ml-3" />
-                </a>
-              </Button>
+                             <Button 
+                 asChild 
+                 size="xl" 
+                 className="bg-red-600 hover:bg-red-700 text-white px-12 py-6 rounded-2xl text-xl font-semibold shadow-2xl"
+               >
+                 <a href="https://rzp.io/rzp/ORa3YJnr" target="_blank" rel="noopener noreferrer">
+                   <Rocket className="h-6 w-6 mr-3" />
+                   Join the Challenge Now
+                   <ArrowRight className="h-6 w-6 ml-3" />
+                 </a>
+               </Button>
             </motion.div>
             
             <p className="text-sm text-white/90 mt-4" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}}>
@@ -186,25 +186,25 @@ const AIBusinessGrowthChallenge = () => {
                   </div>
                   
                   <div className="md:col-span-2">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">Rachna</h3>
-                    <p className="text-lg text-red-600 font-semibold mb-4">AI Business Growth Expert | SHELeadsIndia</p>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">Rachana Upadhyay</h3>
+                    <p className="text-lg text-red-600 font-semibold mb-4">Google & Microsoft Certified | International Trainer</p>
                     
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center gap-3">
                         <Award className="h-5 w-5 text-red-600" />
-                        <span className="text-gray-700">10+ years in business growth & AI implementation</span>
+                        <span className="text-gray-700">Google & Microsoft Certified AI Specialist</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <Users className="h-5 w-5 text-red-600" />
-                        <span className="text-gray-700">Helped 500+ women entrepreneurs scale their businesses</span>
+                        <span className="text-gray-700">International Trainer with 10+ years experience</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <Brain className="h-5 w-5 text-red-600" />
-                        <span className="text-gray-700">Certified AI tools specialist & automation expert</span>
+                        <span className="text-gray-700">Expert in AI tools & business automation</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <Trophy className="h-5 w-5 text-red-600" />
-                        <span className="text-gray-700">Multiple business growth awards & recognition</span>
+                        <span className="text-gray-700">Helped 500+ women entrepreneurs scale their businesses</span>
                       </div>
                     </div>
                     
@@ -246,45 +246,45 @@ const AIBusinessGrowthChallenge = () => {
             {[
               {
                 day: "Day 1",
-                title: "AI Foundation & Business Assessment",
+                title: "AI Essentials & Setting Up Your AI Agent",
                 icon: Brain,
-                description: "Understand AI basics and assess your current business processes for automation opportunities."
+                description: "Understanding AI in business, overview of Google Gemini, Microsoft Copilot, and ChatGPT. Setting up your first AI workspace & accounts. Outcome: Your personal AI agent ready to take commands."
               },
               {
                 day: "Day 2", 
-                title: "Content Creation with AI",
-                icon: BookOpen,
-                description: "Learn to create engaging content faster using AI tools for social media and marketing."
+                title: "Automating Daily Tasks",
+                icon: Zap,
+                description: "AI tools to schedule posts, reply to FAQs, and draft documents. Introduction to simple automation workflows (Pabbly/Zapier/n8n). Outcome: 1 automation that saves you at least 1 hour daily."
               },
               {
                 day: "Day 3",
-                title: "Customer Service Automation",
-                icon: Users,
-                description: "Automate customer interactions and improve response times with smart tools."
+                title: "Smarter Content Creation",
+                icon: BookOpen,
+                description: "Using AI for blogs, social media captions, newsletters. Prompt engineering for business tone & brand voice. Outcome: A week's worth of AI-generated, brand-aligned content."
               },
               {
                 day: "Day 4",
-                title: "Sales & Lead Generation",
+                title: "AI for Marketing & Lead Generation",
                 icon: TrendingUp,
-                description: "Use AI to identify prospects and automate your sales process for better results."
+                description: "AI tools for ad copy, audience targeting & Instagram growth. Setting up automated lead capture forms. Outcome: 1 live lead capture system linked to your WhatsApp/Email."
               },
               {
                 day: "Day 5",
-                title: "Data Analysis & Insights",
+                title: "AI for Decision Making & Analytics",
                 icon: Target,
-                description: "Learn to analyze business data and make informed decisions using AI insights."
+                description: "Turning raw data into insights with AI (Google Sheets + AI, Excel Copilot). Simple dashboards for tracking sales & engagement. Outcome: A visual dashboard showing your key business metrics."
               },
               {
                 day: "Day 6",
-                title: "Process Automation",
-                icon: Zap,
-                description: "Automate repetitive tasks and workflows to save time and reduce errors."
+                title: "AI for Design & Visual Branding",
+                icon: Palette,
+                description: "Canva Magic Studio: create brand-consistent posts, presentations, and reels. AI image generation for ads & campaigns. Outcome: 3 ready-to-use marketing visuals for your business."
               },
               {
                 day: "Day 7",
-                title: "Growth Strategy & Implementation",
+                title: "Your AI-Powered Business Blueprint",
                 icon: Rocket,
-                description: "Create your personalized AI-powered growth strategy and implementation plan."
+                description: "Combining all tools into one system. Time-saving hacks for running your business 24/7 with AI. Q&A + Certification. Outcome: A personalised 30-day AI action plan."
               }
             ].map((item, index) => (
               <motion.div
@@ -339,7 +339,7 @@ const AIBusinessGrowthChallenge = () => {
               {
                 icon: CalendarDays,
                 title: "7 Daily Live Sessions",
-                description: "Interactive sessions with Rachna covering each day's topic and Q&A"
+                description: "1 hour daily live sessions on Zoom with hands-on tasks and Q&A"
               },
               {
                 icon: BookOpen,
@@ -442,17 +442,17 @@ const AIBusinessGrowthChallenge = () => {
                   </div>
                 </div>
 
-                <Button 
-                  asChild 
-                  size="xl" 
-                  className="w-full bg-red-600 hover:bg-red-700 text-white py-6 text-lg font-semibold rounded-xl shadow-lg"
-                >
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <Rocket className="h-6 w-6 mr-3" />
-                    Join the Challenge Now
-                    <ArrowRight className="h-6 w-6 ml-3" />
-                  </a>
-                </Button>
+                                 <Button 
+                   asChild 
+                   size="xl" 
+                   className="w-full bg-red-600 hover:bg-red-700 text-white py-6 text-lg font-semibold rounded-xl shadow-lg"
+                 >
+                   <a href="https://rzp.io/rzp/ORa3YJnr" target="_blank" rel="noopener noreferrer">
+                     <Rocket className="h-6 w-6 mr-3" />
+                     Join the Challenge Now
+                     <ArrowRight className="h-6 w-6 ml-3" />
+                   </a>
+                 </Button>
 
                 <p className="text-sm text-gray-500 text-center mt-4">
                   ⚡ Limited spots available. Join 50+ women entrepreneurs!
@@ -550,17 +550,17 @@ const AIBusinessGrowthChallenge = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <Button 
-                asChild 
-                size="xl" 
-                className="bg-white text-red-600 hover:bg-gray-100 px-12 py-6 rounded-2xl text-xl font-semibold shadow-2xl"
-              >
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <Rocket className="h-6 w-6 mr-3" />
-                  Secure Your Spot Now
-                  <ArrowRight className="h-6 w-6 ml-3" />
-                </a>
-              </Button>
+                             <Button 
+                 asChild 
+                 size="xl" 
+                 className="bg-white text-red-600 hover:bg-gray-100 px-12 py-6 rounded-2xl text-xl font-semibold shadow-2xl"
+               >
+                 <a href="https://rzp.io/rzp/ORa3YJnr" target="_blank" rel="noopener noreferrer">
+                   <Rocket className="h-6 w-6 mr-3" />
+                   Secure Your Spot Now
+                   <ArrowRight className="h-6 w-6 ml-3" />
+                 </a>
+               </Button>
             </motion.div>
 
             <p className="text-sm text-red-100 mt-6">

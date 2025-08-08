@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Users, DollarSign, Clock, CheckCircle, Star, ArrowRight, Play, Sparkles, Zap, Target, Award, Coffee, Heart, Users as UsersIcon, BookOpen, Lightbulb, Phone, Video, Brain, TrendingUp, Rocket, Shield, Gift, Trophy, CalendarDays } from "lucide-react";
+import { Calendar, MapPin, Users, DollarSign, Clock, CheckCircle, Star, ArrowRight, Play, Sparkles, Zap, Target, Award, Coffee, Heart, Users as UsersIcon, BookOpen, Lightbulb, Phone, Video, Brain, TrendingUp, Rocket, Shield, Gift, Trophy, CalendarDays, Palette } from "lucide-react";
 import { motion } from "framer-motion";
 
 const AIBusinessGrowthChallenge = () => {

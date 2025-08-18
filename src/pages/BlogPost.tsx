@@ -12,7 +12,7 @@ const BlogPost = () => {
   const navigate = useNavigate();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
-
+c
   useEffect(() => {
     if (slug) {
       fetchBlogPostById(slug)

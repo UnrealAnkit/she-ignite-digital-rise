@@ -10,6 +10,7 @@ export interface Training {
   end_time?: string;
   location: string;
   image_url?: string;
+  page_link?: string;
   level: 'Beginner' | 'Intermediate' | 'Advanced';
   duration: string;
   max_participants: number;

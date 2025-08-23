@@ -54,6 +54,7 @@ const emptyTrainingForm = {
   end_time: "",
   location: "",
   image_url: "",
+  page_link: "",
   level: "Beginner" as const,
   duration: "",
   max_participants: 50,
@@ -1523,6 +1524,19 @@ export default function AdminPanel() {
                       <p className="text-xs text-gray-500">Enter the payment gateway link (e.g., Razorpay, Stripe, etc.)</p>
                     </div>
                     
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-gray-700">Page Link</label>
+                      <input 
+                        name="page_link" 
+                        type="url" 
+                        value={trainingForm.page_link} 
+                        onChange={handleTrainingChange} 
+                        placeholder="https://yourdomain.com/training-page" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
+                      />
+                      <p className="text-xs text-gray-500">Enter the direct link to the training page (e.g., /canva-ai-workshop, /co-pilot-ai-training)</p>
+                    </div>
+                    
                     <div className="flex items-center gap-6">
                       <div className="flex items-center gap-3">
                         <input 
@@ -1646,6 +1660,19 @@ export default function AdminPanel() {
                                   <MapPin className="h-3 w-3" />
                                   {training.location}
                                 </span>
+                                {training.page_link && (
+                                  <span className="flex items-center gap-1">
+                                    <Link className="h-3 w-3" />
+                                    <a 
+                                      href={training.page_link} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="text-blue-600 hover:text-blue-800 underline"
+                                    >
+                                      View Page
+                                    </a>
+                                  </span>
+                                )}
                               </div>
                             </div>
                             <div className="flex gap-2">

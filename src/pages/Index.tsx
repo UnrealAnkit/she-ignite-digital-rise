@@ -38,6 +38,12 @@ const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   
+  // Reset carousel to first slide on component mount
+  useEffect(() => {
+    setCurrentSlide(0);
+    setIsPlaying(false);
+  }, []);
+  
   // Media carousel state
   const [mediaCurrentSlide, setMediaCurrentSlide] = useState(0);
   const [isMediaAutoPlaying, setIsMediaAutoPlaying] = useState(true);
@@ -51,31 +57,31 @@ const Index = () => {
   const podcastEpisodes = [
     {
       id: 1,
+      title: "Honestly, this is the first time on my channel | SHELeads India",
+      description: "Join us for an honest and heartfelt conversation that marks a special milestone in our journey. Authentic stories and genuine moments await.",
+      embedUrl: "https://www.youtube.com/embed/uXGIDq-WhJ0",
+      thumbnail: "https://img.youtube.com/vi/uXGIDq-WhJ0/maxresdefault.jpg"
+    },
+    {
+      id: 2,
       title: "From Atta Chakki to Shark Tank | SHELeads India",
       description: "Sangeeta dives into the ups and downs of entrepreneurship, her experience pitching on a national platform, and the lessons she's learned along the way.",
       embedUrl: "https://www.youtube.com/embed/CfQk2FaS68A",
       thumbnail: "https://img.youtube.com/vi/CfQk2FaS68A/maxresdefault.jpg"
     },
     {
-      id: 2,
+      id: 3,
       title: "Inspiring journey of a makeup artist | SHELeads India", 
       description: "This episode is a must-watch for anyone seeking inspiration, insights, or the motivation to carve their own path!",
       embedUrl: "https://www.youtube.com/embed/Cjtxwlz4uUI",
       thumbnail: "https://img.youtube.com/vi/Cjtxwlz4uUI/maxresdefault.jpg"
     },
     {
-      id: 3,
+      id: 4,
       title: "The twenty year old solopreneur | SHELeads India",
       description: "Meet an inspiring young entrepreneur who's building her empire at just twenty years old. Discover her secrets to success.",
       embedUrl: "https://www.youtube.com/embed/tZxTcIwGpTA",
       thumbnail: "https://img.youtube.com/vi/tZxTcIwGpTA/maxresdefault.jpg"
-    },
-    {
-      id: 4,
-      title: "Her Legacy: A Lawyer's Impact on RERA and Entrepreneurship | SHELeads India",
-      description: "Meet Adv. Amruta Salunke: Lawyer, RERA Expert, and Women Entrepreneur. A remarkable journey in a male-dominated industry.",
-      embedUrl: "https://www.youtube.com/embed/bsgUGK9pQ6U",
-      thumbnail: "https://img.youtube.com/vi/bsgUGK9pQ6U/maxresdefault.jpg"
     }
   ];
 
@@ -122,7 +128,7 @@ const Index = () => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % podcastEpisodes.length);
       setIsPlaying(false); // Reset play state when slide changes
-    }, 3000); // 3 seconds per slide
+    }, 5000); // 5 seconds per slide for better viewing
     
     return () => clearInterval(timer);
   }, [podcastEpisodes.length]);
@@ -221,27 +227,37 @@ const Index = () => {
     }
   };
 
-  // Podcast slide animation variants
+  // Podcast slide animation variants - Improved smooth transitions
   const slideVariants = {
     enter: {
-      scale: 0.95,
+      x: 300,
       opacity: 0,
+      scale: 0.8,
+      rotateY: 15
     },
     center: {
-      scale: 1,
+      x: 0,
       opacity: 1,
+      scale: 1,
+      rotateY: 0,
       transition: {
         type: "spring" as const,
-        stiffness: 200,
-        damping: 25,
-        opacity: { duration: 0.4 }
+        stiffness: 300,
+        damping: 30,
+        opacity: { duration: 0.6, ease: "easeOut" },
+        scale: { duration: 0.5, ease: "easeOut" },
+        x: { duration: 0.7, ease: "easeOut" },
+        rotateY: { duration: 0.6, ease: "easeOut" }
       }
     },
     exit: {
-      scale: 0.95,
+      x: -300,
       opacity: 0,
+      scale: 0.8,
+      rotateY: -15,
       transition: {
-        duration: 0.3
+        duration: 0.5,
+        ease: "easeInOut"
       }
     }
   };
@@ -1438,139 +1454,227 @@ const Index = () => {
 
       {/* Podcast Section */}
       <motion.section 
-        className="py-20 bg-background"
+        className="py-24 bg-gradient-to-br from-gray-50 via-white to-red-50 relative overflow-hidden"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-10%" }}
         variants={fadeInUp}
       >
-        <div className="container mx-auto px-4">
-          <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(230, 0, 35, 0.1)' }}>
-                <Mic className="h-8 w-8" style={{ color: '#E60023' }} />
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
               </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div className="text-center mb-20" variants={fadeInUp}>
+            <motion.div 
+              className="flex justify-center mb-8"
+              initial={{ scale: 0, rotate: -180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-red-500/20 rounded-full animate-pulse"></div>
+                <div className="relative w-20 h-20 bg-gradient-to-r from-primary to-red-500 rounded-full flex items-center justify-center shadow-2xl">
+                  <Mic className="h-10 w-10 text-white" />
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Heartfelt Conversations – 
-              <span className="block text-primary">Voices That Inspire</span>
+              </div>
+            </motion.div>
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+              Heartfelt Conversations
+              <span className="block bg-gradient-to-r from-primary via-red-500 to-pink-500 bg-clip-text text-transparent">
+                Voices That Inspire
+              </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               Listen to the authentic stories of Indian women entrepreneurs who turned their dreams into reality. 
+              <span className="block mt-2 text-lg text-gray-600">
               Real journeys, genuine struggles, and beautiful victories that will touch your heart and fuel your courage.
+              </span>
             </p>
           </motion.div>
 
           {/* Video Carousel */}
           <motion.div 
-            className="relative max-w-lg mx-auto mb-12"
+            className="relative max-w-2xl mx-auto mb-12"
             variants={fadeInUp}
           >
-            {/* Animated Video Container */}
+                        {/* Simple Video Container */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
-                className="relative rounded-3xl overflow-hidden shadow-2xl bg-background"
+                className="relative"
                 variants={slideVariants}
                 initial="enter"
                 animate="center"
                 exit="exit"
               >
-                <div 
-                  className="aspect-video relative bg-cover bg-center bg-no-repeat rounded-t-3xl overflow-hidden cursor-pointer"
-                  style={{ 
-                    backgroundImage: `url(${podcastEpisodes[currentSlide].thumbnail})` 
-                  }}
-                  onClick={handlePlayClick}
-                >
-                  {/* Show iframe only when playing */}
-                  {isPlaying ? (
-                    <iframe
-                      src={`${podcastEpisodes[currentSlide].embedUrl}?autoplay=1`}
-                      title={podcastEpisodes[currentSlide].title}
-                      className="w-full h-full absolute inset-0"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  ) : (
-                    /* Play button overlay */
-                    <motion.div 
-                      className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
+                {/* Clean rectangular video card */}
+                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                  <div 
+                    className="aspect-video relative bg-cover bg-center bg-no-repeat cursor-pointer hover:opacity-95 transition-opacity duration-300"
+                    style={{ 
+                      backgroundImage: `url(${podcastEpisodes[currentSlide].thumbnail})`
+                    }}
+                    onClick={handlePlayClick}
+                  >
+                      {/* Gradient overlay for better text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
+                      
+                                      {/* Show iframe only when playing */}
+                    {isPlaying ? (
+                      <iframe
+                        src={`${podcastEpisodes[currentSlide].embedUrl}?autoplay=1`}
+                        title={podcastEpisodes[currentSlide].title}
+                        className="w-full h-full absolute inset-0"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    ) : (
+                      /* Simple play button overlay */
                       <motion.div 
-                        className="w-20 h-20 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg"
-                        whileHover={{ scale: 1.1 }}
+                        className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors"
+                        whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <Play className="h-8 w-8 text-primary ml-1" fill="currentColor" />
+                        <div className="w-16 h-16 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg">
+                          <Play className="h-6 w-6 text-primary ml-1" fill="currentColor" />
+                        </div>
                       </motion.div>
-                    </motion.div>
-                  )}
-                </div>
+                    )}
+                                          
+                    {/* Episode Counter */}
+                    <div className="absolute top-3 right-3 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {currentSlide + 1} / {podcastEpisodes.length}
+                    </div>
+                    
+                    {/* New indicator for first episode */}
+                    {currentSlide === 0 && (
+                      <div className="absolute top-3 left-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                        NEW
+                      </div>
+                    )}
+                  </div>
                 
-                {/* Video Info */}
-                <motion.div 
-                  className="p-4 bg-background"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1, duration: 0.3 }}
-                >
-                  <h3 className="text-lg font-bold mb-2 line-clamp-2">
-                    {podcastEpisodes[currentSlide].title}
-                  </h3>
-                  <p className="text-gray-600 text-sm line-clamp-2">
-                    {podcastEpisodes[currentSlide].description}
-                  </p>
-                </motion.div>
-
-                {/* Episode Counter */}
-                <motion.div 
-                  className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.15, duration: 0.3 }}
-                >
-                  {currentSlide + 1} / {podcastEpisodes.length}
-                </motion.div>
+                                      
+                  {/* Video Info */}
+                  <div className="p-4 bg-white">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex-1">
+                        <h3 className="text-base font-bold mb-2 text-gray-900 leading-tight">
+                          {podcastEpisodes[currentSlide].title}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                          {podcastEpisodes[currentSlide].description}
+                        </p>
+                      </div>
+                      
+                      {/* Play button */}
+                      <button
+                        className="px-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center gap-2 flex-shrink-0"
+                        onClick={handlePlayClick}
+                      >
+                        <Play className="h-4 w-4" fill="currentColor" />
+                        Play
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </AnimatePresence>
 
-            {/* Dots Navigation */}
-            <div className="flex justify-center mt-6 space-x-1">
-              {podcastEpisodes.map((_, index) => (
-                <motion.button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                    currentSlide === index 
-                      ? 'bg-primary scale-110' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              ))}
+                        {/* Compact Navigation */}
+            <div className="flex items-center justify-center mt-8 gap-4">
+              {/* Previous button */}
+              <motion.button
+                onClick={prevSlide}
+                className="w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-all duration-300 border border-gray-200"
+                whileHover={{ scale: 1.1, x: -1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <ChevronLeft className="h-4 w-4 text-gray-600" />
+              </motion.button>
+              
+              {/* Compact Dots Navigation */}
+              <div className="flex space-x-2">
+                {podcastEpisodes.map((_, index) => (
+                  <motion.button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`transition-all duration-300 ${
+                      currentSlide === index 
+                        ? 'w-8 h-2 bg-gradient-to-r from-primary to-red-500 rounded-full' 
+                        : 'w-2 h-2 bg-gray-300 hover:bg-gray-400 rounded-full'
+                    }`}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                ))}
+              </div>
+              
+              {/* Next button */}
+              <motion.button
+                onClick={nextSlide}
+                className="w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-all duration-300 border border-gray-200"
+                whileHover={{ scale: 1.1, x: 1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <ChevronRight className="h-4 w-4 text-gray-600" />
+              </motion.button>
             </div>
 
           </motion.div>
 
-          {/* CTA to Full Podcast Page */}
-          <motion.div className="text-center" variants={fadeInUp}>
+          {/* Enhanced CTA to Full Podcast Page */}
+          <motion.div className="text-center mt-20" variants={fadeInUp}>
+            <div className="relative">
+              {/* Background decoration */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-red-500/5 to-pink-500/5 rounded-3xl blur-xl"></div>
+              
+              <motion.div 
+                className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-white/20"
+                whileHover={{ scale: 1.02, y: -5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="space-y-6">
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                    className="inline-block"
+                  >
+                    <div className="w-16 h-16 bg-gradient-to-r from-primary to-red-500 rounded-full flex items-center justify-center shadow-lg">
+                      <Mic className="h-8 w-8 text-white" />
+                    </div>
+                  </motion.div>
+                  
+                  <div className="space-y-4">
+                    <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+                      Ready for More Inspiration?
+                    </h3>
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                      Dive deeper into our complete collection of heartfelt conversations with women entrepreneurs 
+                      who are reshaping the future of business.
+                    </p>
+                  </div>
+                  
             <motion.div
               whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
-              <Button asChild variant="hero" size="xl" className="group">
+                    <Button asChild size="xl" className="bg-gradient-to-r from-primary to-red-500 hover:from-primary/90 hover:to-red-500/90 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group">
                 <Link to="/podcast">
                   <Mic className="h-5 w-5 mr-2" />
                   Explore All Episodes
-                  <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </Link>
               </Button>
             </motion.div>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </motion.section>
@@ -1740,129 +1844,76 @@ const Index = () => {
         </div>
       </motion.section>
 
-      {/* Media Coverage & Recognition */}
+      {/* Media Coverage & Recognition - Compact */}
       <motion.section 
-        className="py-20 bg-gray-50"
+        className="py-12 bg-gray-50"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-10%" }}
         variants={fadeInUp}
       >
         <div className="container mx-auto px-4">
-          <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Media Coverage & Recognition
+          <motion.div className="text-center mb-8" variants={fadeInUp}>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">
+              Media Coverage
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our work has been recognized by leading publications and organizations 
-              across India.
+            <p className="text-sm text-gray-600 max-w-xl mx-auto">
+              Featured in leading publications across India
             </p>
           </motion.div>
 
-          {/* Media Carousel */}
+          {/* Compact Media Grid */}
           <motion.div 
             className="relative"
             variants={fadeInUp}
-            onMouseEnter={() => setIsMediaAutoPlaying(false)}
-            onMouseLeave={() => setIsMediaAutoPlaying(true)}
           >
-            {/* Carousel Content */}
-            <div className="overflow-visible py-8">
-              <div className="flex transition-transform duration-500 ease-in-out">
-                {/* Desktop View - 3 items */}
-                <div className="hidden lg:flex w-full gap-8 items-center justify-center">
-                  {getVisibleMediaItems().map((publication, index) => (
-                    <motion.a 
-                      key={`${mediaCurrentSlide}-${index}`}
-                      href={publication.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-white p-6 rounded-2xl text-center shadow-md hover:shadow-xl transition-all duration-300 block group border border-gray-100 hover:border-primary/30"
-                      style={index === 1 ? {
-                        animation: 'popupSubtle 3s ease-in-out infinite'
-                      } : {}}
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="flex flex-col items-center justify-center h-full">
-                        <div className="w-full h-20 mb-4 flex items-center justify-center">
-                          <img 
-                            src={publication.logo} 
-                            alt={publication.name}
-                            className="max-w-full max-h-full object-contain transition-all duration-300 group-hover:scale-105"
-                          />
-                        </div>
-                        <div className={`font-medium text-sm transition-colors duration-300 ${
-                          index === 1 ? 'text-primary' : 'text-gray-600 group-hover:text-primary'
-                        }`}>
-                          {publication.name}
-                        </div>
-                      </div>
-                    </motion.a>
-                  ))}
-                </div>
-
-                {/* Mobile/Tablet View - 1 item */}
-                <div className="lg:hidden flex justify-center w-full py-4">
-                  {[mediaFeatures[mediaCurrentSlide]].map((publication, index) => (
-                    <motion.a 
-                      key={`mobile-${mediaCurrentSlide}-${index}`}
-                      href={publication.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="bg-white p-6 rounded-2xl text-center shadow-md hover:shadow-xl transition-all duration-300 block group border border-gray-100 hover:border-primary/30 max-w-md w-full"
-                      style={{
-                        animation: 'popupSubtle 3s ease-in-out infinite'
-                      }}
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="flex flex-col items-center justify-center h-full">
-                        <div className="w-full h-20 mb-4 flex items-center justify-center">
-                          <img 
-                            src={publication.logo} 
-                            alt={publication.name}
-                            className="max-w-full max-h-full object-contain transition-all duration-300 group-hover:scale-105"
-                          />
-                        </div>
-                        <div className="font-medium text-sm text-primary transition-colors duration-300">
-                          {publication.name}
-                        </div>
-                      </div>
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevMediaSlide}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all duration-300"
-            >
-              <ChevronLeft className="h-4 w-4 text-gray-600" />
-            </button>
-            <button
-              onClick={nextMediaSlide}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all duration-300"
-            >
-              <ChevronRight className="h-4 w-4 text-gray-600" />
-            </button>
-
-            {/* Carousel Dots */}
-            <div className="flex justify-center mt-6 space-x-2">
-              {mediaFeatures.map((_, index) => (
-                <button
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-6">
+              {mediaFeatures.map((publication, index) => (
+                <motion.a 
                   key={index}
-                  onClick={() => goToMediaSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === mediaCurrentSlide 
-                      ? 'bg-primary scale-125' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
+                  href={publication.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group relative"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05, duration: 0.3 }}
+                  whileHover={{ y: -2, scale: 1.05 }}
+                >
+                  <div className="bg-white p-2 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-primary/20">
+                    <div className="flex flex-col items-center text-center">
+                      <div className="w-full h-6 mb-1 flex items-center justify-center overflow-hidden">
+                        <img 
+                          src={publication.logo} 
+                          alt={publication.name}
+                          className="max-w-full max-h-full object-contain transition-all duration-300 group-hover:scale-110 filter grayscale-[50%] group-hover:grayscale-0"
+                        />
+                      </div>
+                      <div className="font-medium text-[9px] text-gray-500 group-hover:text-primary transition-colors duration-300 line-clamp-1 leading-tight">
+                        {publication.name}
+                      </div>
+                    </div>
+                  </div>
+                </motion.a>
               ))}
             </div>
+
+            {/* Simple trust indicator */}
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.4 }}
+            >
+              <div className="inline-flex items-center gap-1 px-3 py-1 bg-white rounded-full shadow-sm border border-gray-200">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-2.5 w-2.5 text-yellow-400" fill="currentColor" />
+                  ))}
+                </div>
+                <span className="text-xs font-medium text-gray-600">Trusted by media</span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>

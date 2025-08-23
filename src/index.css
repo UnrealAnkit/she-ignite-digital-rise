@@ -126,6 +126,38 @@ All colors MUST be HSL.
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Enhanced 3D animations for podcast carousel */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  /* Smooth video carousel transitions */
+  .video-carousel-container {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .video-slide-enter {
+    transform: translateX(100%) rotateY(45deg) scale(0.8);
+    opacity: 0;
+  }
+  
+  .video-slide-active {
+    transform: translateX(0) rotateY(0deg) scale(1);
+    opacity: 1;
+    transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  .video-slide-exit {
+    transform: translateX(-100%) rotateY(-45deg) scale(0.8);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
 }
 
 @keyframes progress {

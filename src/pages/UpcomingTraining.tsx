@@ -3,7 +3,7 @@ import { fetchTrainings, Training } from "@/lib/trainingService";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Users, Clock, BookOpen, Award, Target, Brain, Zap, TrendingUp, CheckCircle, Star } from "lucide-react";
+import { Calendar, MapPin, Users, Clock, BookOpen, Award, Target, Brain, Zap, TrendingUp, CheckCircle, Star, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -416,6 +416,23 @@ export default function UpcomingTraining() {
                                 <Link to={`/training/${training.id}/register`}>
                                   Register Now
                                 </Link>
+                              </Button>
+                            )}
+                            {training.page_link && (
+                              <Button 
+                                asChild 
+                                size="sm" 
+                                variant="outline" 
+                                className="h-14 md:h-12 px-4 rounded-2xl border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 backdrop-blur-sm min-h-[56px]"
+                                title="View Detailed Page"
+                              >
+                                <a 
+                                  href={training.page_link} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                >
+                                  <ExternalLink className="h-4 w-4" />
+                                </a>
                               </Button>
                             )}
                           </div>

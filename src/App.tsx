@@ -27,6 +27,7 @@ import EventsGallery from "./pages/EventsGallery";
 import CanvaAIWorkshop from "./pages/CanvaAIWorkshop";
 import CoPilotAITraining from "./pages/CoPilotAITraining";
 import AIBusinessGrowthChallenge from "./pages/AIBusinessGrowthChallenge";
+import PowerPointTraining from "./pages/PowerPointTraining";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Content from "./pages/Content";
@@ -71,6 +72,7 @@ const App = () => {
             <Route path="/canva-ai-workshop" element={<CanvaAIWorkshop />} />
             <Route path="/co-pilot-ai-training" element={<CoPilotAITraining />} />
             <Route path="/ai-business-growth-challenge" element={<AIBusinessGrowthChallenge />} />
+            <Route path="/powerpoint-training" element={<PowerPointTraining />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/content" element={<Content />} />

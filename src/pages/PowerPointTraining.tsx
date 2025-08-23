@@ -118,7 +118,7 @@ const PowerPointTraining = () => {
               >
                 <Calendar className="h-8 w-8 text-red-400 mb-3 mx-auto" />
                 <p className="font-semibold text-white">26th August 2025</p>
-                <p className="text-sm text-white/80">Monday</p>
+                <p className="text-sm text-white/80">Tuesday</p>
               </motion.div>
               
               <motion.div 

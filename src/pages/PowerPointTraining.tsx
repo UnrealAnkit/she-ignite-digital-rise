@@ -126,16 +126,6 @@ const PowerPointTraining = () => {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.02, y: -2 }}
               >
-                <Clock className="h-8 w-8 text-red-400 mb-3 mx-auto" />
-                <p className="font-semibold text-white">1 Hour</p>
-                <p className="text-sm text-white/80">Intensive Training</p>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:border-red-300 transition-all duration-300"
-                variants={fadeInUp}
-                whileHover={{ scale: 1.02, y: -2 }}
-              >
                 <Video className="h-8 w-8 text-red-400 mb-3 mx-auto" />
                 <p className="font-semibold text-white">Live on Zoom</p>
                 <p className="text-sm text-white/80">Virtual Training</p>

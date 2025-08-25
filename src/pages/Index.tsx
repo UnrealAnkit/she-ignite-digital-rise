@@ -149,7 +149,13 @@ const Index = () => {
   };
 
   const handlePlayClick = () => {
-    setIsPlaying(true);
+    // Get the current episode's embed URL and convert it to a regular YouTube URL
+    const currentEpisode = podcastEpisodes[currentSlide];
+    const videoId = currentEpisode.embedUrl.split('/').pop(); // Extract video ID from embed URL
+    const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    
+    // Open YouTube video in a new tab
+    window.open(youtubeUrl, '_blank', 'noopener,noreferrer');
   };
 
   // Media carousel auto-rotation

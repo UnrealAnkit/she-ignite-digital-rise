@@ -289,6 +289,124 @@ const SHELeadsIndiaLaunch = () => {
         </div>
       </section>
 
+      {/* Event Gallery Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-red-600 mb-6">
+                Launch Event Gallery
+              </h2>
+              <p className="text-xl text-gray-700">
+                Capturing the memorable moments from our founding day
+              </p>
+            </motion.div>
+            
+            {/* Photo Gallery */}
+            <div className="space-y-8">
+              {/* First Row - Full width grid (4 photos) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-4"
+              >
+                <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img 
+                    src="/media/IMG-20231220-WA0021.jpg" 
+                    alt="SHELeadsIndia Launch Event" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img 
+                    src="/media/IMG-20231220-WA0004.jpg" 
+                    alt="SHELeadsIndia Launch Event" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img 
+                    src="/media/IMG-20231220-WA0003.jpg" 
+                    alt="SHELeadsIndia Launch Event" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img 
+                    src="/media/IMG-20231218-WA0013.jpg" 
+                    alt="SHELeadsIndia Launch Event" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Second Row - Centered grid (3 photos) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-5 gap-4"
+              >
+                <div className="md:col-start-2 aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img 
+                    src="/media/IMG_9942.JPG" 
+                    alt="SHELeadsIndia Launch Event" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img 
+                    src="/media/IMG_9149.JPG" 
+                    alt="SHELeadsIndia Launch Event" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img 
+                    src="/media/IMG_9143.JPG" 
+                    alt="SHELeadsIndia Launch Event" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Third Row - Bottom centered (2 large photos) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+              >
+                <div className="aspect-[4/3] overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img 
+                    src="/media/IMG_8929.JPG" 
+                    alt="SHELeadsIndia Launch Event" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="aspect-[4/3] overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img 
+                    src="/media/IMG_8918.JPG" 
+                    alt="SHELeadsIndia Launch Event" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* MCCIA Recognition Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">

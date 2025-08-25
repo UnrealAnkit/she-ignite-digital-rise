@@ -592,15 +592,15 @@ const EmpowerHer2024 = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
-                    9:00 AM – 10:00 AM
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">Open Networking and Breakfast</h3>
-                    <p className="text-gray-700">The event commenced with an energizing networking breakfast where 250+ women entrepreneurs connected over authentic conversations. The morning buzz was infectious as attendees from diverse industries shared their entrepreneurial stories, challenges, and victories while enjoying a wholesome breakfast spread. This informal setting broke the ice perfectly, setting the stage for meaningful connections that would last throughout the day.</p>
-                  </div>
-                </div>
+                                 <div className="flex flex-col md:flex-row md:items-start gap-4">
+                   <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold md:min-w-[180px] text-center">
+                     9:00 AM – 10:00 AM
+                   </div>
+                   <div className="flex-1">
+                     <h3 className="text-lg font-bold text-gray-900">Open Networking and Breakfast</h3>
+                     <p className="text-gray-700">The event commenced with an energizing networking breakfast where 250+ women entrepreneurs connected over authentic conversations. The morning buzz was infectious as attendees from diverse industries shared their entrepreneurial stories, challenges, and victories while enjoying a wholesome breakfast spread. This informal setting broke the ice perfectly, setting the stage for meaningful connections that would last throughout the day.</p>
+                   </div>
+                 </div>
               </motion.div>
 
               <motion.div
@@ -610,12 +610,12 @@ const EmpowerHer2024 = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
+                                 <div className="flex flex-col md:flex-row md:items-start gap-4">
+                                     <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold md:min-w-[180px] text-center">
                     10:00 AM – 10:30 AM
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">Opening Ceremony</h3>
+                                     <div className="flex-1">
+                     <h3 className="text-lg font-bold text-gray-900">Opening Ceremony</h3>
                     <p className="text-gray-700">The official inauguration marked the beginning of an extraordinary journey. Nikita Vora, Founder of SHELeadsIndia, delivered a powerful welcome address that resonated with every woman in the audience. She shared the compelling vision behind EmpowerHER 24 - to create a platform where women don't just learn, but scale, automate, and lead. The ceremony included a beautiful lamp lighting ceremony and an inspiring video montage showcasing the journey of women entrepreneurs, setting an emotional and motivational tone for the entire day.</p>
                   </div>
                 </div>
@@ -628,12 +628,12 @@ const EmpowerHer2024 = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
+                                 <div className="flex flex-col md:flex-row md:items-start gap-4">
+                                     <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold md:min-w-[180px] text-center">
                     10:30 AM – 11:30 AM
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">Keynote Address by Sahithi Divi</h3>
+                                     <div className="flex-1">
+                     <h3 className="text-lg font-bold text-gray-900">Keynote Address by Sahithi Divi</h3>
                     <p className="text-gray-700">Sahithi Divi, Forbes India 30 Under 30 honoree and social impact expert, delivered a soul-stirring keynote that left the audience captivated. She shared her remarkable journey from Hult Business School to becoming a leading voice in social entrepreneurship. Her address focused on "Building Businesses with Purpose" where she revealed how women entrepreneurs can create sustainable impact while scaling their ventures. The session was packed with real-world examples, practical frameworks, and her personal struggles and triumphs that resonated deeply with every attendee.</p>
                   </div>
                 </div>
@@ -646,12 +646,12 @@ const EmpowerHer2024 = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
+                                 <div className="flex flex-col md:flex-row md:items-start gap-4">
+                                     <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold md:min-w-[180px] text-center">
                     11:30 AM – 12:30 PM
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">Corporate Panel Discussion</h3>
+                                     <div className="flex-1">
+                     <h3 className="text-lg font-bold text-gray-900">Corporate Panel Discussion</h3>
                     <p className="text-gray-700">This high-energy panel brought together three powerhouse women from leading corporations - Anibha Athalye (AI Manager, Google Cloud), Kanchan Sonik (Program Manager, Tech Mahindra), and Deepti Khutal (VP International Operations, INVIDI). The discussion titled "AI & Tech Revolution: How Women Leaders Are Shaping Tomorrow" was moderated expertly and covered crucial topics like breaking the glass ceiling in tech, leveraging AI for business growth, and building inclusive corporate cultures. The audience was treated to insider insights, career pivoting strategies, and actionable advice on climbing the corporate ladder while maintaining authenticity.</p>
                   </div>
                 </div>
@@ -664,12 +664,12 @@ const EmpowerHer2024 = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
+                                 <div className="flex flex-col md:flex-row md:items-start gap-4">
+                                     <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold md:min-w-[180px] text-center">
                     1:00 PM – 2:00 PM
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">Lunch & Networking</h3>
+                                     <div className="flex-1">
+                     <h3 className="text-lg font-bold text-gray-900">Lunch & Networking</h3>
                     <p className="text-gray-700">The lunch break transformed into an extended networking powerhouse! Attendees savored a delectable spread of local Pune delicacies while the conversations from the morning sessions continued to flourish. Tables became informal boardrooms where partnerships were discussed, collaborations were planned, and mentor-mentee relationships were formed. The energy was palpable as women shared contact details, exchanged business cards, and made plans for future ventures. Many attendees later mentioned this as one of the most valuable parts of their day.</p>
                   </div>
                 </div>
@@ -682,12 +682,12 @@ const EmpowerHer2024 = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
+                                 <div className="flex flex-col md:flex-row md:items-start gap-4">
+                                     <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold md:min-w-[180px] text-center">
                     2:00 PM – 3:30 PM
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">Entrepreneurial Panel Discussion</h3>
+                                     <div className="flex-1">
+                     <h3 className="text-lg font-bold text-gray-900">Entrepreneurial Panel Discussion</h3>
                     <p className="text-gray-700">The afternoon panel "From Startup to Scale-up: Real Stories, Real Struggles" featured successful women entrepreneurs including Nancy Katyal, Nandita Khaire, Smita Yedekar, and Aparna Tandale. This brutally honest session dived deep into the unsexy side of entrepreneurship - the failures, the financial struggles, the family pressures, and the moments of self-doubt. But it was equally inspiring as these women shared their breakthrough moments, their pivot strategies, and the systems they built to scale their businesses. The audience was particularly engaged during the Q&A, with practical questions about funding, team building, and market expansion being addressed with refreshing candor.</p>
                   </div>
                 </div>
@@ -700,12 +700,12 @@ const EmpowerHer2024 = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
+                                 <div className="flex flex-col md:flex-row md:items-start gap-4">
+                                     <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold md:min-w-[180px] text-center">
                     3:30 PM - 4:15 PM
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">Masterclass by Harpreeth Suri</h3>
+                                     <div className="flex-1">
+                     <h3 className="text-lg font-bold text-gray-900">Masterclass by Harpreeth Suri</h3>
                     <p className="text-gray-700">Harpreeth Suri, the award-winning "Mom Influencer of the Year" by NDTV, delivered a game-changing masterclass on "Building Your Personal Brand in the Digital Age." As a TEDx speaker and digital content creator, she shared the exact strategies that helped her build a massive following of 619k+ on Instagram. The session was incredibly practical, covering content creation frameworks, audience engagement tactics, brand collaboration strategies, and monetization methods. Attendees walked away with a 90-day personal branding action plan and exclusive access to her content creation templates. The session was so engaging that it ran over time due to the incredible Q&A session!</p>
                   </div>
                 </div>
@@ -718,12 +718,12 @@ const EmpowerHer2024 = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
+                                 <div className="flex flex-col md:flex-row md:items-start gap-4">
+                                     <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold md:min-w-[180px] text-center">
                     4:15 PM - 5:00 PM
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">Hi-Tea & Wellness Break</h3>
+                                     <div className="flex-1">
+                     <h3 className="text-lg font-bold text-gray-900">Hi-Tea & Wellness Break</h3>
                     <p className="text-gray-700">This refreshing break featured an elegant hi-tea setup with artisanal teas, fresh pastries, and healthy snacks. But it was more than just refreshments - it included a surprise 15-minute guided meditation session led by Dr. Sania Siddiqui, focusing on mental wellness for entrepreneurs. The combination of mindful breathing, networking conversations, and delicious treats provided the perfect rejuvenation needed before the final high-energy sessions. Many attendees described this as an unexpected highlight that helped them center themselves and absorb the learnings from the day.</p>
                   </div>
                 </div>
@@ -736,12 +736,12 @@ const EmpowerHer2024 = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
+                                 <div className="flex flex-col md:flex-row md:items-start gap-4">
+                                     <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold md:min-w-[180px] text-center">
                     5:00 PM - 6:30 PM
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">Grand Networking Mixer</h3>
+                                     <div className="flex-1">
+                     <h3 className="text-lg font-bold text-gray-900">Grand Networking Mixer</h3>
                     <p className="text-gray-700">The evening culminated in an electrifying networking mixer that was part celebration, part business expo. The venue was transformed with vibrant décor, ambient lighting, and dedicated networking zones for different industries. Attendees participated in structured networking activities including "Speed Networking" rounds, "Collaboration Matchmaking" sessions, and "Pitch Your Idea in 60 Seconds" challenges. The energy was infectious as business cards flew, WhatsApp groups were formed, and several on-the-spot collaborations were announced. Live music added to the festive atmosphere while the photo booth captured memories of new friendships and business partnerships being forged.</p>
                   </div>
                 </div>
@@ -754,12 +754,12 @@ const EmpowerHer2024 = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
+                                 <div className="flex flex-col md:flex-row md:items-start gap-4">
+                                     <div className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold md:min-w-[180px] text-center">
                     6:30 PM Onwards
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">Closing Ceremony & Future Vision</h3>
+                                     <div className="flex-1">
+                     <h3 className="text-lg font-bold text-gray-900">Closing Ceremony & Future Vision</h3>
                     <p className="text-gray-700">The event concluded with an emotional closing ceremony that celebrated the incredible day's journey. Nikita Vora delivered a heartfelt vote of thanks, acknowledging every speaker, partner, and participant who made EmpowerHER 24 a resounding success. The ceremony included a beautiful presentation showcasing the day's highlights, candid moments, and powerful testimonials from attendees. The evening ended with the announcement of EmpowerHER25 and a collective pledge from all 250+ women to continue supporting each other's entrepreneurial journeys. As the final group photo was taken, there wasn't a dry eye in the house - it was truly the end of an extraordinary day that would be remembered for years to come.</p>
                   </div>
                 </div>

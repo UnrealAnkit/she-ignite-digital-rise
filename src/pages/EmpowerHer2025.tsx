@@ -542,6 +542,52 @@ const EmpowerHer2025 = () => {
         </div>
       </section>
 
+      {/* Previous Event Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="text-4xl font-bold text-red-600 mb-6">
+                Our Journey So Far
+              </h2>
+              <p className="text-xl text-gray-700 mb-8">
+                Building on the success of our previous events
+              </p>
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl p-8 shadow-lg max-w-2xl mx-auto"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  EmpowerHER 2024 - A Blockbuster Success!
+                </h3>
+                <p className="text-lg text-gray-700 mb-6">
+                  Our flagship event attracted 250+ women entrepreneurs, featuring keynote speakers, 
+                  panel discussions, interactive workshops, and networking zones. The energy was unstoppable, 
+                  and women left not only inspired but armed with strategies to apply immediately.
+                </p>
+                <Link 
+                  to="/empowerher2024"
+                  className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300"
+                >
+                  View Last Year's Event
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* About SHELeadsIndia Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">

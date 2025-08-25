@@ -32,6 +32,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Content from "./pages/Content";
 import EmpowerHer2025 from "./pages/EmpowerHer2025";
+import EmpowerHer2024 from "./pages/EmpowerHer2024";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -77,6 +78,7 @@ const App = () => {
             <Route path="/terms" element={<Terms />} />
             <Route path="/content" element={<Content />} />
             <Route path="/empowerher2025" element={<EmpowerHer2025 />} />
+            <Route path="/empowerher2024" element={<EmpowerHer2024 />} />
             <Route path="/admin" element={<AdminPanel />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

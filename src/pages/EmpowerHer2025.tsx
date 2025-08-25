@@ -6,7 +6,7 @@ import { Calendar, Clock, MapPin, Users, Mic, Award, CheckCircle, ArrowRight, St
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const EmpowerHer2025 = () => {
+const EmpowerHer25 = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -40,7 +40,7 @@ const EmpowerHer2025 = () => {
                 Welcome to EmpowerHER
               </h1>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
-                2025
+                25
               </h1>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 A Transformative Experience Awaits!
@@ -57,7 +57,7 @@ const EmpowerHer2025 = () => {
                 </div>
                 <div className="flex items-center gap-2 text-white">
                   <Calendar className="h-5 w-5 text-red-400" />
-                  <span className="font-medium">18th Dec, 2025</span>
+                  <span className="font-medium">18th Dec, 25</span>
                 </div>
                 <div className="flex items-center gap-2 text-white">
                   <Clock className="h-5 w-5 text-red-400" />
@@ -89,7 +89,7 @@ const EmpowerHer2025 = () => {
                 
                 <div className="space-y-4">
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    EmpowerHER25 is a full-day masterclass experience for women-led SMEs and solopreneurs to learn the real, practical side of Marketing & AI without the overwhelm.
+                    EmpowerHER 25 is a full-day masterclass experience for women-led SMEs and solopreneurs to learn the real, practical side of Marketing & AI without the overwhelm.
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     Hosted by SHELeadsIndia, this event brings together 200+ women entrepreneurs in one room to learn, apply, and grow their businesses with real tools and real stories.
@@ -112,7 +112,7 @@ const EmpowerHer2025 = () => {
                 <div className="space-y-6">
                   <div className="flex items-center gap-3">
                     <Calendar className="h-7 w-7 text-red-600" />
-                    <span className="text-gray-700 text-xl font-medium">18th December, 2025</span>
+                    <span className="text-gray-700 text-xl font-medium">18th December, 25</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="h-7 w-7 text-red-600" />
@@ -139,7 +139,7 @@ const EmpowerHer2025 = () => {
                     className="h-24 w-auto object-contain"
                   />
                   <div className="text-black font-bold text-2xl">
-                    EmpowerHER 2025
+                    EmpowerHER 25
                   </div>
                 </div>
               </motion.div>
@@ -160,7 +160,7 @@ const EmpowerHer2025 = () => {
               className="text-center mb-12"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-4">
-                Why Speak at EmpowerHER25?
+                Why Speak at EmpowerHER 25?
               </h2>
               <p className="text-lg text-gray-700">
                 Know more about the opportunities here
@@ -592,7 +592,7 @@ const EmpowerHer2025 = () => {
                   className="bg-gradient-to-br from-red-600 to-red-700 rounded-3xl p-8 shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col h-full"
                 >
                   <h3 className="text-2xl font-bold text-white mb-4">
-                    EmpowerHER 2024 - A Blockbuster Success!
+                    EmpowerHER 24 - A Blockbuster Success!
                   </h3>
                   <p className="text-lg text-white/90 mb-6 flex-grow">
                     Our flagship event attracted 250+ women entrepreneurs, featuring keynote speakers, 
@@ -600,7 +600,7 @@ const EmpowerHer2025 = () => {
                     and women left not only inspired but armed with strategies to apply immediately.
                   </p>
                   <Link 
-                    to="/empowerher2024"
+                    to="/empowerher24"
                     className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-red-600 font-semibold px-6 py-3 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl mt-auto"
                   >
                     View Last Year's Event
@@ -793,7 +793,7 @@ const EmpowerHer2025 = () => {
                 Event Details
               </h2>
               <p className="text-xl text-gray-700">
-                Everything you need to know about EmpowerHER 2025
+                Everything you need to know about EmpowerHER 25
               </p>
             </motion.div>
             
@@ -811,7 +811,7 @@ const EmpowerHer2025 = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Date & Time</h3>
-                    <p className="text-lg text-gray-700">18th December, 2025</p>
+                    <p className="text-lg text-gray-700">18th December, 25</p>
                     <p className="text-gray-600">10:30 AM onwards</p>
                   </div>
                 </div>
@@ -939,4 +939,4 @@ const EmpowerHer2025 = () => {
   );
 };
 
-export default EmpowerHer2025; 
+export default EmpowerHer25; 

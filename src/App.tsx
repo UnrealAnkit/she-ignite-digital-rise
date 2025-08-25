@@ -78,8 +78,8 @@ const App = () => {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/content" element={<Content />} />
-            <Route path="/empowerher2025" element={<EmpowerHer2025 />} />
-            <Route path="/empowerher2024" element={<EmpowerHer2024 />} />
+            <Route path="/empowerher25" element={<EmpowerHer2025 />} />
+            <Route path="/empowerher24" element={<EmpowerHer2024 />} />
             <Route path="/sheleadsindia-launch" element={<SHELeadsIndiaLaunch />} />
             <Route path="/admin" element={<AdminPanel />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -36,12 +36,12 @@ const EmpowerHer2024 = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
-                Welcome to EmpowerHER
-              </h1>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
-                2024
-              </h1>
+                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
+                 Welcome to EmpowerHER
+               </h1>
+               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
+                 24
+               </h1>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 A Transformative Experience Awaits!
               </h2>
@@ -57,7 +57,7 @@ const EmpowerHer2024 = () => {
                 </div>
                 <div className="flex items-center gap-2 text-white">
                   <Calendar className="h-5 w-5 text-red-400" />
-                  <span className="font-medium">18th Dec, 2024</span>
+                  <span className="font-medium">18th Dec, 24</span>
                 </div>
                 <div className="flex items-center gap-2 text-white">
                   <Clock className="h-5 w-5 text-red-400" />
@@ -81,10 +81,10 @@ const EmpowerHer2024 = () => {
               className="text-center mb-12"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-6">
-                EmpowerHER24 – Full-Day Flagship Growth Event
+                EmpowerHER 24 – Full-Day Flagship Growth Event
               </h2>
               <p className="text-xl text-gray-700">
-                Fast forward to our next big milestone: EmpowerHER24.
+                Fast forward to our next big milestone: EmpowerHER 24.
               </p>
             </motion.div>
 
@@ -98,7 +98,7 @@ const EmpowerHer2024 = () => {
               >
                 <p className="text-lg text-gray-700 leading-relaxed">
                   If the launch was a spark, this event was a blazing fire.
-                  Held as a full-day conference, EmpowerHER24 attracted <strong>250+ women entrepreneurs</strong>, showing our year-on-year growth and the demand for platforms like ours.
+                  Held as a full-day conference, EmpowerHER 24 attracted <strong>250+ women entrepreneurs</strong>, showing our year-on-year growth and the demand for platforms like ours.
                 </p>
                 
                 <div className="space-y-4">
@@ -122,7 +122,7 @@ const EmpowerHer2024 = () => {
 
                 <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-3xl p-6 text-white">
                   <p className="text-lg font-semibold leading-relaxed text-center">
-                    👉 The verdict from participants, partners, and even the media was unanimous: EmpowerHER24 was a blockbuster hit.
+                    👉 The verdict from participants, partners, and even the media was unanimous: EmpowerHER 24 was a blockbuster hit.
                   </p>
                 </div>
               </motion.div>
@@ -136,7 +136,7 @@ const EmpowerHer2024 = () => {
               >
                 <img 
                   src="/media/empowerher 2024.jpg" 
-                  alt="EmpowerHER 2024 Event" 
+                  alt="EmpowerHER 24 Event" 
                   className="w-full rounded-xl shadow-2xl mb-6"
                 />
                 <div className="flex justify-center">
@@ -171,7 +171,7 @@ const EmpowerHer2024 = () => {
 
                 <div className="space-y-4">
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    EmpowerHER 2024 is a lot more than just a workshop; it is an experience crafted to support and uplift your business journey. Our goal is simple yet powerful: to connect you with like-minded women, boost your confidence, and provide the tools to help you succeed.
+                    EmpowerHER 24 is a lot more than just a workshop; it is an experience crafted to support and uplift your business journey. Our goal is simple yet powerful: to connect you with like-minded women, boost your confidence, and provide the tools to help you succeed.
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     Whether you are here to learn, network, or simply get inspired, this event is about you and your potential.
@@ -192,7 +192,7 @@ const EmpowerHer2024 = () => {
               >
                 <div className="flex items-center gap-3">
                   <Calendar className="h-7 w-7 text-red-600" />
-                  <span className="text-gray-700 text-xl font-medium">18th December, 2024</span>
+                  <span className="text-gray-700 text-xl font-medium">18th December, 24</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock className="h-7 w-7 text-red-600" />
@@ -218,7 +218,7 @@ const EmpowerHer2024 = () => {
                     className="h-24 w-auto object-contain"
                   />
                   <div className="text-black font-bold text-2xl">
-                    EmpowerHER 2024
+                    EmpowerHER 24
                   </div>
                 </div>
               </motion.div>
@@ -347,7 +347,7 @@ const EmpowerHer2024 = () => {
         </div>
       </section>
 
-      {/* What is EmpowerHER 2024 Section */}
+      {/* What is EmpowerHER 24 Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -359,7 +359,7 @@ const EmpowerHer2024 = () => {
               className="text-center mb-12"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-4">
-                What is EmpowerHER 2024?
+                What is EmpowerHER 24?
               </h2>
               <p className="text-lg text-gray-700">
                 Know more about the event here
@@ -368,7 +368,7 @@ const EmpowerHer2024 = () => {
                 Your journey towards Growth, Connection, and Empowerment starts from here.
               </p>
               <p className="text-lg text-gray-700 mt-2">
-                This is not your typical workshop. EmpowerHER 2024 is about giving you practical tools, real insights, and a network that can genuinely change the way you approach your business.
+                This is not your typical workshop. EmpowerHER 24 is about giving you practical tools, real insights, and a network that can genuinely change the way you approach your business.
               </p>
             </motion.div>
             
@@ -452,7 +452,7 @@ const EmpowerHer2024 = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-6">
-                EmpowerHER 2024: Crafting a Vision for Tomorrow's Success
+                EmpowerHER 24: Crafting a Vision for Tomorrow's Success
               </h2>
               <p className="text-xl text-gray-700 mb-8">
                 Get ready to ignite your passion, elevate your skills, and join the team with trailblazing women entrepreneurs!
@@ -557,7 +557,7 @@ const EmpowerHer2024 = () => {
             >
               <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-3xl p-8 text-white">
                 <p className="text-xl font-semibold leading-relaxed">
-                  "Don't miss the opportunity to be part of India's largest gathering of women entrepreneurs and tech leaders. EmpowerHER 2024 is where innovation meets empowerment!"
+                  "Don't miss the opportunity to be part of India's largest gathering of women entrepreneurs and tech leaders. EmpowerHER 24 is where innovation meets empowerment!"
                 </p>
               </div>
             </motion.div>
@@ -580,7 +580,7 @@ const EmpowerHer2024 = () => {
                 AGENDA
               </h2>
               <p className="text-xl text-gray-700">
-                Event Schedule: EmpowerHER 2024
+                Event Schedule: EmpowerHER 24
               </p>
             </motion.div>
             
@@ -616,7 +616,7 @@ const EmpowerHer2024 = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-gray-900">Opening Ceremony</h3>
-                    <p className="text-gray-700">The official inauguration marked the beginning of an extraordinary journey. Nikita Vora, Founder of SHELeadsIndia, delivered a powerful welcome address that resonated with every woman in the audience. She shared the compelling vision behind EmpowerHER24 - to create a platform where women don't just learn, but scale, automate, and lead. The ceremony included a beautiful lamp lighting ceremony and an inspiring video montage showcasing the journey of women entrepreneurs, setting an emotional and motivational tone for the entire day.</p>
+                    <p className="text-gray-700">The official inauguration marked the beginning of an extraordinary journey. Nikita Vora, Founder of SHELeadsIndia, delivered a powerful welcome address that resonated with every woman in the audience. She shared the compelling vision behind EmpowerHER 24 - to create a platform where women don't just learn, but scale, automate, and lead. The ceremony included a beautiful lamp lighting ceremony and an inspiring video montage showcasing the journey of women entrepreneurs, setting an emotional and motivational tone for the entire day.</p>
                   </div>
                 </div>
               </motion.div>
@@ -760,7 +760,7 @@ const EmpowerHer2024 = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-gray-900">Closing Ceremony & Future Vision</h3>
-                    <p className="text-gray-700">The event concluded with an emotional closing ceremony that celebrated the incredible day's journey. Nikita Vora delivered a heartfelt vote of thanks, acknowledging every speaker, partner, and participant who made EmpowerHER24 a resounding success. The ceremony included a beautiful presentation showcasing the day's highlights, candid moments, and powerful testimonials from attendees. The evening ended with the announcement of EmpowerHER25 and a collective pledge from all 250+ women to continue supporting each other's entrepreneurial journeys. As the final group photo was taken, there wasn't a dry eye in the house - it was truly the end of an extraordinary day that would be remembered for years to come.</p>
+                    <p className="text-gray-700">The event concluded with an emotional closing ceremony that celebrated the incredible day's journey. Nikita Vora delivered a heartfelt vote of thanks, acknowledging every speaker, partner, and participant who made EmpowerHER 24 a resounding success. The ceremony included a beautiful presentation showcasing the day's highlights, candid moments, and powerful testimonials from attendees. The evening ended with the announcement of EmpowerHER25 and a collective pledge from all 250+ women to continue supporting each other's entrepreneurial journeys. As the final group photo was taken, there wasn't a dry eye in the house - it was truly the end of an extraordinary day that would be remembered for years to come.</p>
                   </div>
                 </div>
               </motion.div>
@@ -774,7 +774,7 @@ const EmpowerHer2024 = () => {
               className="mt-12 text-center"
             >
               <p className="text-xl font-semibold text-red-600">
-                EmpowerHER24 - A day that changed lives, sparked partnerships, and ignited dreams!
+                EmpowerHER 24 - A day that changed lives, sparked partnerships, and ignited dreams!
               </p>
             </motion.div>
           </div>
@@ -798,7 +798,7 @@ const EmpowerHer2024 = () => {
                 Event Gallery
               </h2>
               <p className="text-xl text-gray-700">
-                Capturing the memorable moments from EmpowerHER 2024
+                Capturing the memorable moments from EmpowerHER 24
               </p>
             </motion.div>
             
@@ -815,35 +815,35 @@ const EmpowerHer2024 = () => {
                 <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02339.JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02336.JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02328.JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02301.JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02323.JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -860,21 +860,21 @@ const EmpowerHer2024 = () => {
                 <div className="md:col-start-2 aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02283.JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02257.JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02240.JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -891,28 +891,28 @@ const EmpowerHer2024 = () => {
                 <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02206.JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02198.JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02130 (1).JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src="/media/DSC02058.JPG" 
-                    alt="EmpowerHER 2024 Event" 
+                    alt="EmpowerHER 24 Event" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -940,7 +940,7 @@ const EmpowerHer2024 = () => {
                 Here's how to lock in your ticket
               </p>
               <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                EmpowerHER 2024 is your cosmic destination if you identify as:
+                EmpowerHER 24 is your cosmic destination if you identify as:
               </p>
             </motion.div>
             
@@ -1293,10 +1293,10 @@ const EmpowerHer2024 = () => {
               </div>
 
               <Link 
-                to="/empowerher2025"
+                to="/empowerher25"
                 className="inline-block bg-white text-red-600 hover:bg-gray-100 font-semibold px-8 py-3 text-lg rounded-lg transition-colors duration-300"
               >
-                Join EmpowerHER 2025 →
+                Join EmpowerHER 25 →
               </Link>
             </motion.div>
           </div>

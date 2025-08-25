@@ -16,7 +16,7 @@ const EmpowerHer2024 = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="/media/IMG_0011.JPG"
+            src="/media/empowerher 2024.jpg"
             alt="Empowering Women Entrepreneurs"
             className="w-full h-full object-cover"
             style={{
@@ -135,7 +135,7 @@ const EmpowerHer2024 = () => {
                 className="text-center"
               >
                 <img 
-                  src="/media/IMG_0011.JPG" 
+                  src="/media/empowerher 2024.jpg" 
                   alt="EmpowerHER 2024 Event" 
                   className="w-full rounded-xl shadow-2xl mb-6"
                 />
@@ -382,7 +382,7 @@ const EmpowerHer2024 = () => {
                 className="text-center"
               >
                 <img 
-                  src="/media/IMG_0011.JPG" 
+                  src="/media/empowerher 2024.jpg" 
                   alt="Women networking" 
                   className="w-full h-80 object-cover rounded-xl mb-6"
                 />

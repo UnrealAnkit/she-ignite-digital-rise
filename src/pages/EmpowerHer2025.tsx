@@ -560,29 +560,147 @@ const EmpowerHer2025 = () => {
                 Building on the success of our previous events
               </p>
               
+              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-red-600 to-red-700 rounded-3xl p-8 shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col h-full"
+                >
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    SHELeadsIndia Launch - December 2023
+                  </h3>
+                  <p className="text-lg text-white/90 mb-6 flex-grow">
+                    Where it all began! At MCCIA Pune, 150+ women entrepreneurs witnessed the birth of SHELeadsIndia. 
+                    An electric atmosphere with powerful keynotes and inspiring panel discussions that sparked a movement.
+                  </p>
+                  <Link 
+                    to="/sheleadsindia-launch"
+                    className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-red-600 font-semibold px-6 py-3 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl mt-auto"
+                  >
+                    View Our Launch Story
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-red-600 to-red-700 rounded-3xl p-8 shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col h-full"
+                >
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    EmpowerHER 2024 - A Blockbuster Success!
+                  </h3>
+                  <p className="text-lg text-white/90 mb-6 flex-grow">
+                    Our flagship event attracted 250+ women entrepreneurs, featuring keynote speakers, 
+                    panel discussions, interactive workshops, and networking zones. The energy was unstoppable, 
+                    and women left not only inspired but armed with strategies to apply immediately.
+                  </p>
+                  <Link 
+                    to="/empowerher2024"
+                    className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-red-600 font-semibold px-6 py-3 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl mt-auto"
+                  >
+                    View Last Year's Event
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Media Coverage Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl font-bold text-red-600 mb-6">
+                Media Coverage
+              </h2>
+              <p className="text-xl text-gray-700">
+                Recognized and featured by leading media outlets
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="flex justify-center"
+              >
+                <img 
+                  src="/media/times of india logo.jpeg" 
+                  alt="Times of India" 
+                  className="h-12 w-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg max-w-2xl mx-auto"
+                className="flex justify-center"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  EmpowerHER 2024 - A Blockbuster Success!
-                </h3>
-                <p className="text-lg text-gray-700 mb-6">
-                  Our flagship event attracted 250+ women entrepreneurs, featuring keynote speakers, 
-                  panel discussions, interactive workshops, and networking zones. The energy was unstoppable, 
-                  and women left not only inspired but armed with strategies to apply immediately.
-                </p>
-                <Link 
-                  to="/empowerher2024"
-                  className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300"
-                >
-                  View Last Year's Event
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+                <img 
+                  src="/media/Hindustan Times.png" 
+                  alt="Hindustan Times" 
+                  className="h-12 w-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
               </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="flex justify-center"
+              >
+                <img 
+                  src="/media/ians wire service  logo.png" 
+                  alt="IANS" 
+                  className="h-12 w-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="flex justify-center"
+              >
+                <img 
+                  src="/media/united news of india.jpg" 
+                  alt="UNI" 
+                  className="h-12 w-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </motion.div>
+            </div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="mt-8 text-center"
+            >
+              <p className="text-gray-600 italic">
+                "SHELeadsIndia continues to gain recognition as a leading platform for women entrepreneurs, 
+                with extensive coverage highlighting our impact on the entrepreneurial ecosystem."
+              </p>
             </motion.div>
           </div>
         </div>

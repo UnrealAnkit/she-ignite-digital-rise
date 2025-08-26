@@ -162,7 +162,7 @@ const PowerPointTraining = () => {
                 size="xl" 
                 className="bg-red-600 hover:bg-red-700 text-white px-12 py-6 rounded-2xl text-xl font-semibold shadow-2xl"
               >
-                <a href="https://digitalstepup.kit.com/d00ef39749" target="_blank" rel="noopener noreferrer">
+                <a href="https://us06web.zoom.us/meeting/register/OUud9WK-QMKyPX32GvI1bA#/registration" target="_blank" rel="noopener noreferrer">
                   <Zap className="h-6 w-6 mr-3" />
                   Join Live Training
                   <ArrowRight className="h-6 w-6 ml-3" />

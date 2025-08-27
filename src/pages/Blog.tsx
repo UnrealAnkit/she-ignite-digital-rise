@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Calendar, Clock, User, TrendingUp, Brain, Users, Target, BookOpen, Star, CheckCircle, Zap, Lightbulb } from "lucide-react";
-import { fetchBlogPosts, BlogPost } from "@/lib/blogService";
+import { fetchBlogPosts, type BlogPost } from "@/lib/blogService";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -311,7 +311,13 @@ const Blog = () => {
                       </div>
 
                       <div className="flex gap-3">
-                        <Button className="flex-1 h-12 text-base font-semibold rounded-2xl bg-gray-900 hover:bg-gray-800 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <Button 
+                          className="flex-1 h-12 text-base font-semibold rounded-2xl bg-gray-900 hover:bg-gray-800 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handlePostClick(post.id);
+                          }}
+                        >
                           Read Article
                           <ArrowRight className="h-4 w-4 ml-2" />
                         </Button>
@@ -418,7 +424,13 @@ const Blog = () => {
                         </div>
                       </div>
 
-                      <Button className="w-full h-10 text-sm font-semibold rounded-xl bg-gray-900 hover:bg-gray-800 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300">
+                      <Button 
+                        className="w-full h-10 text-sm font-semibold rounded-xl bg-gray-900 hover:bg-gray-800 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handlePostClick(post.id);
+                        }}
+                      >
                         Read More
                         <ArrowRight className="h-3 w-3 ml-1" />
                       </Button>

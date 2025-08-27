@@ -9,3 +9,4 @@ COMMENT ON COLUMN trainings.page_link IS 'Optional URL link to a custom training
 
 
 
+

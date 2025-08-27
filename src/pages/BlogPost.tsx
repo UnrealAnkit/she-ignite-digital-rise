@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Calendar, Clock, User, Share2, Bookmark } from "lucide-react";
-import { fetchBlogPostById, BlogPost } from "@/lib/blogService";
+import { fetchBlogPostById, type BlogPost } from "@/lib/blogService";
 import { useEffect, useState } from "react";
 
 const BlogPost = () => {
@@ -12,7 +12,7 @@ const BlogPost = () => {
   const navigate = useNavigate();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
-c
+
   useEffect(() => {
     if (slug) {
       fetchBlogPostById(slug)

@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { preloadCriticalResources, monitorCoreWebVitals } from "@/lib/performance";
 import { initGA } from "@/lib/analytics";
@@ -79,6 +79,7 @@ const App = () => {
             <Route path="/terms" element={<Terms />} />
             <Route path="/content" element={<Content />} />
             <Route path="/empowerher25" element={<EmpowerHer2025 />} />
+            <Route path="/empowerher2025" element={<Navigate to="/empowerher25" replace />} />
             <Route path="/empowerher24" element={<EmpowerHer2024 />} />
             <Route path="/sheleadsindia-launch" element={<SHELeadsIndiaLaunch />} />
             <Route path="/admin" element={<AdminPanel />} />

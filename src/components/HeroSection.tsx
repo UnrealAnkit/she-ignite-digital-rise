@@ -94,7 +94,7 @@ const HeroSection = () => {
               style={{ backgroundColor: 'rgba(230, 0, 35, 0.2)' }}
           >
             <MapPin className="h-4 w-4" />
-            <span className="text-sm font-medium">Pune • Nagpur • Nashik</span>
+            <span className="text-sm font-medium">Across India • National Network</span>
           </motion.div>
 
           {/* Main Headline with Staggered Animation */}

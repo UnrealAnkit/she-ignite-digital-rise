@@ -371,15 +371,19 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h3 className="text-2xl font-bold text-red-600 mb-6 text-center lg:text-left">
+              <h3 className="text-2xl font-bold text-red-600 mb-6 text-center lg:text-left lg:ml-8">
                 Our Presence Across India
               </h3>
               
               {/* Clean Map - No Dots */}
               <img 
-                src="/media/india map.jpg" 
-                alt="India Map - SHELeads presence" 
-                className="w-full max-w-sm h-auto"
+                src="/media/acrosss india.png" 
+                alt="India Map - SHELeads presence across India" 
+                className="w-full max-w-lg h-auto"
+                style={{
+                  mixBlendMode: 'multiply',
+                  filter: 'contrast(1.2)'
+                }}
               />
             </motion.div>
 

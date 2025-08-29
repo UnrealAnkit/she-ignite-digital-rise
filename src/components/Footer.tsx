@@ -40,8 +40,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-sm">
                 <Mail className="h-3 w-3" />
-                <a href="mailto:info@shelladsindia.in" className="hover:underline" style={{ color: '#E60023' }}>
-                  info@shelladsindia.in
+                <a href="mailto:info@sheleadsindia.in" className="hover:underline" style={{ color: '#E60023' }}>
+                  info@sheleadsindia.in
                 </a>
               </div>
               <div className="text-sm">

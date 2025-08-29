@@ -514,11 +514,10 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Media Coverage & Recognition
+              As Featured In
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our work has been recognized by leading publications and organizations 
-              across India.
+              Recognized by leading publications across India.
             </p>
           </div>
 
@@ -534,12 +533,9 @@ const About = () => {
                                  {/* Desktop View - 3 items */}
                  <div className="hidden lg:flex w-full gap-8 items-center justify-center">
                    {getVisibleItems().map((publication, index) => (
-                     <a 
+                     <div 
                        key={`${currentSlide}-${index}`}
-                       href={publication.url} 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       className="flex-1 bg-white p-6 rounded-2xl text-center shadow-md hover:shadow-xl transition-all duration-300 block group border border-gray-100 hover:border-primary/30"
+                       className="flex-1 bg-white p-6 rounded-2xl text-center shadow-md transition-all duration-300 border border-gray-100"
                        style={index === 1 ? {
                          animation: 'popupSubtle 3s ease-in-out infinite'
                        } : {}}
@@ -549,28 +545,25 @@ const About = () => {
                            <img 
                              src={publication.logo} 
                              alt={publication.name}
-                             className="max-w-full max-h-full object-contain transition-all duration-300 group-hover:scale-105"
+                             className="max-w-full max-h-full object-contain"
                            />
                          </div>
-                         <div className={`font-medium text-sm transition-colors duration-300 ${
-                           index === 1 ? 'text-primary' : 'text-gray-600 group-hover:text-primary'
+                         <div className={`font-medium text-sm ${
+                           index === 1 ? 'text-primary' : 'text-gray-600'
                          }`}>
                            {publication.name}
                          </div>
                        </div>
-                     </a>
+                     </div>
                    ))}
                  </div>
 
                                  {/* Mobile/Tablet View - 1 item */}
                  <div className="lg:hidden flex justify-center w-full py-4">
                    {[mediaFeatures[currentSlide]].map((publication, index) => (
-                     <a 
+                     <div 
                        key={`mobile-${currentSlide}-${index}`}
-                       href={publication.url} 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       className="bg-white p-6 rounded-2xl text-center shadow-md hover:shadow-xl transition-all duration-300 block group border border-gray-100 hover:border-primary/30 max-w-md w-full"
+                       className="bg-white p-6 rounded-2xl text-center shadow-md transition-all duration-300 border border-gray-100 max-w-md w-full"
                        style={{
                          animation: 'popupSubtle 3s ease-in-out infinite'
                        }}
@@ -580,14 +573,14 @@ const About = () => {
                            <img 
                              src={publication.logo} 
                              alt={publication.name}
-                             className="max-w-full max-h-full object-contain transition-all duration-300 group-hover:scale-105"
+                             className="max-w-full max-h-full object-contain"
                            />
                          </div>
-                         <div className="font-medium text-sm text-primary transition-colors duration-300">
+                         <div className="font-medium text-sm text-primary">
                            {publication.name}
                          </div>
                        </div>
-                     </a>
+                     </div>
                    ))}
                 </div>
               </div>

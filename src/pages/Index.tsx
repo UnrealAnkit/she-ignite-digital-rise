@@ -351,7 +351,7 @@ const Index = () => {
               <span className="font-bold text-red-600">Over 10,000 women</span> across India have already started building their digital growth stories with us.
             </p>
             <p className="text-lg md:text-xl text-gray-600">
-              Across Pune, Nashik, Nagpur, and now expanding city by city.
+              From major metros to emerging cities across India, building a nationwide community of empowered women entrepreneurs.
             </p>
           </motion.div>
 

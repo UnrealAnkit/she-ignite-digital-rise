@@ -6,17 +6,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowRight, Download, MapPin, Users, CheckCircle, MessageCircle, Star, Clock, TrendingUp } from "lucide-react";
 
 const StartHere = () => {
-  const cities = [
+  const regions = [
     { 
-      name: "Pune", 
-      description: "Tech Hub Programs", 
+      name: "Western India", 
+      description: "Tech & Innovation Hub", 
       programs: 3,
       whatsappLink: "https://digitalstepup.kit.com/d00ef39749",
-      buttonText: "Join Pune Group",
+      buttonText: "Join Regional Group",
       backgroundImage: "/media/DSC02132.JPG"
     },
     { 
-      name: "Nagpur", 
+      name: "Central India", 
       description: "Business Growth Focus", 
       programs: 2,
       whatsappLink: "#",
@@ -24,11 +24,11 @@ const StartHere = () => {
       backgroundImage: "/media/DSC02211.JPG"
     },
     { 
-      name: "Nashik", 
+      name: "Northern India", 
       description: "Startup Accelerator", 
       programs: 2,
       whatsappLink: "https://rebrand.ly/SHELeadsNashik",
-      buttonText: "Join Nashik Group",
+      buttonText: "Join Regional Group",
       backgroundImage: "/media/DSC02233.JPG"
     },
   ];
@@ -119,17 +119,17 @@ const StartHere = () => {
               Find Your Support Circle
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Connect with the incredible women in your city who share your dreams and understand your journey.
+              Connect with incredible women entrepreneurs across India who share your dreams and understand your journey.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {cities.map((city, index) => (
+            {regions.map((region, index) => (
               <div 
                 key={index} 
                 className="relative rounded-2xl overflow-hidden h-80 group cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1"
                 style={{
-                  backgroundImage: `url('${city.backgroundImage}')`,
+                  backgroundImage: `url('${region.backgroundImage}')`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -144,27 +144,27 @@ const StartHere = () => {
                       <MapPin className="h-6 w-6" />
                     </div>
                     
-                    <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">{city.name}</h3>
-                    <p className="text-white/90 mb-3 drop-shadow-md">{city.description}</p>
+                    <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">{region.name}</h3>
+                    <p className="text-white/90 mb-3 drop-shadow-md">{region.description}</p>
                     
                     <div className="mb-4">
-                      <span className="text-2xl font-bold">{city.programs}</span>
+                      <span className="text-2xl font-bold">{region.programs}</span>
                       <span className="text-white/80 ml-2">Active Programs</span>
                     </div>
                     
-                    {city.whatsappLink !== "#" ? (
+                    {region.whatsappLink !== "#" ? (
                       <Button 
                         variant="secondary" 
                         className="w-full group/btn bg-white/90 text-gray-900 hover:bg-white backdrop-blur-sm"
-                        onClick={() => window.open(city.whatsappLink, '_blank')}
+                        onClick={() => window.open(region.whatsappLink, '_blank')}
                       >
                         <MessageCircle className="h-4 w-4 mr-2" />
-                        {city.buttonText}
+                        {region.buttonText}
                         <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
                       </Button>
                     ) : (
                       <Button variant="secondary" className="w-full bg-white/50 text-gray-700" disabled>
-                        {city.buttonText}
+                        {region.buttonText}
                       </Button>
                     )}
                   </div>

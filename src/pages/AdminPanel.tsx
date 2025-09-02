@@ -54,6 +54,7 @@ const emptyTrainingForm = {
   end_time: "",
   location: "",
   image_url: "",
+  page_link: "",
   level: "Beginner" as const,
   duration: "",
   max_participants: 50,
@@ -297,6 +298,10 @@ export default function AdminPanel() {
 
   const handleTrainingTopicsChange = (e: any) => {
     setTrainingForm((f: any) => ({ ...f, topics: e.target.value.split(",").map((t: string) => t.trim()) }));
+  };
+
+  const handleTrainingRequirementsChange = (e: any) => {
+    setTrainingForm((f: any) => ({ ...f, requirements: e.target.value.split(",").map((t: string) => t.trim()) }));
   };
 
   const handleTrainingFieldsChange = (e: any) => {
@@ -1325,7 +1330,7 @@ export default function AdminPanel() {
                 </CardHeader>
                 <CardContent className="p-6">
                   <form onSubmit={handleTrainingSubmit} className="grid gap-6">
-                    <div className="grid gap-4 md:grid-cols-2">
+                    <div className="grid gap-4 md:grid-cols-3">
                       <div className="space-y-2">
                         <label className="text-sm font-semibold text-gray-700">Training Title *</label>
                         <input 
@@ -1348,6 +1353,16 @@ export default function AdminPanel() {
                           required 
                         />
                       </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Instructor Bio</label>
+                        <textarea 
+                          name="instructor_bio" 
+                          value={trainingForm.instructor_bio} 
+                          onChange={handleTrainingChange} 
+                          placeholder="Brief description of the instructor's background and expertise" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 min-h-[80px] text-gray-900" 
+                        />
+                      </div>
                     </div>
                     
                     <div className="space-y-2">
@@ -1362,7 +1377,7 @@ export default function AdminPanel() {
                       />
                     </div>
                     
-                    <div className="grid gap-4 md:grid-cols-4">
+                    <div className="grid gap-4 md:grid-cols-6">
                       <div className="space-y-2">
                         <label className="text-sm font-semibold text-gray-700">Start Date *</label>
                         <input 
@@ -1383,6 +1398,26 @@ export default function AdminPanel() {
                           onChange={handleTrainingChange} 
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                           required 
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">End Date</label>
+                        <input 
+                          name="end_date" 
+                          type="date" 
+                          value={trainingForm.end_date} 
+                          onChange={handleTrainingChange} 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">End Time</label>
+                        <input 
+                          name="end_time" 
+                          type="time" 
+                          value={trainingForm.end_time} 
+                          onChange={handleTrainingChange} 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
                       <div className="space-y-2">
@@ -1433,7 +1468,20 @@ export default function AdminPanel() {
                       />
                     </div>
                     
-                    <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-gray-700">Page Link</label>
+                      <input 
+                        name="page_link" 
+                        type="url" 
+                        value={trainingForm.page_link} 
+                        onChange={handleTrainingChange} 
+                        placeholder="https://yourdomain.com/training-page" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
+                      />
+                      <p className="text-xs text-gray-500">Enter the direct link to the training page (e.g., /email-marketing-ai-training, /canva-ai-workshop)</p>
+                    </div>
+                    
+                    <div className="grid gap-4 md:grid-cols-3">
                       <div className="space-y-2">
                         <label className="text-sm font-semibold text-gray-700">Topics (comma separated)</label>
                         <input 
@@ -1441,6 +1489,16 @@ export default function AdminPanel() {
                           value={trainingForm.topics.join(", ")} 
                           onChange={handleTrainingTopicsChange} 
                           placeholder="topic1, topic2, topic3" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Requirements (comma separated)</label>
+                        <input 
+                          name="requirements" 
+                          value={trainingForm.requirements.join(", ")} 
+                          onChange={handleTrainingRequirementsChange} 
+                          placeholder="requirement1, requirement2" 
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
@@ -1454,6 +1512,18 @@ export default function AdminPanel() {
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
                         />
                       </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-gray-700">Registration Fields (comma separated)</label>
+                      <input 
+                        name="registration_fields" 
+                        value={trainingForm.registration_fields.join(", ")} 
+                        onChange={handleTrainingFieldsChange} 
+                        placeholder="name, email, phone, company" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-gray-900" 
+                      />
+                      <p className="text-xs text-gray-500">Default fields: name, email, phone. Add additional fields as needed.</p>
                     </div>
                     
                     <div className="grid gap-4 md:grid-cols-4">
@@ -1646,6 +1716,19 @@ export default function AdminPanel() {
                                   <MapPin className="h-3 w-3" />
                                   {training.location}
                                 </span>
+                                {training.page_link && (
+                                  <span className="flex items-center gap-1">
+                                    <Link className="h-3 w-3" />
+                                    <a 
+                                      href={training.page_link} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="text-blue-600 hover:text-blue-800 underline"
+                                    >
+                                      View Page
+                                    </a>
+                                  </span>
+                                )}
                               </div>
                             </div>
                             <div className="flex gap-2">

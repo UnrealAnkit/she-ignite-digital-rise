@@ -28,6 +28,7 @@ import CanvaAIWorkshop from "./pages/CanvaAIWorkshop";
 import CoPilotAITraining from "./pages/CoPilotAITraining";
 import AIBusinessGrowthChallenge from "./pages/AIBusinessGrowthChallenge";
 import PowerPointTraining from "./pages/PowerPointTraining";
+import EmailMarketingAITraining from "./pages/EmailMarketingAITraining";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Content from "./pages/Content";
@@ -75,6 +76,7 @@ const App = () => {
             <Route path="/co-pilot-ai-training" element={<CoPilotAITraining />} />
             <Route path="/ai-business-growth-challenge" element={<AIBusinessGrowthChallenge />} />
             <Route path="/powerpoint-training" element={<PowerPointTraining />} />
+            <Route path="/email-marketing-ai-training" element={<EmailMarketingAITraining />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/content" element={<Content />} />

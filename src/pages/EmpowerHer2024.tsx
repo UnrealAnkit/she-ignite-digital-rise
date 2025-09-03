@@ -261,6 +261,24 @@ const EmpowerHer2024 = () => {
                       src="/media/deAsra + YU logo.avif" 
                       alt="deAsra + YU" 
                       className="h-16 w-auto object-contain hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        console.log('Image failed to load:', e.target.src);
+                        // Try alternative file names if the main one fails
+                        if (e.target.src.includes('deAsra + YU logo.avif')) {
+                          e.target.src = "/media/deAsra + YU logo (1).avif";
+                        } else if (e.target.src.includes('(1)')) {
+                          // If both fail, show a placeholder or text
+                          e.target.style.display = 'none';
+                          const parent = e.target.parentElement;
+                          if (parent) {
+                            const fallbackText = document.createElement('div');
+                            fallbackText.className = 'text-red-600 font-semibold text-sm';
+                            fallbackText.textContent = 'deAsra + YU';
+                            parent.appendChild(fallbackText);
+                          }
+                        }
+                      }}
+                      onLoad={() => console.log('deAsra logo loaded successfully')}
                     />
                   </motion.div>
                   <motion.div

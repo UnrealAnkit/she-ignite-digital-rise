@@ -251,7 +251,7 @@ const SHELeadsIndiaLaunch = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">December 2024</h3>
                 <h4 className="text-xl font-semibold text-red-600 mb-3">The Growth</h4>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  EmpowerHER24 attracted 250+ women entrepreneurs, showing remarkable year-on-year growth and establishing SHELeadsIndia as the go-to platform for women-led business growth.
+                  EmpowerHER2024 attracted 250+ women entrepreneurs, showing remarkable year-on-year growth and establishing SHELeadsIndia as the go-to platform for women-led business growth.
                 </p>
                 <Link 
                   to="/empowerher2024"

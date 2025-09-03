@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MapPin, Users, Mic, Award, CheckCircle, ArrowRight, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import OptimizedImage from "@/components/OptimizedImage"; // Added import for OptimizedImage
 
 const EmpowerHer2024 = () => {
   return (
@@ -257,28 +258,31 @@ const EmpowerHer2024 = () => {
                     viewport={{ once: true }}
                     className="flex justify-center"
                   >
-                    <img 
-                      src="/media/deAsra + YU logo.avif" 
+                    <OptimizedImage 
+                      src="/media/deAsra + YU logo.avif"
                       alt="deAsra + YU" 
                       className="h-16 w-auto object-contain hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        console.log('Image failed to load:', e.target.src);
-                        // Try alternative file names if the main one fails
-                        if (e.target.src.includes('deAsra + YU logo.avif')) {
-                          e.target.src = "/media/deAsra + YU logo (1).avif";
-                        } else if (e.target.src.includes('(1)')) {
-                          // If both fail, show a placeholder or text
-                          e.target.style.display = 'none';
-                          const parent = e.target.parentElement;
-                          if (parent) {
-                            const fallbackText = document.createElement('div');
-                            fallbackText.className = 'text-red-600 font-semibold text-sm';
-                            fallbackText.textContent = 'deAsra + YU';
-                            parent.appendChild(fallbackText);
-                          }
-                        }
+                      fallbackText="deAsra + YU"
+                      fallbackOptions={[
+                        "/media/deAsra + YU logo (1).avif",
+                        "/media/deAsra%20%2B%20YU%20logo.avif",
+                        "/media/deAsra%20%2B%20YU%20logo%20(1).avif",
+                        // Additional fallbacks for production deployment issues
+                        "/media/deAsra%2BYU%20logo.avif",
+                        "/media/deAsra%2BYU%20logo%20(1).avif"
+                      ]}
+                      onLoad={() => {
+                        console.log('deAsra logo loaded successfully');
+                        // Log the successful URL for debugging
+                        console.log('Successfully loaded from:', window.location.href);
                       }}
-                      onLoad={() => console.log('deAsra logo loaded successfully')}
+                      onError={() => {
+                        console.log('All deAsra logo fallbacks failed');
+                        console.log('Current URL:', window.location.href);
+                        console.log('User Agent:', navigator.userAgent);
+                        // Log available media files for debugging
+                        console.log('Attempting to check media directory...');
+                      }}
                     />
                   </motion.div>
                   <motion.div

@@ -1,80 +1,74 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 interface OptimizedImageProps {
   src: string;
   alt: string;
   className?: string;
-  width?: number;
-  height?: number;
-  priority?: boolean;
-  placeholder?: string;
+  fallbackText?: string;
+  fallbackOptions?: string[];
+  onLoad?: () => void;
+  onError?: () => void;
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   alt,
   className = '',
-  width,
-  height,
-  priority = false,
-  placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0zMCA0MEg3MFY2MEgzMFY0MFoiIGZpbGw9IiNEMUQ1REIiLz4KPC9zdmc+'
+  fallbackText,
+  fallbackOptions = [],
+  onLoad,
+  onError
 }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [currentSrc, setCurrentSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    if (priority) {
-      setIsLoaded(true);
-    }
-  }, [priority]);
-
-  const handleLoad = () => {
-    setIsLoaded(true);
-  };
+  const allOptions = [src, ...fallbackOptions];
 
   const handleError = () => {
-    setHasError(true);
-    setIsLoaded(true);
+    console.log(`Image failed to load: ${currentSrc}`);
+    
+    if (currentIndex < allOptions.length - 1) {
+      // Try next fallback option
+      const nextIndex = currentIndex + 1;
+      setCurrentIndex(nextIndex);
+      setCurrentSrc(allOptions[nextIndex]);
+    } else {
+      // All options failed
+      setHasError(true);
+      onError?.();
+    }
   };
 
+  const handleLoad = () => {
+    console.log(`Image loaded successfully: ${currentSrc}`);
+    setHasError(false);
+    onLoad?.();
+  };
+
+  // Reset when src prop changes
+  useEffect(() => {
+    setCurrentSrc(src);
+    setCurrentIndex(0);
+    setHasError(false);
+  }, [src]);
+
+  if (hasError && fallbackText) {
+    return (
+      <div className={`fallback-text text-red-600 font-semibold text-sm text-center ${className}`}>
+        {fallbackText}
+      </div>
+    );
+  }
+
   return (
-    <div className={`relative overflow-hidden ${className}`}>
-      {/* Placeholder */}
-      {!isLoaded && !hasError && (
-        <motion.div
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="absolute inset-0 bg-gray-200 animate-pulse"
-        />
-      )}
-
-      {/* Main Image */}
-      <motion.img
-        src={hasError ? placeholder : src}
-        alt={alt}
-        width={width}
-        height={height}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-        onLoad={handleLoad}
-        onError={handleError}
-        loading={priority ? 'eager' : 'lazy'}
-        decoding="async"
-        style={{
-          imageRendering: 'crisp-edges',
-          willChange: 'opacity'
-        }}
-      />
-
-      {/* Loading Spinner */}
-      {!isLoaded && !hasError && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-8 h-8 border-2 border-red-200 border-t-red-600 rounded-full animate-spin"></div>
-        </div>
-      )}
-    </div>
+    <img
+      src={currentSrc}
+      alt={alt}
+      className={className}
+      onError={handleError}
+      onLoad={handleLoad}
+    />
   );
 };
 

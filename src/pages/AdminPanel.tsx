@@ -128,6 +128,8 @@ export default function AdminPanel() {
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [eventFilter, setEventFilter] = useState<'all' | 'upcoming' | 'past'>('all');
+  const [trainingFilter, setTrainingFilter] = useState<'all' | 'upcoming' | 'past'>('all');
 
   useEffect(() => {
     // Check initial auth state
@@ -473,6 +475,58 @@ export default function AdminPanel() {
   const handleCancelTraining = () => {
     setTrainingForm(emptyTrainingForm);
     setEditingTrainingId(null);
+  };
+
+  // Helper functions to filter events and trainings
+  const getFilteredEvents = () => {
+    const today = new Date().toISOString().split('T')[0];
+    let filtered = events;
+
+    if (eventFilter === 'upcoming') {
+      filtered = events.filter(event => 
+        event.status === 'published' && event.event_date >= today
+      );
+    } else if (eventFilter === 'past') {
+      filtered = events.filter(event => 
+        (event.status === 'published' || event.status === 'ended') && event.event_date < today
+      );
+    }
+
+    if (searchTerm) {
+      filtered = filtered.filter(event =>
+        event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        event.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        event.location.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    return filtered;
+  };
+
+  const getFilteredTrainings = () => {
+    const today = new Date().toISOString().split('T')[0];
+    let filtered = trainings;
+
+    if (trainingFilter === 'upcoming') {
+      filtered = trainings.filter(training => 
+        training.status === 'published' && training.start_date >= today
+      );
+    } else if (trainingFilter === 'past') {
+      filtered = trainings.filter(training => 
+        (training.status === 'published' || training.status === 'completed') && training.start_date < today
+      );
+    }
+
+    if (searchTerm) {
+      filtered = filtered.filter(training =>
+        training.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        training.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        training.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        training.instructor.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    return filtered;
   };
 
   const handleLogout = async () => {
@@ -1216,11 +1270,31 @@ export default function AdminPanel() {
                   <CardTitle className="flex items-center justify-between">
                     <span className="flex items-center gap-2 text-gray-900">
                       <Calendar className="h-5 w-5 text-primary" />
-                      All Events ({events.length})
+                      All Events ({getFilteredEvents().length})
                     </span>
-                    <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-200">
-                      {events.filter(e => e.status === 'published').length} Published
-                    </Badge>
+                    <div className="flex items-center gap-3">
+                      <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-200">
+                        {events.filter(e => e.status === 'published').length} Published
+                      </Badge>
+                      <div className="flex gap-2">
+                        <select
+                          value={eventFilter}
+                          onChange={(e) => setEventFilter(e.target.value as 'all' | 'upcoming' | 'past')}
+                          className="px-3 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        >
+                          <option value="all">All Events</option>
+                          <option value="upcoming">Upcoming</option>
+                          <option value="past">Past</option>
+                        </select>
+                        <input
+                          type="text"
+                          placeholder="Search events..."
+                          value={searchTerm}
+                          onChange={(e) => setSearchTerm(e.target.value)}
+                          className="px-3 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 w-48"
+                        />
+                      </div>
+                    </div>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
@@ -1231,7 +1305,7 @@ export default function AdminPanel() {
                     </div>
                   ) : (
                     <div className="grid gap-4">
-                      {events.map((event, index) => (
+                      {getFilteredEvents().map((event, index) => (
                         <motion.div
                           key={event.id}
                           initial={{ opacity: 0, y: 20 }}
@@ -1653,11 +1727,31 @@ export default function AdminPanel() {
                   <CardTitle className="flex items-center justify-between">
                     <span className="flex items-center gap-2 text-gray-900">
                       <BookOpen className="h-5 w-5 text-primary" />
-                      All Training Sessions ({trainings.length})
+                      All Training Sessions ({getFilteredTrainings().length})
                     </span>
-                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
-                      {trainings.filter(t => t.status === 'published').length} Published
-                    </Badge>
+                    <div className="flex items-center gap-3">
+                      <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                        {trainings.filter(t => t.status === 'published').length} Published
+                      </Badge>
+                      <div className="flex gap-2">
+                        <select
+                          value={trainingFilter}
+                          onChange={(e) => setTrainingFilter(e.target.value as 'all' | 'upcoming' | 'past')}
+                          className="px-3 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        >
+                          <option value="all">All Trainings</option>
+                          <option value="upcoming">Upcoming</option>
+                          <option value="past">Past</option>
+                        </select>
+                        <input
+                          type="text"
+                          placeholder="Search trainings..."
+                          value={searchTerm}
+                          onChange={(e) => setSearchTerm(e.target.value)}
+                          className="px-3 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 w-48"
+                        />
+                      </div>
+                    </div>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
@@ -1668,7 +1762,7 @@ export default function AdminPanel() {
                     </div>
                   ) : (
                     <div className="grid gap-4">
-                      {trainings.map((training, index) => (
+                      {getFilteredTrainings().map((training, index) => (
                         <motion.div
                           key={training.id}
                           initial={{ opacity: 0, y: 20 }}

@@ -52,6 +52,32 @@ export async function fetchEvents(): Promise<Event[]> {
   return data || [];
 }
 
+export async function fetchUpcomingEvents(): Promise<Event[]> {
+  const today = new Date().toISOString().split('T')[0];
+  const { data, error } = await supabase
+    .from('events')
+    .select('*')
+    .eq('status', 'published')
+    .gte('event_date', today)
+    .order('event_date', { ascending: true });
+  
+  if (error) throw error;
+  return data || [];
+}
+
+export async function fetchPastEvents(): Promise<Event[]> {
+  const today = new Date().toISOString().split('T')[0];
+  const { data, error } = await supabase
+    .from('events')
+    .select('*')
+    .in('status', ['published', 'ended'])
+    .lt('event_date', today)
+    .order('event_date', { ascending: false });
+  
+  if (error) throw error;
+  return data || [];
+}
+
 export async function fetchEventById(id: string): Promise<Event | null> {
   const { data, error } = await supabase
     .from('events')

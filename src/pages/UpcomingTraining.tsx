@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchTrainings, Training } from "@/lib/trainingService";
+import { fetchUpcomingTrainings, fetchPastTrainings, Training } from "@/lib/trainingService";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,22 +9,28 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export default function UpcomingTraining() {
-  const [trainings, setTrainings] = useState<Training[]>([]);
+  const [upcomingTrainings, setUpcomingTrainings] = useState<Training[]>([]);
+  const [pastTrainings, setPastTrainings] = useState<Training[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchTrainings()
-      .then((data) => {
-        // Only show published trainings to public
-        const publishedTrainings = data.filter(training => training.status === 'published');
-        setTrainings(publishedTrainings);
+    const loadTrainings = async () => {
+      try {
+        const [upcoming, past] = await Promise.all([
+          fetchUpcomingTrainings(),
+          fetchPastTrainings()
+        ]);
+        setUpcomingTrainings(upcoming);
+        setPastTrainings(past);
         setLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         setError("Failed to load training sessions");
         setLoading(false);
-      });
+      }
+    };
+
+    loadTrainings();
   }, []);
 
   const formatDate = (dateString: string) => {
@@ -211,7 +217,7 @@ export default function UpcomingTraining() {
             </p>
           </div>
 
-          {trainings.length === 0 ? (
+          {upcomingTrainings.length === 0 ? (
             <div className="text-center py-20">
               <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                 <BookOpen className="h-12 w-12 text-primary" />
@@ -223,7 +229,7 @@ export default function UpcomingTraining() {
             </div>
           ) : (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {trainings.map((training, index) => {
+              {upcomingTrainings.map((training, index) => {
                 const cardVariants = [
                   'bg-gradient-to-br from-blue-50 to-indigo-100 border-l-4 border-blue-500',
                   'bg-gradient-to-br from-purple-50 to-pink-100 border-l-4 border-purple-500',
@@ -398,6 +404,152 @@ export default function UpcomingTraining() {
           )}
         </div>
       </section>
+
+      {/* Past Training Sessions Section */}
+      {pastTrainings.length > 0 && (
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Past Training Sessions
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Explore our completed training programs and see what participants have learned.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {pastTrainings.map((training, index) => {
+                const cardVariants = [
+                  'bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border-gray-400',
+                  'bg-gradient-to-br from-slate-50 to-slate-100 border-l-4 border-slate-400',
+                  'bg-gradient-to-br from-zinc-50 to-zinc-100 border-l-4 border-zinc-400',
+                ];
+                
+                const iconColors = [
+                  'text-gray-600 bg-gray-200',
+                  'text-slate-600 bg-slate-200',
+                  'text-zinc-600 bg-zinc-200',
+                ];
+                
+                const badgeColors = [
+                  'bg-gray-100 text-gray-700 border-gray-300',
+                  'bg-slate-100 text-slate-700 border-slate-300',
+                  'bg-zinc-100 text-zinc-700 border-zinc-300',
+                ];
+                
+                const cardVariant = cardVariants[index % cardVariants.length];
+                const iconColor = iconColors[index % iconColors.length];
+                const badgeColor = badgeColors[index % badgeColors.length];
+                
+                return (
+                  <div key={training.id} className={`group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 ${cardVariant}`}>
+                    {/* Decorative elements */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
+                    
+                    {training.image_url && (
+                      <div className="relative aspect-video overflow-hidden">
+                        <img
+                          src={training.image_url}
+                          alt={training.title}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 opacity-80"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        <div className="absolute top-4 left-4 flex gap-2">
+                          <Badge className={`${badgeColor} border font-medium`}>
+                            <Award className="h-3 w-3 mr-1" />
+                            {training.level}
+                          </Badge>
+                          {training.price > 0 && (
+                            <Badge className={`${badgeColor} border font-medium`}>
+                              ₹{training.price}
+                            </Badge>
+                          )}
+                          {training.certificate_provided && (
+                            <Badge className={`${badgeColor} border font-medium`}>
+                              <CheckCircle className="h-3 w-3 mr-1" />
+                              Certificate
+                            </Badge>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                    
+                    <div className="relative p-8">
+                      <div className="flex items-start justify-between mb-4">
+                        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors duration-300 flex-1">
+                          {training.title}
+                        </h3>
+                        <div className={`w-12 h-12 rounded-xl ${iconColor} flex items-center justify-center ml-4 group-hover:scale-110 transition-transform duration-300`}>
+                          <BookOpen className="h-6 w-6" />
+                        </div>
+                      </div>
+                      
+                      <p className="text-gray-700 mb-6 line-clamp-3 text-base leading-relaxed">
+                        {training.description}
+                      </p>
+                      
+                      {/* Info Cards */}
+                      <div className="grid grid-cols-2 gap-3 mb-6">
+                        <div className="bg-white/50 backdrop-blur-sm rounded-xl p-3 border border-white/20">
+                          <div className="flex items-center gap-2 text-sm text-gray-700">
+                            <Calendar className="h-4 w-4" />
+                            <span className="font-medium truncate">{formatDate(training.start_date)}</span>
+                          </div>
+                        </div>
+                        <div className="bg-white/50 backdrop-blur-sm rounded-xl p-3 border border-white/20">
+                          <div className="flex items-center gap-2 text-sm text-gray-700">
+                            <Clock className="h-4 w-4" />
+                            <span className="font-medium">{training.duration}</span>
+                          </div>
+                        </div>
+                        <div className="bg-white/50 backdrop-blur-sm rounded-xl p-3 border border-white/20">
+                          <div className="flex items-center gap-2 text-sm text-gray-700">
+                            <MapPin className="h-4 w-4" />
+                            <span className="font-medium truncate">{training.location}</span>
+                          </div>
+                        </div>
+                        <div className="bg-white/50 backdrop-blur-sm rounded-xl p-3 border border-white/20">
+                          <div className="flex items-center gap-2 text-sm text-gray-700">
+                            <Users className="h-4 w-4" />
+                            <span className="font-medium">{training.max_participants} max</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-3">
+                        <Button asChild className="flex-1 h-12 text-base font-semibold rounded-2xl bg-gray-700 hover:bg-gray-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                          <Link to={`/training/${training.id}`}>
+                            View Details
+                          </Link>
+                        </Button>
+                        {training.page_link && (
+                          <Button 
+                            asChild 
+                            size="sm" 
+                            variant="outline" 
+                            className="h-12 px-4 rounded-2xl border-gray-300 text-gray-600 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300"
+                            title="View Training Page"
+                          >
+                            <a 
+                              href={training.page_link} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                            >
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Call to Action Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10">

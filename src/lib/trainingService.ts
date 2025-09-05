@@ -63,6 +63,38 @@ export const fetchTrainings = async (): Promise<Training[]> => {
   return data || [];
 };
 
+export const fetchUpcomingTrainings = async (): Promise<Training[]> => {
+  const today = new Date().toISOString().split('T')[0];
+  const { data, error } = await supabase
+    .from('trainings')
+    .select('*')
+    .eq('status', 'published')
+    .gte('start_date', today)
+    .order('start_date', { ascending: true });
+
+  if (error) {
+    throw error;
+  }
+
+  return data || [];
+};
+
+export const fetchPastTrainings = async (): Promise<Training[]> => {
+  const today = new Date().toISOString().split('T')[0];
+  const { data, error } = await supabase
+    .from('trainings')
+    .select('*')
+    .in('status', ['published', 'completed'])
+    .lt('start_date', today)
+    .order('start_date', { ascending: false });
+
+  if (error) {
+    throw error;
+  }
+
+  return data || [];
+};
+
 export const fetchTrainingById = async (id: string): Promise<Training | null> => {
   const { data, error } = await supabase
     .from('trainings')

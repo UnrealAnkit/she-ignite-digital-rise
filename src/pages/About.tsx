@@ -243,9 +243,11 @@ const About = () => {
                   <li>→ Weekly Masterclasses & Offline Events for Women Founders</li>
                 </ul>
               </div>
-              <Button variant="outline" size="lg" className="group">
-                Connect with Nikita
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button variant="outline" size="lg" className="group" asChild>
+                <a href="https://www.linkedin.com/in/nikitavora/" target="_blank" rel="noopener noreferrer">
+                  Connect with Nikita
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
             </div>
             <div className="relative">

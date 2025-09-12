@@ -299,7 +299,7 @@ const About = () => {
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">Salonia Bajaj</h3>
-              <p className="text-muted-foreground">Head - Marketing</p>
+              <p className="text-muted-foreground">Operations</p>
             </div>
 
             {/* Priti Bhaskarwar */}
@@ -312,7 +312,7 @@ const About = () => {
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">Priti Bhaskarwar</h3>
-              <p className="text-muted-foreground">Head - Technical</p>
+              <p className="text-muted-foreground">Tech Solutions</p>
             </div>
 
             {/* Ritika Jain */}
@@ -325,21 +325,9 @@ const About = () => {
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">Ritika Jain</h3>
-              <p className="text-muted-foreground">Creative Head</p>
+              <p className="text-muted-foreground">Marketing</p>
             </div>
 
-            {/* Dhara Pandya */}
-            <div className="text-center">
-              <div className="relative mb-6">
-                <img
-                  src="/media/Dhara.avif"
-                  alt="Dhara Pandya"
-                  className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Dhara Pandya</h3>
-              <p className="text-muted-foreground">Learning Head</p>
-            </div>
           </div>
         </div>
       </section>

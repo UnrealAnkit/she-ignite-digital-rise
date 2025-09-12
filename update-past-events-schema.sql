@@ -145,3 +145,5 @@ SELECT * FROM get_event_stats();
 
 SELECT 'Current Training Statistics:' as info;
 SELECT * FROM get_training_stats();
+
+

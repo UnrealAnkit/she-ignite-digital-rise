@@ -189,3 +189,5 @@ WHERE EXISTS (
 SELECT 
   (SELECT COUNT(*) FROM public.events WHERE status = 'ended') as past_events_count,
   (SELECT COUNT(*) FROM public.trainings WHERE status = 'completed') as past_trainings_count;
+
+

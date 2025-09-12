@@ -275,20 +275,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-            {/* Nikita Vora */}
-            <div className="text-center">
-              <div className="relative mb-6">
-                <img
-                  src="/media/founder-nikita.webp"
-                  alt="Nikita Vora"
-                  className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Nikita Vora</h3>
-              <p className="text-muted-foreground">Founder & Director</p>
-            </div>
-
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
             {/* Salonia Bajaj */}
             <div className="text-center">
               <div className="relative mb-6">
@@ -299,7 +286,7 @@ const About = () => {
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">Salonia Bajaj</h3>
-              <p className="text-muted-foreground">Operations</p>
+              <p className="text-gray-800 font-medium">Operations</p>
             </div>
 
             {/* Priti Bhaskarwar */}
@@ -312,7 +299,7 @@ const About = () => {
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">Priti Bhaskarwar</h3>
-              <p className="text-muted-foreground">Tech Solutions</p>
+              <p className="text-gray-800 font-medium">Tech Solutions</p>
             </div>
 
             {/* Ritika Jain */}
@@ -325,7 +312,20 @@ const About = () => {
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">Ritika Jain</h3>
-              <p className="text-muted-foreground">Marketing</p>
+              <p className="text-gray-800 font-medium">Marketing</p>
+            </div>
+
+            {/* Aarti */}
+            <div className="text-center">
+              <div className="relative mb-6">
+                <img
+                  src="/media/aarti .jpg"
+                  alt="Aarti"
+                  className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Aarti</h3>
+              <p className="text-gray-800 font-medium">Operations</p>
             </div>
 
           </div>

@@ -621,12 +621,16 @@ const About = () => {
               and lives through our community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl" className="group">
-                Join Our Community
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <Button variant="hero" size="xl" className="group" asChild>
+                <a href="https://rebrand.ly/SHELeadsNashik" target="_blank" rel="noopener noreferrer">
+                  Join Our Community
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
-              <Button variant="outline" size="xl">
-                Schedule a Call
+              <Button variant="outline" size="xl" asChild>
+                <a href="https://tidycal.com/nikitavora" target="_blank" rel="noopener noreferrer">
+                  Schedule a Call
+                </a>
               </Button>
             </div>
           </div>

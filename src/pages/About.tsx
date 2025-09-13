@@ -317,12 +317,12 @@ const About = () => {
               <p className="text-gray-800 font-medium">Marketing</p>
             </div>
 
-            {/* Aarti */}
+            {/* Aarti Kadam */}
             <div className="text-center">
               <div className="relative mb-6">
                 <img
                   src="/media/aarti .jpg"
-                  alt="Aarti"
+                  alt="Aarti kadam"
                   className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
                 />
               </div>

@@ -147,3 +147,4 @@ SELECT 'Current Training Statistics:' as info;
 SELECT * FROM get_training_stats();
 
 
+

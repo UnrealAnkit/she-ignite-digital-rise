@@ -191,3 +191,4 @@ SELECT
   (SELECT COUNT(*) FROM public.trainings WHERE status = 'completed') as past_trainings_count;
 
 
+

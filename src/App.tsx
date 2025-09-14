@@ -35,6 +35,7 @@ import Content from "./pages/Content";
 import EmpowerHer2025 from "./pages/EmpowerHer2025";
 import EmpowerHer2024 from "./pages/EmpowerHer2024";
 import SHELeadsIndiaLaunch from "./pages/SHELeadsIndiaLaunch";
+import OurCourses from "./pages/OurCourses";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -84,6 +85,7 @@ const App = () => {
             <Route path="/empowerher2025" element={<Navigate to="/empowerher25" replace />} />
             <Route path="/empowerher24" element={<EmpowerHer2024 />} />
             <Route path="/sheleadsindia-launch" element={<SHELeadsIndiaLaunch />} />
+            <Route path="/our-courses" element={<OurCourses />} />
             <Route path="/admin" element={<AdminPanel />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

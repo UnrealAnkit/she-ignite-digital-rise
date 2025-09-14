@@ -18,6 +18,24 @@ export async function signIn(email: string, password: string): Promise<User | nu
   return data.user ? { id: data.user.id, email: data.user.email! } : null;
 }
 
+export async function signUp(email: string, password: string, fullName?: string): Promise<User | null> {
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: {
+        full_name: fullName || '',
+      }
+    }
+  });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data.user ? { id: data.user.id, email: data.user.email! } : null;
+}
+
 export async function signOut(): Promise<void> {
   const { error } = await supabase.auth.signOut();
   if (error) {

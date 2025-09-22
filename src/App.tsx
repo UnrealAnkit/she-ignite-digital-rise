@@ -36,6 +36,8 @@ import EmpowerHer2025 from "./pages/EmpowerHer2025";
 import EmpowerHer2024 from "./pages/EmpowerHer2024";
 import SHELeadsIndiaLaunch from "./pages/SHELeadsIndiaLaunch";
 import OurCourses from "./pages/OurCourses";
+import RefundPolicy from "./pages/RefundPolicy";
+import Newsletter from "./pages/Newsletter";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -86,6 +88,8 @@ const App = () => {
             <Route path="/empowerher24" element={<EmpowerHer2024 />} />
             <Route path="/sheleadsindia-launch" element={<SHELeadsIndiaLaunch />} />
             <Route path="/our-courses" element={<OurCourses />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/admin" element={<AdminPanel />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

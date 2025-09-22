@@ -149,3 +149,4 @@ $$ LANGUAGE plpgsql SECURITY DEFINER;
 
 -- Grant execute permission to authenticated users (you can restrict this to admin only)
 GRANT EXECUTE ON FUNCTION public.mark_notifications_sent() TO authenticated;
+

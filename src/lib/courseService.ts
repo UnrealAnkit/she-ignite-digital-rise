@@ -82,3 +82,4 @@ export async function deleteCourse(id: string): Promise<void> {
     throw new Error('Failed to delete course');
   }
 }
+

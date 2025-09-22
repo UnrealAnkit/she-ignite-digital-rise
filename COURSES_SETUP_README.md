@@ -130,3 +130,4 @@ SELECT * FROM public.course_notification_requests WHERE notified = FALSE;
 3. Create admin dashboard to manage course notifications
 4. Implement course launch notification system
 5. Add user profile management features
+

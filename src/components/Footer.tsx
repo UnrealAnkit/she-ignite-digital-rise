@@ -96,6 +96,11 @@ const Footer = () => {
                   Content Policy
                 </Link>
               </li>
+              <li>
+                <Link to="/refund-policy" className="text-gray-300 transition-colors hover:text-[#E60023]">
+                  Refund Policy
+                </Link>
+              </li>
             </ul>
           </div>
 

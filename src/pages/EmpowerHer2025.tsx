@@ -37,31 +37,28 @@ const EmpowerHer25 = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
-                Welcome to EmpowerHER
-              </h1>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
-                25
+                EmpowerHER25 – India's Flagship MarTech & AI Summit for Women Entrepreneurs
               </h1>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                 A Transformative Experience Awaits!
               </h2>
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl">
-                A one-day masterclass on Marketing & AI, for women entrepreneurs ready to grow smarter and faster.
+                Join 300+ women entrepreneurs for a full-day masterclass on MarTech & AI for Business Growth.
               </p>
               
               {/* Event Details */}
               <div className="flex flex-col md:flex-row gap-6 mb-8">
                 <div className="flex items-center gap-2 text-white">
                   <MapPin className="h-5 w-5 text-red-400" />
-                  <span className="font-medium">Pune</span>
+                  <span className="font-medium">Radisson Blu, Pune</span>
                 </div>
                 <div className="flex items-center gap-2 text-white">
                   <Calendar className="h-5 w-5 text-red-400" />
-                  <span className="font-medium">18th Dec, 25</span>
+                  <span className="font-medium">18th December 2025</span>
                 </div>
                 <div className="flex items-center gap-2 text-white">
                   <Clock className="h-5 w-5 text-red-400" />
-                  <span className="font-medium">10 AM – 6 PM</span>
+                  <span className="font-medium">10:30 AM onwards</span>
                 </div>
               </div>
             </motion.div>
@@ -83,16 +80,16 @@ const EmpowerHer25 = () => {
                 className="space-y-6"
               >
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-4 leading-tight">
-                  Step into a day designed to empower you as a truly successful woman entrepreneur.
+                  🌟 Why EmpowerHER25?
                 </h2>
 
                 
                 <div className="space-y-4">
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    EmpowerHER 25 is a full-day masterclass experience for women-led SMEs and solopreneurs to learn the real, practical side of Marketing & AI without the overwhelm.
+                    EmpowerHER25 isn't just another conference—it's the stage where India's most ambitious women entrepreneurs meet innovation, technology, and growth. With 300+ founders, leaders, investors, and change-makers under one roof, this is where business conversations turn into collaborations, and ideas turn into impact.
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Hosted by SHELeadsIndia, this event brings together 200+ women entrepreneurs in one room to learn, apply, and grow their businesses with real tools and real stories.
+                    This year, the spotlight is on MarTech + AI for Business Growth, bringing you insights, strategies, and tools you can implement right away.
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed font-medium">
                     No fluff. No jargon. Only action, learning, and inspiration.
@@ -112,7 +109,7 @@ const EmpowerHer25 = () => {
                 <div className="space-y-6">
                   <div className="flex items-center gap-3">
                     <Calendar className="h-7 w-7 text-red-600" />
-                    <span className="text-gray-700 text-xl font-medium">18th December, 25</span>
+                    <span className="text-gray-700 text-xl font-medium">18th December 2025</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="h-7 w-7 text-red-600" />
@@ -120,7 +117,7 @@ const EmpowerHer25 = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <MapPin className="h-7 w-7 text-red-600" />
-                    <span className="text-gray-700 text-xl font-medium">Pune, Maharashtra</span>
+                    <span className="text-gray-700 text-xl font-medium">Radisson Blu, Pune</span>
                   </div>
                   
                   <Button 
@@ -139,8 +136,266 @@ const EmpowerHer25 = () => {
                     className="h-24 w-auto object-contain"
                   />
                   <div className="text-black font-bold text-2xl">
-                    EmpowerHER 25
+                    EmpowerHER25
                   </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Speakers Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-red-600 mb-6">
+                🎤 Our Esteemed Speakers
+              </h2>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-12 text-white max-w-2xl mx-auto">
+                <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                  <Mic className="h-10 w-10 text-red-600" />
+                </div>
+                <h3 className="text-3xl font-bold mb-4">Speaker Details Revealing Soon</h3>
+                <p className="text-xl leading-relaxed">
+                  We're curating an exceptional lineup of industry leaders, successful entrepreneurs, and MarTech & AI experts. Stay tuned for exciting speaker announcements!
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Knowledge Partner Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl font-bold text-red-600 mb-6">
+                🎓 Knowledge Partner
+              </h2>
+              <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">Symbiosis Centre for Entrepreneurship and Innovation (SCEI)</h3>
+                <p className="text-lg leading-relaxed">
+                  We are proud to have Symbiosis Centre for Entrepreneurship and Innovation (SCEI) as our official Knowledge Partner.
+                </p>
+                <p className="text-lg leading-relaxed mt-4">
+                  Their collaboration brings academic depth, startup expertise, and innovation insights to the EmpowerHER25 experience.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* What to Expect Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-red-600 mb-6">
+                💡 What to Expect
+              </h2>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg text-center"
+              >
+                <div className="bg-red-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Mic className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">25+ Visionary Speakers & Mentors</h3>
+                <p className="text-gray-700">Learn from industry leaders and successful entrepreneurs</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg text-center"
+              >
+                <div className="bg-red-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">300+ Women Entrepreneurs</h3>
+                <p className="text-gray-700">From across India, all focused on growth and innovation</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg text-center"
+              >
+                <div className="bg-red-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Panel Discussions & Masterclasses</h3>
+                <p className="text-gray-700">Interactive sessions and networking lounges</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg text-center"
+              >
+                <div className="bg-red-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Star className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">MarTech & AI Tools Showcase</h3>
+                <p className="text-gray-700">Exclusive demonstration of cutting-edge business tools</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg text-center"
+              >
+                <div className="bg-red-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Investor & Collaborator Connections</h3>
+                <p className="text-gray-700">Opportunities to connect with investors, sponsors & collaborators</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg text-center"
+              >
+                <div className="bg-red-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <ArrowRight className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Media Coverage</h3>
+                <p className="text-gray-700">96+ media outlets expected for maximum visibility</p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why You Shouldn't Miss This Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-red-600 mb-6">
+                🚀 Why You Shouldn't Miss This
+              </h2>
+              <p className="text-xl text-gray-700 mb-8">
+                EmpowerHER25 is more than an event—it's an ecosystem.
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-start gap-4"
+              >
+                <div className="bg-red-600 rounded-full p-3 flex-shrink-0">
+                  <CheckCircle className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Get actionable strategies to scale your business with MarTech & AI</h3>
+                  <p className="text-gray-700 leading-relaxed">Learn practical, implementable strategies from industry experts who have built successful businesses using these tools.</p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="flex items-start gap-4"
+              >
+                <div className="bg-red-600 rounded-full p-3 flex-shrink-0">
+                  <CheckCircle className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Build real networks with industry leaders & investors</h3>
+                  <p className="text-gray-700 leading-relaxed">Connect with like-minded entrepreneurs, potential investors, and industry leaders who can help accelerate your growth.</p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="flex items-start gap-4"
+              >
+                <div className="bg-red-600 rounded-full p-3 flex-shrink-0">
+                  <CheckCircle className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Gain visibility & media coverage (96+ outlets expected)</h3>
+                  <p className="text-gray-700 leading-relaxed">Get featured in leading media outlets and build your personal brand as a thought leader in your industry.</p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="flex items-start gap-4"
+              >
+                <div className="bg-red-600 rounded-full p-3 flex-shrink-0">
+                  <CheckCircle className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Walk away with collaborations & opportunities to grow faster</h3>
+                  <p className="text-gray-700 leading-relaxed">Leave with concrete partnerships, collaborations, and opportunities that can transform your business trajectory.</p>
                 </div>
               </motion.div>
             </div>
@@ -160,7 +415,7 @@ const EmpowerHer25 = () => {
               className="text-center mb-12"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-4">
-                Why Speak at EmpowerHER 25?
+                Why Speak at EmpowerHER25?
               </h2>
               <p className="text-lg text-gray-700">
                 Know more about the opportunities here
@@ -793,7 +1048,7 @@ const EmpowerHer25 = () => {
                 Event Details
               </h2>
               <p className="text-xl text-gray-700">
-                Everything you need to know about EmpowerHER 25
+                Everything you need to know about EmpowerHER25
               </p>
             </motion.div>
             
@@ -811,7 +1066,7 @@ const EmpowerHer25 = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Date & Time</h3>
-                    <p className="text-lg text-gray-700">18th December, 25</p>
+                    <p className="text-lg text-gray-700">18th December 2025</p>
                     <p className="text-gray-600">10:30 AM onwards</p>
                   </div>
                 </div>
@@ -822,8 +1077,8 @@ const EmpowerHer25 = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Location</h3>
-                    <p className="text-lg text-gray-700">Pune, Maharashtra</p>
-                    <p className="text-gray-600">Venue details will be shared upon registration</p>
+                    <p className="text-lg text-gray-700">Radisson Blu, Pune</p>
+                    <p className="text-gray-600">Premium venue in the heart of Pune</p>
                   </div>
                 </div>
 
@@ -833,7 +1088,7 @@ const EmpowerHer25 = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Audience</h3>
-                    <p className="text-lg text-gray-700">200+ women entrepreneurs</p>
+                    <p className="text-lg text-gray-700">300+ women entrepreneurs</p>
                     <p className="text-gray-600">Curated audience of growth-focused founders</p>
                   </div>
                 </div>
@@ -875,7 +1130,7 @@ const EmpowerHer25 = () => {
                     className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl mb-6"
                   />
                   <div className="absolute -bottom-4 -right-4 bg-red-600 text-white px-6 py-3 rounded-full">
-                    <p className="font-semibold">200+ Women</p>
+                    <p className="font-semibold">300+ Women</p>
                     <p className="text-sm opacity-90">Entrepreneurs</p>
                   </div>
                 </div>
@@ -911,10 +1166,10 @@ const EmpowerHer25 = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl font-bold text-white mb-8">
-                Ready to Make a Difference?
+                🔗 Join Us at EmpowerHER25
               </h2>
               <p className="text-2xl text-white mb-12 leading-relaxed">
-                Join us in empowering the next generation of women entrepreneurs
+                Be part of India's most powerful women entrepreneur movement. Seats are limited, and the energy is unmatched.
               </p>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -926,7 +1181,7 @@ const EmpowerHer25 = () => {
                   size="lg" 
                   className="bg-white text-red-600 hover:bg-gray-100 font-semibold px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
-                  Apply to Speak
+                  👉 Register Now
                 </Button>
               </motion.div>
             </motion.div>

@@ -47,3 +47,4 @@ CREATE INDEX IF NOT EXISTS idx_courses_focus_area ON public.courses(focus_area);
 GRANT USAGE ON SCHEMA public TO anon, authenticated;
 GRANT ALL ON public.courses TO anon, authenticated;
 
+

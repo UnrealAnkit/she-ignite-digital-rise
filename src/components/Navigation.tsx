@@ -14,7 +14,7 @@ const Navigation = () => {
     { name: "Programs", href: "/programs" },
     { name: "Our Courses", href: "/our-courses" },
     { name: "Upcoming Training", href: "/upcoming-training" },
-    { name: "EmpowerHER 25", href: "/empowerher25" },
+    { name: "EmpowerHER25", href: "/empowerher25" },
     { name: "Newsletter", href: "/newsletter" },
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },

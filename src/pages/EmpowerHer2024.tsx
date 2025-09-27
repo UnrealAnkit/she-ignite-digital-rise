@@ -1318,7 +1318,7 @@ const EmpowerHer2024 = () => {
                 to="/empowerher25"
                 className="inline-block bg-white text-red-600 hover:bg-gray-100 font-semibold px-8 py-3 text-lg rounded-lg transition-colors duration-300"
               >
-                Join EmpowerHER 25 →
+                Join EmpowerHER25 →
               </Link>
             </motion.div>
           </div>

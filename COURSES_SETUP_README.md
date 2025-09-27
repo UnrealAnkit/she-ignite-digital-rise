@@ -131,3 +131,4 @@ SELECT * FROM public.course_notification_requests WHERE notified = FALSE;
 4. Implement course launch notification system
 5. Add user profile management features
 
+

@@ -48,3 +48,5 @@ GRANT USAGE ON SCHEMA public TO anon, authenticated;
 GRANT ALL ON public.courses TO anon, authenticated;
 
 
+
+

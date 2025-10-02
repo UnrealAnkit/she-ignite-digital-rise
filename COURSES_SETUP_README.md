@@ -132,3 +132,5 @@ SELECT * FROM public.course_notification_requests WHERE notified = FALSE;
 5. Add user profile management features
 
 
+
+

@@ -151,3 +151,5 @@ $$ LANGUAGE plpgsql SECURITY DEFINER;
 GRANT EXECUTE ON FUNCTION public.mark_notifications_sent() TO authenticated;
 
 
+
+

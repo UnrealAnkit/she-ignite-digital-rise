@@ -439,7 +439,7 @@ const EmpowerHer25 = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-6">
-                🚀 Why You Shouldn't Miss This
+                Why You Shouldn't Miss This
               </h2>
               <p className="text-xl text-gray-700 mb-8">
                 EmpowerHER25 is more than an event—it's an ecosystem.
@@ -538,7 +538,7 @@ const EmpowerHer25 = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-6">
-                🤝 To Partner With Us For This Event
+                To Partner With Us For This Event
               </h2>
               <p className="text-xl text-gray-700 mb-8">
                 Join us in empowering women entrepreneurs across India

@@ -37,7 +37,7 @@ const SecureSpotButton = ({ className = "" }) => {
         </Button>
       </motion.div>
       <div className="mt-4 text-red-600 text-lg font-semibold">
-        <span className="text-red-600">Almost Full</span> - Only 2 Seats Left
+        <span className="text-red-600">Limited Time Early Bird Price</span>
       </div>
     </div>
   );
@@ -162,13 +162,13 @@ const EmpowerHer25 = () => {
                 
                 <div className="space-y-4">
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    EmpowerHER25 isn't just another conference—it's the stage where India's most ambitious women entrepreneurs meet innovation, technology, and growth. With 300+ founders, leaders, investors, and change-makers under one roof, this is where business conversations turn into collaborations, and ideas turn into impact.
+                    EmpowerHER25 brings together India's most ambitious women entrepreneurs to drive innovation and growth. Join 300+ founders, leaders and investors in an environment where business conversations spark real collaborations and transform ideas into impact.
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     This year, the spotlight is on MarTech + AI for Business Growth, bringing you insights, strategies, and tools you can implement right away.
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed font-medium">
-                    No fluff. No jargon. Only action, learning, and inspiration.
+                    Pure actionable strategies for real business growth and success.
                   </p>
                 </div>
               </motion.div>
@@ -442,7 +442,7 @@ const EmpowerHer25 = () => {
                 Why You Shouldn't Miss This
               </h2>
               <p className="text-xl text-gray-700 mb-8">
-                EmpowerHER25 is more than an event—it's an ecosystem.
+                EmpowerHER25 creates a powerful ecosystem for your business growth.
               </p>
               <div className="mb-8">
                 <Button 

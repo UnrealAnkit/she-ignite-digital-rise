@@ -11,16 +11,15 @@ const SecureSpotButton = ({ className = "" }) => {
   const buttonControls = useAnimation();
 
   useEffect(() => {
-    const animateButton = async () => {
-      while (true) {
-        await buttonControls.start({
-          x: [0, -10, 10, -10, 10, 0],
-          transition: { duration: 1.5, ease: "easeInOut" }
-        });
-        await new Promise(resolve => setTimeout(resolve, 2000));
+    buttonControls.start({
+      x: [-20, 20, -20],
+      transition: {
+        duration: 3,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatType: "reverse"
       }
-    };
-    animateButton();
+    });
   }, []);
 
   return (
@@ -157,7 +156,7 @@ const EmpowerHer25 = () => {
                 className="space-y-6"
               >
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-4 leading-tight">
-                  🌟 Why EmpowerHER25?
+                  Why EmpowerHER25?
                 </h2>
 
                 
@@ -300,7 +299,7 @@ const EmpowerHer25 = () => {
               className="text-center mb-12"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-6">
-                🎓 Knowledge Partner
+                Knowledge Partner
               </h2>
               <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 text-white">
                 <div className="flex items-center justify-center mb-6">
@@ -335,7 +334,7 @@ const EmpowerHer25 = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-6">
-                💡 What to Expect
+                What to Expect
               </h2>
             </motion.div>
             

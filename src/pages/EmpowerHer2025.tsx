@@ -60,7 +60,7 @@ const EmpowerHer25 = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden w-full">
       <Navigation />
       
       {/* Hero Section */}
@@ -144,7 +144,7 @@ const EmpowerHer25 = () => {
 
       {/* Event Details and Registration Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="w-full">
             <div className="grid md:grid-cols-2 gap-12 items-start">
               {/* Left Column - Text Content */}
@@ -224,7 +224,7 @@ const EmpowerHer25 = () => {
 
       {/* Speakers Section */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -289,7 +289,7 @@ const EmpowerHer25 = () => {
 
       {/* Knowledge Partner Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -324,7 +324,7 @@ const EmpowerHer25 = () => {
 
       {/* What to Expect Section */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -429,7 +429,7 @@ const EmpowerHer25 = () => {
 
       {/* Why You Shouldn't Miss This Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -528,7 +528,7 @@ const EmpowerHer25 = () => {
 
       {/* To Partner With Us Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -634,7 +634,7 @@ const EmpowerHer25 = () => {
 
       {/* Previous Event Section */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -705,7 +705,7 @@ const EmpowerHer25 = () => {
 
       {/* Media Coverage Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -834,7 +834,7 @@ const EmpowerHer25 = () => {
 
       {/* Event Details Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -948,7 +948,7 @@ const EmpowerHer25 = () => {
 
       {/* Final CTA Section */}
       <section className="py-20 bg-[#1a1a1a]">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -982,7 +982,7 @@ const EmpowerHer25 = () => {
 
       {/* Fixed Bottom CTA */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-3 z-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-full">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="flex items-center gap-4">
               <div className="flex flex-col items-start">

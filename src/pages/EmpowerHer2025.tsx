@@ -119,7 +119,7 @@ const EmpowerHer25 = () => {
                   </Button>
                 </motion.div>
                 <div className="mt-4 text-lg font-semibold">
-                  <span className="text-red-600">Almost Full</span> <span className="text-red-600">- Only 2 Seats Left</span>
+                  <span className="text-red-600">Early Bird Offer Ends Soon</span>
                 </div>
               </motion.div>
               
@@ -993,7 +993,7 @@ const EmpowerHer25 = () => {
                 </div>
                 <span className="text-sm font-medium text-green-600">Early Bird Offer</span>
               </div>
-              <span className="text-red-600 font-semibold">Almost Full - Only 2 Seats Left</span>
+              <span className="text-red-600 font-semibold">Limited Time Early Bird Price</span>
             </div>
             <Button 
               size="lg" 

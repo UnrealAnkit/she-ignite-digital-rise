@@ -50,3 +50,5 @@ GRANT ALL ON public.courses TO anon, authenticated;
 
 
 
+
+

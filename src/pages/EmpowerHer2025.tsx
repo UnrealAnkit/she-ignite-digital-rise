@@ -3,10 +3,63 @@ import Footer from "@/components/Footer";
 
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MapPin, Users, Mic, Award, CheckCircle, ArrowRight, Star } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
+const SecureSpotButton = ({ className = "" }) => {
+  const buttonControls = useAnimation();
+
+  useEffect(() => {
+    const animateButton = async () => {
+      while (true) {
+        await buttonControls.start({
+          x: [0, -10, 10, -10, 10, 0],
+          transition: { duration: 1.5, ease: "easeInOut" }
+        });
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      }
+    };
+    animateButton();
+  }, []);
+
+  return (
+    <div className={`text-center ${className}`}>
+      <motion.div
+        animate={buttonControls}
+        className="inline-block"
+      >
+        <Button 
+          size="lg" 
+          className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-6 text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 rounded-full"
+          onClick={() => window.open('https://rzp.io/rzp/HcUdgXV', '_blank')}
+        >
+          👉 Secure Your Spot Now 👈
+        </Button>
+      </motion.div>
+      <div className="mt-4 text-red-600 text-lg font-semibold">
+        <span className="text-red-600">Almost Full</span> - Only 2 Seats Left
+      </div>
+    </div>
+  );
+};
 
 const EmpowerHer25 = () => {
+  const buttonControls = useAnimation();
+
+  useEffect(() => {
+    const animateButton = async () => {
+      while (true) {
+        await buttonControls.start({
+          x: [0, -10, 10, -10, 10, 0],
+          transition: { duration: 1.5, ease: "easeInOut" }
+        });
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      }
+    };
+    animateButton();
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -53,13 +106,21 @@ const EmpowerHer25 = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="mb-8"
               >
-                <Button 
-                  size="lg" 
-                  className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                  onClick={() => window.open('https://rzp.io/rzp/HcUdgXV', '_blank')}
+                <motion.div
+                  animate={buttonControls}
+                  className="inline-block"
                 >
-                  🎯 Secure Your Spot Now
-                </Button>
+                  <Button 
+                    size="lg" 
+                    className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-6 text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 rounded-full"
+                    onClick={() => window.open('https://rzp.io/rzp/HcUdgXV', '_blank')}
+                  >
+                    👉 Secure Your Spot Now 👈
+                  </Button>
+                </motion.div>
+                <div className="mt-4 text-lg font-semibold">
+                  <span className="text-red-600">Almost Full</span> <span className="text-red-600">- Only 2 Seats Left</span>
+                </div>
               </motion.div>
               
               {/* Event Details */}
@@ -174,9 +235,37 @@ const EmpowerHer25 = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-6">
-                🎤 Our Esteemed Speakers
+                🎯 Learn from India's Top Business Minds
               </h2>
             </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Speaker Card 1 */}
+              <div className="bg-[#1a1a1a] rounded-xl overflow-hidden text-center p-6">
+                <div className="w-48 h-48 mx-auto mb-4 bg-black rounded-full overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-b from-gray-800 to-black"></div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Revealing Soon</h3>
+                <p className="text-red-600 mb-2">MarTech Expert</p>
+                <p className="text-gray-400 text-sm">
+                  Industry leader with proven track record in digital transformation
+                </p>
+              </div>
+
+              {/* Speaker Card 2 */}
+              <div className="bg-[#1a1a1a] rounded-xl overflow-hidden text-center p-6">
+                <div className="w-48 h-48 mx-auto mb-4 bg-black rounded-full overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-b from-gray-800 to-black"></div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Revealing Soon</h3>
+                <p className="text-red-600 mb-2">AI Strategy Expert</p>
+                <p className="text-gray-400 text-sm">
+                  Pioneering AI implementation in business growth
+                </p>
+              </div>
+            </div>
+            
+            <SecureSpotButton className="mt-12" />
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -858,50 +947,59 @@ const EmpowerHer25 = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="/media/IMG_0011.JPG" 
-            alt="Women entrepreneurs background" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-red-600 bg-opacity-85"></div>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
+      {/* Final CTA Section */}
+      <section className="py-20 bg-[#1a1a1a]">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl font-bold text-white mb-8">
-                🔗 Join Us at EmpowerHER25
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Don't let 2025 be another year of 'almost'.
               </h2>
-              <p className="text-2xl text-white mb-12 leading-relaxed">
-                Be part of India's most powerful women entrepreneur movement. Seats are limited, and the energy is unmatched.
+              <p className="text-xl text-gray-400 mb-12">
+                Join us and transform your business with proven strategies that work.
               </p>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <Button 
-                  size="lg" 
-                  className="bg-white text-red-600 hover:bg-gray-100 font-semibold px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                  onClick={() => window.open('https://rzp.io/rzp/HcUdgXV', '_blank')}
-                >
-                  👉 Register Now
-                </Button>
-              </motion.div>
+              
+              <SecureSpotButton className="mb-12" />
+              
+              <div className="flex flex-col md:flex-row gap-6 justify-center items-center text-gray-400">
+                <div className="flex items-center gap-2">
+                  <span className="font-medium">Call: +91 8806661434</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-medium">Email: event@sheleadsindia.in</span>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
       <Footer />
+
+      {/* Fixed Bottom CTA */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-3 z-50">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+            <div className="flex items-center gap-4">
+              <span className="text-2xl font-bold text-green-500">₹999</span>
+              <span className="text-gray-400 line-through">₹9999</span>
+              <span className="text-red-600 font-semibold">Almost Full - Only 2 Seats Left</span>
+            </div>
+            <Button 
+              size="lg" 
+              className="bg-red-600 hover:bg-red-700 text-white font-bold px-12 py-6 text-2xl rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl min-w-[200px]"
+              onClick={() => window.open('https://rzp.io/rzp/HcUdgXV', '_blank')}
+            >
+              Book Now
+            </Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

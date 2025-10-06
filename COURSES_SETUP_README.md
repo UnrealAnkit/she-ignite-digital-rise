@@ -134,3 +134,5 @@ SELECT * FROM public.course_notification_requests WHERE notified = FALSE;
 
 
 
+
+

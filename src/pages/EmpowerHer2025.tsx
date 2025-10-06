@@ -363,8 +363,8 @@ const EmpowerHer25 = () => {
                 <div className="bg-red-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Users className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">1-1</h3>
-                <p className="text-gray-700">From across India, all focused on growth and innovation</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">1-1 Expert Guidance</h3>
+                <p className="text-gray-700">Personal mentoring sessions with industry leaders</p>
               </motion.div>
 
               <motion.div
@@ -420,7 +420,7 @@ const EmpowerHer25 = () => {
                   <ArrowRight className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Media Coverage</h3>
-                <p className="text-gray-700">96+ media outlets expected for maximum visibility</p>
+                <p className="text-gray-700">Featured in leading business media outlets</p>
               </motion.div>
             </div>
           </div>
@@ -499,7 +499,7 @@ const EmpowerHer25 = () => {
                   <CheckCircle className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Gain visibility & media coverage (96+ outlets expected)</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Gain visibility through media coverage</h3>
                   <p className="text-gray-700 leading-relaxed">Get featured in leading media outlets and build your personal brand as a thought leader in your industry.</p>
                 </div>
               </motion.div>

@@ -450,7 +450,7 @@ const EmpowerHer25 = () => {
                   className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                   onClick={() => window.open('https://rzp.io/rzp/HcUdgXV', '_blank')}
                 >
-                  💳 Book Your Ticket
+                  Book Your Ticket
                 </Button>
               </div>
             </motion.div>

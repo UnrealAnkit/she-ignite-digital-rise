@@ -95,7 +95,7 @@ const EmpowerHer25 = () => {
                 A Transformative Experience Awaits!
               </h2>
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl">
-                Join 300+ women entrepreneurs for a full-day masterclass on MarTech & AI for Business Growth.
+                Join 300+ women entrepreneurs for an intensive full-day masterclass on MarTech & AI for Business Growth.
               </p>
               
               {/* Payment CTA in Hero */}
@@ -897,9 +897,9 @@ const EmpowerHer25 = () => {
                     <Mic className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Time Commitment</h3>
-                    <p className="text-lg text-gray-700">45-60 minutes</p>
-                    <p className="text-gray-600">Including prep, presence & session</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Event Duration</h3>
+                    <p className="text-lg text-gray-700">Full-Day Immersive Experience</p>
+                    <p className="text-gray-600">Including networking lunch</p>
                   </div>
                 </div>
 

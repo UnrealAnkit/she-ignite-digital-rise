@@ -34,7 +34,7 @@ const SecureSpotButton = ({ className = "" }) => {
           className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-6 text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 rounded-full"
           onClick={() => window.open('https://rzp.io/rzp/HcUdgXV', '_blank')}
         >
-          👉 Secure Your Spot Now 👈
+          Secure Your Spot Now
         </Button>
       </motion.div>
       <div className="mt-4 text-red-600 text-lg font-semibold">
@@ -115,7 +115,7 @@ const EmpowerHer25 = () => {
                     className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-6 text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 rounded-full"
                     onClick={() => window.open('https://rzp.io/rzp/HcUdgXV', '_blank')}
                   >
-                    👉 Secure Your Spot Now 👈
+                    Secure Your Spot Now
                   </Button>
                 </motion.div>
                 <div className="mt-4 text-lg font-semibold">
@@ -235,7 +235,7 @@ const EmpowerHer25 = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-6">
-                🎯 Learn from India's Top Business Minds
+                Learn from India's Top Business Minds
               </h2>
             </motion.div>
 
@@ -986,8 +986,13 @@ const EmpowerHer25 = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="flex items-center gap-4">
-              <span className="text-2xl font-bold text-green-500">₹999</span>
-              <span className="text-gray-400 line-through">₹9999</span>
+              <div className="flex flex-col items-start">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-bold text-green-500">₹2000</span>
+                  <span className="text-gray-400 line-through">₹4999</span>
+                </div>
+                <span className="text-sm font-medium text-green-600">Early Bird Offer</span>
+              </div>
               <span className="text-red-600 font-semibold">Almost Full - Only 2 Seats Left</span>
             </div>
             <Button 

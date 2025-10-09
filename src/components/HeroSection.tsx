@@ -120,7 +120,7 @@ const HeroSection = () => {
             animate="visible"
           >
             <span className="block mb-3">
-              <strong>SHELeadsIndia helps women grow with <span className="text-primary">AI, marketing, and community</span> — not just survive online, but shine.</strong>
+              <strong>SHELeadsIndia helps women grow with <span className="text-primary">AI, marketing and community</span> - not just survive online, but shine.</strong>
             </span>
           </motion.p>
 

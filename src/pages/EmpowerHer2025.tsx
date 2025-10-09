@@ -68,7 +68,7 @@ const EmpowerHer25 = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="/media/IMG_0011.JPG"
+            src="/media/she leads banner.png"
             alt="Empowering Women Entrepreneurs"
             className="w-full h-full object-cover"
             style={{
@@ -222,8 +222,9 @@ const EmpowerHer25 = () => {
         </div>
       </section>
 
-      {/* Speakers Section */}
-      <section className="py-20 bg-gray-50">
+
+      {/* Our Panelists Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-full">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -234,55 +235,100 @@ const EmpowerHer25 = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-red-600 mb-6">
-                Learn from India's Top Business Minds
+                Our Panelists
               </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Speaker Card 1 */}
-              <div className="bg-[#1a1a1a] rounded-xl overflow-hidden text-center p-6">
-                <div className="w-48 h-48 mx-auto mb-4 bg-black rounded-full overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-b from-gray-800 to-black"></div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Saundarya Kaushal */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg border border-gray-200"
+              >
+                <div className="text-center mb-6">
+                  <img
+                    src="/media/_Saundarya[1].png"
+                    alt="Saundarya Kaushal"
+                    className="w-32 h-32 mx-auto rounded-full object-cover mb-4"
+                  />
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Saundarya Kaushal</h3>
+                  <p className="text-red-600 font-semibold">Business, Media & Marketing Leader</p>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Revealing Soon</h3>
-                <p className="text-red-600 mb-2">MarTech Expert</p>
-                <p className="text-gray-400 text-sm">
-                  Industry leader with proven track record in digital transformation
-                </p>
-              </div>
+                <div className="space-y-3 text-sm text-gray-700">
+                  <p>Business, media, and marketing leader with 6+ years of experience across India, UAE, the US, and the UK. Led GOAT content IP with 1.5B+ impressions and won Foxglove Award and Impact Digital Influencer Awards.</p>
+                  <p>Expertise in brand marketing, content production, influencer marketing, and strategic partnerships. Works with India's top founders to craft powerful personal and brand narratives.</p>
+                  <div className="pt-3 border-t border-gray-200">
+                    <p className="font-semibold text-gray-900 mb-2">Social Media Handles</p>
+                    <p className="text-xs">
+                      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/saundarya-kaushal-5a5a14190/" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">saundarya-kaushal-5a5a14190</a>
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
 
-              {/* Speaker Card 2 */}
-              <div className="bg-[#1a1a1a] rounded-xl overflow-hidden text-center p-6">
-                <div className="w-48 h-48 mx-auto mb-4 bg-black rounded-full overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-b from-gray-800 to-black"></div>
+              {/* Amita Deshpande */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg border border-gray-200"
+              >
+                <div className="text-center mb-6">
+                  <img
+                    src="/media/Amita photo.JPG"
+                    alt="Amita Deshpande"
+                    className="w-32 h-32 mx-auto rounded-full object-cover mb-4"
+                  />
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Amita Deshpande</h3>
+                  <p className="text-red-600 font-semibold">Sustainable Development & CSR Expert</p>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Revealing Soon</h3>
-                <p className="text-red-600 mb-2">AI Strategy Expert</p>
-                <p className="text-gray-400 text-sm">
-                  Pioneering AI implementation in business growth
-                </p>
-              </div>
+                <div className="space-y-3 text-sm text-gray-700">
+                  <p>15+ years in Sustainable Development and CSR. IT Engineer with Master's from Purdue University, USA. Founder of reCharkha - The EcoSocial Tribe.</p>
+                  <p>reCharkha upcycles non-recyclable plastic waste using traditional weaving techniques, employing rural women and artisans to create sustainable livelihoods.</p>
+                  <div className="pt-3 border-t border-gray-200">
+                    <p className="font-semibold text-gray-900 mb-2">Social Media Handles</p>
+                    <div className="text-xs space-y-1">
+                      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/recharkha-ecosocial/" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">recharkha-ecosocial</a></p>
+                      <p><strong>Facebook:</strong> <a href="https://www.facebook.com/reCharkhaEcoSocial" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">reCharkhaEcoSocial</a></p>
+                      <p><strong>Instagram:</strong> <a href="http://www.instagram.com/recharkha_ecosocial" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">recharkha_ecosocial</a></p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Sonam Srivastava */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg border border-gray-200"
+              >
+                <div className="text-center mb-6">
+                  <img
+                    src="/media/Sonam-Srivastava.webp"
+                    alt="Sonam Srivastava"
+                    className="w-32 h-32 mx-auto rounded-full object-cover mb-4"
+                  />
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Sonam Srivastava</h3>
+                  <p className="text-red-600 font-semibold">Founder, Wright Research</p>
+                </div>
+                <div className="space-y-3 text-sm text-gray-700">
+                  <p>IIT graduate and founder of Wright Research, a SEBI registered Robo-advisor managing 350+ crore INR in assets for 40,000+ clients.</p>
+                  <p>Achieved 90%+ outperformance over the index in the past three years. Expert in quant finance with experience at HSBC, Edelweiss, and AI-driven portfolio management.</p>
+                  <div className="pt-3 border-t border-gray-200">
+                    <p className="font-semibold text-gray-900 mb-2">Social Media Handles</p>
+                    <p className="text-xs">
+                      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sonamsrivastava-wright" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">sonamsrivastava-wright</a>
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
             </div>
-            
-            <SecureSpotButton className="mt-12" />
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-12 text-white max-w-2xl mx-auto">
-                <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                  <Mic className="h-10 w-10 text-red-600" />
-                </div>
-                <h3 className="text-3xl font-bold mb-4">Speaker Details Revealing Soon</h3>
-                <p className="text-xl leading-relaxed">
-                  We're curating an exceptional lineup of industry leaders, successful entrepreneurs, and MarTech & AI experts. Stay tuned for exciting speaker announcements!
-                </p>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -420,7 +466,7 @@ const EmpowerHer25 = () => {
                   <ArrowRight className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Media Coverage</h3>
-                <p className="text-gray-700">Featured in leading business media outlets</p>
+                <p className="text-gray-700">96+ media outlets expected for maximum visibility</p>
               </motion.div>
             </div>
           </div>
@@ -499,7 +545,7 @@ const EmpowerHer25 = () => {
                   <CheckCircle className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Gain visibility through media coverage</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Gain visibility & media coverage (96+ outlets expected)</h3>
                   <p className="text-gray-700 leading-relaxed">Get featured in leading media outlets and build your personal brand as a thought leader in your industry.</p>
                 </div>
               </motion.div>

@@ -565,7 +565,7 @@ const Index = () => {
                 {/* Solution Image */}
                 <div className="relative mb-8">
                   <img 
-                    src="/media/IMG_0013.JPG" 
+                    src="/media/DSC02132.JPG" 
                     alt="Women entrepreneurs succeeding together" 
                     className="w-full h-64 object-cover rounded-2xl shadow-2xl"
                   />

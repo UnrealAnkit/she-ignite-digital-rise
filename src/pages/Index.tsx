@@ -65,14 +65,14 @@ const Index = () => {
     {
       id: 2,
       title: "From Atta Chakki to Shark Tank | SHELeads India",
-      description: "Sangeeta dives into the ups and downs of entrepreneurship, her experience pitching on a national platform, and the lessons she's learned along the way.",
+      description: "Sangeeta dives into the ups and downs of entrepreneurship her experience pitching on a national platform and the lessons she's learned along the way.",
       embedUrl: "https://www.youtube.com/embed/CfQk2FaS68A",
       thumbnail: "https://img.youtube.com/vi/CfQk2FaS68A/maxresdefault.jpg"
     },
     {
       id: 3,
       title: "Inspiring journey of a makeup artist | SHELeads India", 
-      description: "This episode is a must-watch for anyone seeking inspiration, insights, or the motivation to carve their own path!",
+      description: "This episode is a must-watch for anyone seeking inspiration insights or the motivation to carve their own path!",
       embedUrl: "https://www.youtube.com/embed/Cjtxwlz4uUI",
       thumbnail: "https://img.youtube.com/vi/Cjtxwlz4uUI/maxresdefault.jpg"
     },
@@ -270,7 +270,7 @@ const Index = () => {
 
   const testimonials = [
     {
-      quote: "From running a traditional atta chakki to pitching on Shark Tank India - SHELeadsIndia helped me transform my business and navigate entrepreneurship challenges. This incredible journey taught me that with passion and determination, dreams truly have no limits!",
+      quote: "From running a traditional atta chakki to pitching on Shark Tank India - SHELeadsIndia helped me transform my business and navigate entrepreneurship challenges. This incredible journey taught me that with passion and determination dreams truly have no limits!",
       author: "Sangeeta",
       title: "From Atta Chakki to Shark Tank",
       city: "Mumbai"
@@ -282,7 +282,7 @@ const Index = () => {
       city: "Pune"
     },
     {
-      quote: "Breaking into the male-dominated legal industry while building my YouTube presence felt impossible until SHELeadsIndia showed me the path forward. Now I successfully balance my RERA expertise with content creation, empowering women through legal education every single day!",
+      quote: "Breaking into the male-dominated legal industry while building my YouTube presence felt impossible until SHELeadsIndia showed me the path forward. Now I successfully balance my RERA expertise with content creation empowering women through legal education every single day!",
       author: "Adv. Amruta Salunke",
       title: "RERA Expert, Lawyer & YouTuber",
       city: "Pune"
@@ -690,11 +690,11 @@ const Index = () => {
               </p>
               
               <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                At <span className="text-red-600 font-semibold">SHELeadsIndia</span>, we don't just teach theory — we give you the <span className="text-red-600 font-semibold">tools</span>, <span className="text-red-600 font-semibold">confidence</span>, and <span className="text-red-600 font-semibold">community</span> to take real action in your business.
+                At <span className="text-red-600 font-semibold">SHELeadsIndia</span>, we don't just teach theory - we give you the <span className="text-red-600 font-semibold">tools</span> <span className="text-red-600 font-semibold">confidence</span> and <span className="text-red-600 font-semibold">community</span> to take real action in your business.
               </p>
               
               <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4 leading-relaxed">
-                Here's how we help <span className="text-red-600 font-semibold">women entrepreneurs</span> grow — <span className="italic text-gray-700">one step, one story at a time.</span>
+                Here's how we help <span className="text-red-600 font-semibold">women entrepreneurs</span> grow - <span className="italic text-gray-700">one step one story at a time.</span>
               </p>
             </div>
             
@@ -723,9 +723,9 @@ const Index = () => {
                   />
                 </div>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
-                  <p className="text-lg">We break down digital marketing, AI tools, and content creation into simple, doable steps.</p>
-                  <p className="text-lg">Our trainings are built for women who are juggling home, business, and everything in between.</p>
-                  <p className="text-lg">Whether it's learning how to automate your WhatsApp, create content using AI, or build a lead magnet — you'll walk out with skills, not confusion.</p>
+                  <p className="text-lg">We break down digital marketing AI tools and content creation into simple doable steps.</p>
+                  <p className="text-lg">Our trainings are built for women who are juggling home business and everything in between.</p>
+                  <p className="text-lg">Whether it's learning how to automate your WhatsApp create content using AI or build a lead magnet - you'll walk out with skills not confusion.</p>
                 </div>
               </motion.div>
 
@@ -752,9 +752,9 @@ const Index = () => {
                   />
                 </div>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
-                  <p className="text-lg">These aren't just tasks — they're momentum-builders.</p>
-                  <p className="text-lg">Our 5-day and 7-day challenges help you stay consistent, push past tech fear, and actually <em>launch</em> that idea you've been sitting on.</p>
-                  <p className="text-lg">Each challenge comes with guidance, checklists, and group energy that keeps you going.</p>
+                  <p className="text-lg">These aren't just tasks - they're momentum-builders.</p>
+                  <p className="text-lg">Our 5-day and 7-day challenges help you stay consistent push past tech fear and actually <em>launch</em> that idea you've been sitting on.</p>
+                  <p className="text-lg">Each challenge comes with guidance checklists and group energy that keeps you going.</p>
                 </div>
               </motion.div>
 
@@ -782,8 +782,8 @@ const Index = () => {
                 </div>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p className="text-lg">We believe in hugs and high-fives <em>as much as</em> hacks and how-tos.</p>
-                  <p className="text-lg">Our in-person sessions in cities like Pune, Nashik, and Nagpur give women a chance to connect beyond the screen — while our virtual events make sure no one is left out.</p>
-                  <p className="text-lg">From strategy workshops to panel discussions, we curate experiences that spark both learning and collaboration.</p>
+                  <p className="text-lg">Our in-person sessions in cities like Pune Nashik and Nagpur give women a chance to connect beyond the screen - while our virtual events make sure no one is left out.</p>
+                  <p className="text-lg">From strategy workshops to panel discussions we curate experiences that spark both learning and collaboration.</p>
                 </div>
               </motion.div>
 
@@ -811,8 +811,8 @@ const Index = () => {
                 </div>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p className="text-lg">This is not a Facebook group with ghost members.</p>
-                  <p className="text-lg">This is a curated space where women business owners ask questions, share wins, hire each other, and build confidence together.</p>
-                  <p className="text-lg">You're not just joining a platform. You're becoming part of a circle that genuinely wants you to win — and shows up to help you do it.</p>
+                  <p className="text-lg">This is a curated space where women business owners ask questions share wins hire each other and build confidence together.</p>
+                  <p className="text-lg">You're not just joining a platform. You're becoming part of a circle that genuinely wants you to win - and shows up to help you do it.</p>
                 </div>
               </motion.div>
             </div>
@@ -863,13 +863,13 @@ const Index = () => {
                 </div>
                 
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
-                  Inside our community, you'll find women just like you — 
-                  <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent"> building, learning, failing, rising, and helping each other grow.</span>
+                  Inside our community, you'll find women just like you - 
+                  <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent"> building learning failing rising and helping each other grow.</span>
                 </h3>
                 
                 <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                  This isn't just a chat group. It's where collaborations happen, tools are exchanged, 
-                  wins are celebrated, and businesses grow — together.
+                  This isn't just a chat group. It's where collaborations happen tools are exchanged 
+                  wins are celebrated and businesses grow - together.
                 </p>
               </motion.div>
 
@@ -1414,7 +1414,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Stories of Courage,
+              Stories of Courage
               <span className="block text-primary">Journeys of Triumph</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -1780,7 +1780,7 @@ const Index = () => {
                     />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-1">Hands-on Trainings</h3>
-                  <p className="text-sm text-gray-800">We break down digital marketing, AI tools, and content creation into simple, doable steps.</p>
+                  <p className="text-sm text-gray-800">We break down digital marketing AI tools and content creation into simple doable steps.</p>
                 </motion.div>
 
                 {/* 2. Weekly Challenges */}

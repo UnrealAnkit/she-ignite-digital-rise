@@ -5,13 +5,6 @@
       "destination": "/index.html"
     }
   ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://www.sheleadsempowerher.com/",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/static/(.*)",

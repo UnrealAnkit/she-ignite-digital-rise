@@ -276,13 +276,15 @@ const SHELeadsIndiaLaunch = () => {
                 <p className="text-lg leading-relaxed mb-6">
                   Join us for EmpowerHER25 - our biggest event yet, designed to take women entrepreneurs to the next level with advanced strategies, AI tools, and global networking opportunities.
                 </p>
-                <Link 
-                  to="/empowerher25"
+                <a 
+                  href="https://www.sheleadsempowerher.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-white text-red-600 hover:bg-gray-100 font-semibold px-6 py-3 rounded-lg transition-colors duration-300"
                 >
                   Join EmpowerHER25
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </div>
             </motion.div>
           </div>

@@ -1314,12 +1314,14 @@ const EmpowerHer2024 = () => {
                 </div>
               </div>
 
-              <Link 
-                to="/empowerher25"
+              <a 
+                href="https://www.sheleadsempowerher.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-white text-red-600 hover:bg-gray-100 font-semibold px-8 py-3 text-lg rounded-lg transition-colors duration-300"
               >
                 Join EmpowerHER25 →
-              </Link>
+              </a>
             </motion.div>
           </div>
         </div>

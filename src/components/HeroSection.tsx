@@ -114,13 +114,13 @@ const HeroSection = () => {
 
           {/* Subheadline */}
           <motion.p 
-            className="text-base md:text-lg mb-5 text-background/90 leading-relaxed"
+            className="text-lg md:text-xl mb-5 text-background leading-relaxed font-medium drop-shadow-lg"
             variants={subheadingVariants}
             initial="hidden"
             animate="visible"
           >
             <span className="block mb-3">
-              <strong>SHELeadsIndia helps women grow with <span className="text-primary">AI, marketing and community</span> - not just survive online, but shine.</strong>
+              <span className="font-semibold">SHELeadsIndia helps women grow with <span className="text-primary font-bold">AI, marketing and community</span> - not just survive online, but shine.</span>
             </span>
           </motion.p>
 

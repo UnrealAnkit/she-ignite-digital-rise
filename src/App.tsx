@@ -32,13 +32,20 @@ import EmailMarketingAITraining from "./pages/EmailMarketingAITraining";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Content from "./pages/Content";
-import EmpowerHer2025 from "./pages/EmpowerHer2025";
 import EmpowerHer2024 from "./pages/EmpowerHer2024";
 import SHELeadsIndiaLaunch from "./pages/SHELeadsIndiaLaunch";
 import OurCourses from "./pages/OurCourses";
 import RefundPolicy from "./pages/RefundPolicy";
 import Newsletter from "./pages/Newsletter";
 import NotFound from "./pages/NotFound";
+
+// External redirect component
+const ExternalRedirect = ({ to }: { to: string }) => {
+  useEffect(() => {
+    window.location.href = to;
+  }, [to]);
+  return null;
+};
 
 const queryClient = new QueryClient();
 
@@ -83,8 +90,8 @@ const App = () => {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/content" element={<Content />} />
-            <Route path="/empowerher25" element={<EmpowerHer2025 />} />
-            <Route path="/empowerher2025" element={<Navigate to="/empowerher25" replace />} />
+            <Route path="/empowerher25" element={<ExternalRedirect to="https://www.sheleadsempowerher.com/" />} />
+            <Route path="/empowerher2025" element={<ExternalRedirect to="https://www.sheleadsempowerher.com/" />} />
             <Route path="/empowerher24" element={<EmpowerHer2024 />} />
             <Route path="/sheleadsindia-launch" element={<SHELeadsIndiaLaunch />} />
             <Route path="/our-courses" element={<OurCourses />} />

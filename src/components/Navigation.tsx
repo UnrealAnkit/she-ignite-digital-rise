@@ -14,7 +14,7 @@ const Navigation = () => {
     { name: "Programs", href: "/programs" },
     { name: "Our Courses", href: "/our-courses" },
     { name: "Upcoming Training", href: "/upcoming-training" },
-    { name: "EmpowerHER25", href: "/empowerher25" },
+    { name: "EmpowerHER25", href: "https://www.sheleadsempowerher.com/", external: true },
     { name: "Newsletter", href: "/newsletter" },
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
@@ -46,22 +46,43 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <motion.div key={item.name} className="relative">
-                <Link
-                  to={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-primary relative ${
-                    isActive(item.href)
-                      ? "text-primary font-semibold"
-                      : "text-muted-foreground"
-                  }`}
-                >
-                  {item.name}
-                  <motion.div
-                    className="absolute -bottom-1 left-0 h-0.5 bg-primary"
-                    initial={{ width: 0 }}
-                    whileHover={{ width: "100%" }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </Link>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-sm font-medium transition-colors hover:text-primary relative ${
+                      isActive(item.href)
+                        ? "text-primary font-semibold"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    {item.name}
+                    <motion.div
+                      className="absolute -bottom-1 left-0 h-0.5 bg-primary"
+                      initial={{ width: 0 }}
+                      whileHover={{ width: "100%" }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </a>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={`text-sm font-medium transition-colors hover:text-primary relative ${
+                      isActive(item.href)
+                        ? "text-primary font-semibold"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    {item.name}
+                    <motion.div
+                      className="absolute -bottom-1 left-0 h-0.5 bg-primary"
+                      initial={{ width: 0 }}
+                      whileHover={{ width: "100%" }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </Link>
+                )}
               </motion.div>
             ))}
             <motion.div
@@ -94,18 +115,35 @@ const Navigation = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                    isActive(item.href)
-                      ? "text-white hero-button"
-                      : "text-muted-foreground hover:text-primary hover:bg-muted"
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                item.external ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                      isActive(item.href)
+                        ? "text-white hero-button"
+                        : "text-muted-foreground hover:text-primary hover:bg-muted"
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                      isActive(item.href)
+                        ? "text-white hero-button"
+                        : "text-muted-foreground hover:text-primary hover:bg-muted"
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
               <div className="px-3 py-2">
                 <Button variant="hero" size="sm" className="w-full" asChild>
